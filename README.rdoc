@@ -1,6 +1,6 @@
 = cms-fortress
 
-Description goes here.
+Mexican Comfortable Sofa (CMS) - User and Role Management extension
 
 == Contributing to cms-fortress
  
