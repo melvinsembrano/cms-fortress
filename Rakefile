@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "cms-fortress"
   gem.homepage = "http://github.com/melvinsembrano/cms-fortress"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Comfortable Mexican Sofa (CMS) - User and role management extension}
+  gem.description = %Q{Comfortable Mexican Sofa (CMS) - User and role management extension}
   gem.email = "melvinsembrano@gmail.com"
   gem.authors = ["Melvin Sembrano"]
   # dependencies defined in Gemfile
@@ -32,6 +32,7 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = true
 end
 
+=begin
 require 'rcov/rcovtask'
 Rcov::RcovTask.new do |test|
   test.libs << 'test'
@@ -39,6 +40,7 @@ Rcov::RcovTask.new do |test|
   test.verbose = true
   test.rcov_opts << '--exclude "gems/*"'
 end
+=end
 
 task :default => :test
 
