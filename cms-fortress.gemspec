@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Melvin Sembrano"]
-  s.date = "2013-03-09"
+  s.date = "2013-03-13"
   s.description = "Comfortable Mexican Sofa (CMS) - User and role management extension"
   s.email = "melvinsembrano@gmail.com"
   s.extra_rdoc_files = [
@@ -18,11 +18,14 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".document",
+    ".rvmrc",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "cms-fortress.gemspec",
     "lib/cms-fortress.rb",
     "test/helper.rb",
     "test/test_cms-fortress.rb"
@@ -37,17 +40,20 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<comfortable_mexican_sofa>, [">= 1.6.26"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
       s.add_development_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_development_dependency(%q<simplecov>, [">= 0"])
     else
+      s.add_dependency(%q<comfortable_mexican_sofa>, [">= 1.6.26"])
       s.add_dependency(%q<rdoc>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<simplecov>, [">= 0"])
     end
   else
+    s.add_dependency(%q<comfortable_mexican_sofa>, [">= 1.6.26"])
     s.add_dependency(%q<rdoc>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
