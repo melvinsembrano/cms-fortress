@@ -25,8 +25,28 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "app/assets/javascripts/cms_fortress/bootstrap-affix.js",
+    "app/assets/javascripts/cms_fortress/bootstrap-alert.js",
+    "app/assets/javascripts/cms_fortress/bootstrap-button.js",
+    "app/assets/javascripts/cms_fortress/bootstrap-carousel.js",
+    "app/assets/javascripts/cms_fortress/bootstrap-collapse.js",
+    "app/assets/javascripts/cms_fortress/bootstrap-dropdown.js",
+    "app/assets/javascripts/cms_fortress/bootstrap-modal.js",
+    "app/assets/javascripts/cms_fortress/bootstrap-popover.js",
+    "app/assets/javascripts/cms_fortress/bootstrap-scrollspy.js",
+    "app/assets/javascripts/cms_fortress/bootstrap-tab.js",
+    "app/assets/javascripts/cms_fortress/bootstrap-tooltip.js",
+    "app/assets/javascripts/cms_fortress/bootstrap-transition.js",
+    "app/assets/javascripts/cms_fortress/bootstrap-typeahead.js",
+    "app/assets/javascripts/cms_fortress/bootstrap.js",
+    "app/assets/javascripts/cms_fortress/html5shiv.js",
+    "app/assets/javascripts/cms_fortress/jquery.js",
+    "app/assets/stylesheets/cms_fortress/bootstrap-responsive.css",
+    "app/assets/stylesheets/cms_fortress/bootstrap.css",
+    "app/views/layouts/cms_fortress/default.html.erb",
     "cms-fortress.gemspec",
     "lib/cms-fortress.rb",
+    "lib/cms/fortress/rails/engine.rb",
     "test/helper.rb",
     "test/test_cms-fortress.rb"
   ]
@@ -41,12 +61,14 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<comfortable_mexican_sofa>, [">= 1.6.26"])
+      s.add_runtime_dependency(%q<devise>, [">= 1.5.4"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
       s.add_development_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_development_dependency(%q<simplecov>, [">= 0"])
     else
       s.add_dependency(%q<comfortable_mexican_sofa>, [">= 1.6.26"])
+      s.add_dependency(%q<devise>, [">= 1.5.4"])
       s.add_dependency(%q<rdoc>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
@@ -54,6 +76,7 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency(%q<comfortable_mexican_sofa>, [">= 1.6.26"])
+    s.add_dependency(%q<devise>, [">= 1.5.4"])
     s.add_dependency(%q<rdoc>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
