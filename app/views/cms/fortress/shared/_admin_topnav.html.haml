@@ -1,0 +1,16 @@
+.navbar.navbar-inverse.nabvar-fixed-top
+  .navbar-inner
+    .navbar-container
+      %button.btn.btn-navbar{'type' => 'button', 'data-toggle' => 'collapse', 'data-target' => '.nav-collapse'}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.brand{'href' => '#'}= t('cms.fortress.title')
+      .nav-collapse.collapse
+        %ul.nav
+          %li.active
+            = link_to t("cms.fortress.contents"), "#"
+          %li
+            = link_to t("cms.fortress.design"), "#"
+          %li
+            = link_to t("cms.fortress.admin"), "#"

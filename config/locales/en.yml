@@ -3,3 +3,8 @@ en:
     fortress:
       page_title: CMS Fortress Admin
       title: CMS Fortress
+      contents: Contents
+      design: Design
+      admin: Admin
+      login: Logout
+      logout: Logout
