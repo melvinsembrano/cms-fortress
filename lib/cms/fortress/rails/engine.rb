@@ -4,7 +4,7 @@ module Cms
 
       initializer 'cms-fortress.setup' do |app|
         app.config.to_prepare do
-          Devise::SessionsController.layout "cms/fortress/default"
+          Devise::SessionsController.layout "cms/fortress/session"
         end
       end
     end
