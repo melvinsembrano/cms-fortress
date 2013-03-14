@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Cms::Fortress::UserTest < ActiveSupport::TestCase
+class Cms::Fortress::RoleTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

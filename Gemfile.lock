@@ -32,6 +32,7 @@ GEM
     arel (2.0.10)
     bcrypt-ruby (3.0.1)
     builder (2.1.2)
+    cancan (1.6.9)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.1)
@@ -107,6 +108,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
+  cancan (>= 1.6.9)
   comfortable_mexican_sofa (>= 1.6.26)
   devise (>= 1.5.4)
   jeweler
