@@ -1,6 +1,7 @@
+<%= render :partial => 'cms/fortress/shared/navbar' %>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form-signin" }) do |f| %>
-  <h2 class="form-signin-heading">Sign in</h2>
+  <h3 class="form-signin-heading">Sign in</h3>
 
   <%= f.email_field :email, :autofocus => true, :placeholder => "Email address", :class => "input-block-level" %>
   <%= f.password_field :password, :placeholder => "Password", :class => "input-block-level" %>
@@ -16,16 +17,3 @@
   <%= render "devise/shared/links" %>
 <% end %>
 
-
-
-<!--
-      <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" class="input-block-level" placeholder="Email address">
-        <input type="password" class="input-block-level" placeholder="Password">
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        <button class="btn  btn-primary" type="submit">Sign in</button>
-      </form>
-      -->
