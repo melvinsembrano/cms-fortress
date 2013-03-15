@@ -8,9 +8,9 @@
       %a.brand{'href' => '#'}= t('cms.fortress.title')
       .nav-collapse.collapse
         %ul.nav
-          %li.active
-            = link_to t("cms.fortress.contents"), cms_admin_path
-          %li
-            = link_to t("cms.fortress.design"), "#"
-          %li
-            = link_to t("cms.fortress.admin"), admin_cms_admin_path
+          %li{:class => content_page? ? 'active' : ''}
+            = link_to t("cms.fortress.contents"), cms_admin_site_pages_path(@site)
+          %li{:class => design_page? ? 'active' : ''}
+            = link_to t("cms.fortress.design"), design_cms_admin_path
+          %li{:class => admin_page? ? 'active' : ''}
+            = link_to t("cms.fortress.settings"), settings_cms_admin_path
