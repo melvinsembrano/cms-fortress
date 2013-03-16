@@ -7,7 +7,7 @@ module Cms
       end
 
       def roles
-
+        @roles = Role.all
       end
 
 

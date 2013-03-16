@@ -8,3 +8,8 @@ en:
       admin: Admin
       login: Logout
       logout: Logout
+
+      roles:
+        title: Roles
+        new_link: New Role
+

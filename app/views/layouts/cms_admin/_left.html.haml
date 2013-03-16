@@ -2,7 +2,7 @@
 
   - if admin_page?
     %li= active_link_to t('cms_admin.base.sites'), cms_admin_sites_path, :active => ['cms_admin/sites']
-    %li= active_link_to t('cms.fortress.roles'), roles_cms_admin_path
+    %li= active_link_to t('cms.fortress.roles.title'), cms_fortress_roles_path
     %li= active_link_to t('cms.fortress.users'), users_cms_admin_path
   - elsif design_page?
     - if @site && !@site.new_record?
@@ -17,6 +17,6 @@
 
     = cms_hook :navigation
 
-/%p
-/  = controller.controller_name
-/  = controller.action_name
+%p
+  = controller.controller_name
+  = controller.action_name

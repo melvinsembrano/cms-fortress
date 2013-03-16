@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @cms_fortress_role.title
+%p
+  %b Description:
+  = @cms_fortress_role.description
+
+= link_to 'Edit', edit_cms_fortress_role_path(@cms_fortress_role)
+\|
+= link_to 'Back', cms_fortress_roles_path
