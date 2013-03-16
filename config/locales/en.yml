@@ -12,4 +12,6 @@ en:
       roles:
         title: Roles
         new_link: New Role
+        edit_title: Edit Role
+        new_title: Create New Role
 

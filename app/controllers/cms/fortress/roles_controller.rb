@@ -45,7 +45,7 @@ class Cms::Fortress::RolesController < CmsAdmin::BaseController
 
     respond_to do |format|
       if @cms_fortress_role.save
-        format.html { redirect_to @cms_fortress_role, notice: 'Role was successfully created.' }
+        format.html { redirect_to cms_fortress_roles_path, notice: 'Role was successfully created.' }
         format.json { render json: @cms_fortress_role, status: :created, location: @cms_fortress_role }
       else
         format.html { render action: "new" }
@@ -61,7 +61,7 @@ class Cms::Fortress::RolesController < CmsAdmin::BaseController
 
     respond_to do |format|
       if @cms_fortress_role.update_attributes(params[:cms_fortress_role])
-        format.html { redirect_to @cms_fortress_role, notice: 'Role was successfully updated.' }
+        format.html { redirect_to cms_fortress_roles_path, notice: 'Role was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

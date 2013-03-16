@@ -5,7 +5,7 @@ class CreateCmsFortressRoles < ActiveRecord::Migration
 
     # Create default users
     {
-      :administration => {
+      :administrator => {
 
       },
       :author => {
