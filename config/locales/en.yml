@@ -15,3 +15,10 @@ en:
         edit_title: Edit Role
         new_title: Create New Role
 
+      users:
+        title: Users
+        new_link: New User
+        edit_title: Edit User
+        new_title: Create New User
+
+

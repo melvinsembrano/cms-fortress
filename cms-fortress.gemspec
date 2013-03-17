@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Melvin Sembrano"]
-  s.date = "2013-03-14"
+  s.date = "2013-03-17"
   s.description = "Comfortable Mexican Sofa (CMS) - User and role management extension"
   s.email = "melvinsembrano@gmail.com"
   s.extra_rdoc_files = [
@@ -45,8 +45,23 @@ Gem::Specification.new do |s|
     "app/assets/stylesheets/cms/fortress/bootstrap-responsive.css",
     "app/assets/stylesheets/cms/fortress/bootstrap.css",
     "app/assets/stylesheets/cms/fortress/session.css",
+    "app/controllers/cms/fortress/admin_controller.rb",
+    "app/controllers/cms/fortress/roles_controller.rb",
+    "app/helpers/cms/fortress/application_helper.rb",
+    "app/helpers/cms/fortress/roles_helper.rb",
     "app/models/cms/fortress.rb",
+    "app/models/cms/fortress/role.rb",
     "app/models/cms/fortress/user.rb",
+    "app/models/cms_ability.rb",
+    "app/views/cms/fortress/admin/design.html.haml",
+    "app/views/cms/fortress/admin/roles.html.haml",
+    "app/views/cms/fortress/admin/settings.html.haml",
+    "app/views/cms/fortress/admin/users.html.haml",
+    "app/views/cms/fortress/roles/_form.html.haml",
+    "app/views/cms/fortress/roles/edit.html.haml",
+    "app/views/cms/fortress/roles/index.html.haml",
+    "app/views/cms/fortress/roles/new.html.haml",
+    "app/views/cms/fortress/roles/show.html.haml",
     "app/views/cms/fortress/shared/_admin_topnav.html.haml",
     "app/views/cms/fortress/shared/_navbar.html.erb",
     "app/views/cms_users/sessions/new.html.erb",
@@ -54,19 +69,25 @@ Gem::Specification.new do |s|
     "app/views/layouts/cms/fortress/session.html.erb",
     "app/views/layouts/cms_admin/_body.html.haml",
     "app/views/layouts/cms_admin/_head.html.haml",
+    "app/views/layouts/cms_admin/_left.html.haml",
     "cms-fortress.gemspec",
+    "config/initializers/devise.rb",
     "config/locales/en.yml",
     "config/routes.rb",
     "db/migrate/01_devise_create_cms_fortress_users.rb",
+    "db/migrate/02_create_cms_fortress_roles.rb",
     "lib/cms-fortress.rb",
     "lib/cms/fortress/auth.rb",
     "lib/cms/fortress/comfortable_mexican_sofa.rb",
     "lib/cms/fortress/devise.rb",
     "lib/cms/fortress/rails/engine.rb",
-    "test/fixtures/cms/fortress/users.yml",
+    "test/fixtures/cms/fortress/roles.yml",
+    "test/functional/cms/fortress/roles_controller_test.rb",
     "test/helper.rb",
     "test/test_cms-fortress.rb",
-    "test/unit/cms/fortress/user_test.rb"
+    "test/unit/cms/fortress/role_test.rb",
+    "test/unit/cms/fortress/role_user_test.rb",
+    "test/unit/helpers/cms/fortress/roles_helper_test.rb"
   ]
   s.homepage = "http://github.com/melvinsembrano/cms-fortress"
   s.licenses = ["MIT"]

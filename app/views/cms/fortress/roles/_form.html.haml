@@ -1,7 +1,7 @@
 = form_for @cms_fortress_role, :html => {:class => 'form-horizontal'} do |f|
   - if @cms_fortress_role.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@cms_fortress_role.errors.count, "error")} prohibited this cms_fortress_role from being saved:"
+      %h2= "#{pluralize(@cms_fortress_role.errors.count, "error")} prohibited this role from being saved:"
       %ul
         - @cms_fortress_role.errors.full_messages.each do |msg|
           %li= msg

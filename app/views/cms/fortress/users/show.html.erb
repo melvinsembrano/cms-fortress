@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Email:</b>
+  <%= @cms_fortress_user.email %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @cms_fortress_user.password %>
+</p>
+
+<p>
+  <b>Password confirmation:</b>
+  <%= @cms_fortress_user.password_confirmation %>
+</p>
+
+
+<%= link_to 'Edit', edit_cms_fortress_user_path(@cms_fortress_user) %> |
+<%= link_to 'Back', cms_fortress_users_path %>

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   namespace :cms do
     namespace :fortress do
       resources :roles
+      resources :users
     end
   end
 

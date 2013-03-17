@@ -1,0 +1,21 @@
+.page-header
+  = link_to t('cms.fortress.users.new_link'), new_cms_fortress_user_path, :class => 'btn pull-right'
+  %h2= t('cms.fortress.users.title')
+
+%table.table.table-hover.table-bordered
+  %tr
+    %th Email
+    %th Role
+    %th
+
+
+  - @cms_fortress_users.each do |cms_fortress_user|
+    %tr
+      %td= cms_fortress_user.email
+      %td= cms_fortress_user.role.name
+      %td
+        .btn-group.pull-right
+          = link_to 'Show', cms_fortress_user, :class => 'btn btn-small btn-primary'
+          = link_to 'Edit', edit_cms_fortress_user_path(cms_fortress_user), :class => 'btn btn-small btn-primary'
+          = link_to 'Destroy', cms_fortress_user, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-small btn-danger'
+

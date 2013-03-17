@@ -6,7 +6,8 @@ module Cms
       def admin_page?
         controller_name.eql?('admin') && %w{settings roles users}.include?(action_name) ||
           controller_name.eql?('sites') && %w{index}.include?(action_name) ||
-          controller_name.eql?('roles')
+          controller_name.eql?('roles') ||
+          controller_name.eql?('users')
       end
 
       def design_page?

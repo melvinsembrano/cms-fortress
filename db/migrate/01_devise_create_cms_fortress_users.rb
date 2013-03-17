@@ -4,7 +4,7 @@ class DeviseCreateCmsFortressUsers < ActiveRecord::Migration
     super
 
     # Create default cms-admin user
-    Cms::Fortress::User.create!(:email => 'admin@cmsfortress.com', :password => '1234qwer', :password_confirmation => '1234qwer') if direction == :up
+    Cms::Fortress::User.create!(:email => 'admin@cmsfortress.com', :password => '1234qwer', :password_confirmation => '1234qwer', :role_id => 1) if direction == :up
   end
 
   def change
@@ -12,6 +12,8 @@ class DeviseCreateCmsFortressUsers < ActiveRecord::Migration
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""
       t.string :encrypted_password, :null => false, :default => ""
+
+      t.integer :role_id
 
       ## Recoverable
       t.string   :reset_password_token
