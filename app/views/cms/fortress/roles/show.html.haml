@@ -1,12 +1,7 @@
-%p#notice= notice
+.page-header
+  .btn-group.pull-right
+    = link_to t('.edit'), edit_cms_fortress_role_path(@cms_fortress_role), :class => 'btn'
+    = link_to t('cms.fortress.roles.back'), cms_fortress_roles_path, :class => 'btn'
+  %h2= "Role: #{ @cms_fortress_role.name }"
+  %p= @cms_fortress_role.description
 
-%p
-  %b Name:
-  = @cms_fortress_role.name
-%p
-  %b Description:
-  = @cms_fortress_role.description
-
-= link_to 'Edit', edit_cms_fortress_role_path(@cms_fortress_role)
-\|
-= link_to 'Back', cms_fortress_roles_path

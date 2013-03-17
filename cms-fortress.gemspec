@@ -47,6 +47,7 @@ Gem::Specification.new do |s|
     "app/assets/stylesheets/cms/fortress/session.css",
     "app/controllers/cms/fortress/admin_controller.rb",
     "app/controllers/cms/fortress/roles_controller.rb",
+    "app/controllers/cms/fortress/users_controller.rb",
     "app/helpers/cms/fortress/application_helper.rb",
     "app/helpers/cms/fortress/roles_helper.rb",
     "app/models/cms/fortress.rb",
@@ -64,6 +65,10 @@ Gem::Specification.new do |s|
     "app/views/cms/fortress/roles/show.html.haml",
     "app/views/cms/fortress/shared/_admin_topnav.html.haml",
     "app/views/cms/fortress/shared/_navbar.html.erb",
+    "app/views/cms/fortress/users/_form.html.haml",
+    "app/views/cms/fortress/users/edit.html.haml",
+    "app/views/cms/fortress/users/index.html.haml",
+    "app/views/cms/fortress/users/new.html.haml",
     "app/views/cms_users/sessions/new.html.erb",
     "app/views/layouts/cms/fortress/default.html.erb",
     "app/views/layouts/cms/fortress/session.html.erb",
@@ -77,17 +82,20 @@ Gem::Specification.new do |s|
     "db/migrate/01_devise_create_cms_fortress_users.rb",
     "db/migrate/02_create_cms_fortress_roles.rb",
     "lib/cms-fortress.rb",
+    "lib/cms/fortress/application_controller_methods.rb",
     "lib/cms/fortress/auth.rb",
     "lib/cms/fortress/comfortable_mexican_sofa.rb",
     "lib/cms/fortress/devise.rb",
     "lib/cms/fortress/rails/engine.rb",
     "test/fixtures/cms/fortress/roles.yml",
     "test/functional/cms/fortress/roles_controller_test.rb",
+    "test/functional/cms/fortress/users_controller_test.rb",
     "test/helper.rb",
     "test/test_cms-fortress.rb",
     "test/unit/cms/fortress/role_test.rb",
     "test/unit/cms/fortress/role_user_test.rb",
-    "test/unit/helpers/cms/fortress/roles_helper_test.rb"
+    "test/unit/helpers/cms/fortress/roles_helper_test.rb",
+    "test/unit/helpers/cms/fortress/users_helper_test.rb"
   ]
   s.homepage = "http://github.com/melvinsembrano/cms-fortress"
   s.licenses = ["MIT"]

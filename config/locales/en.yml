@@ -14,6 +14,7 @@ en:
         new_link: New Role
         edit_title: Edit Role
         new_title: Create New Role
+        back: Back
 
       users:
         title: Users

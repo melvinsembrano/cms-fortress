@@ -15,7 +15,6 @@
       %td= cms_fortress_user.role.name
       %td
         .btn-group.pull-right
-          = link_to 'Show', cms_fortress_user, :class => 'btn btn-small btn-primary'
           = link_to 'Edit', edit_cms_fortress_user_path(cms_fortress_user), :class => 'btn btn-small btn-primary'
           = link_to 'Destroy', cms_fortress_user, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-small btn-danger'
 

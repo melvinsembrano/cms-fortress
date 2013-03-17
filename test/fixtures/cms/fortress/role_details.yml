@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  command: MyString
+  create: false
+  update: false
+  delete: false
+  view: false
+
+two:
+  name: MyString
+  command: MyString
+  create: false
+  update: false
+  delete: false
+  view: false
