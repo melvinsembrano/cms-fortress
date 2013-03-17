@@ -15,3 +15,5 @@
               = link_to t("cms.fortress.design"), cms_admin_site_layouts_path(@site)
           %li{:class => admin_page? ? 'active' : ''}
             = link_to t("cms.fortress.settings"), cms_admin_sites_path
+          %li
+            = link_to "Logout", destroy_cms_user_session_path, :method => 'delete'

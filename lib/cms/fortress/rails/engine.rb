@@ -8,6 +8,10 @@ module Cms
           ApplicationController.helper(Cms::Fortress::ApplicationHelper)
         end
         app.config.railties_order = [ :all, ComfortableMexicanSofa::Engine, Cms::Fortress::Engine ]
+
+        ActiveSupport.on_load(:action_controller) do
+          include Cms::Fortress::ApplicationControllerMethods
+        end
       end
     end
   end
