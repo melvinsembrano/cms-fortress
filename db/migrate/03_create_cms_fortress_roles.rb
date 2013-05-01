@@ -16,6 +16,8 @@ class CreateCmsFortressRoles < ActiveRecord::Migration
       }
     }.each do |k, roles|
       role = Cms::Fortress::Role.create!(:name => k.to_s.humanize, :description => k.to_s.humanize)
+      role.load_defaults
+      role.save
     end
   end
 

@@ -7,6 +7,7 @@ class CreateCmsFortressRoleDetails < ActiveRecord::Migration
       t.boolean :can_update
       t.boolean :can_delete
       t.boolean :can_view
+      t.integer :role_id
 
       t.timestamps
     end

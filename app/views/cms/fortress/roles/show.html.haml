@@ -5,3 +5,8 @@
   %h2= "Role: #{ @cms_fortress_role.name }"
   %p= @cms_fortress_role.description
 
+%table.table
+  - @cms_fortress_role.role_details.each do |d|
+    %tr
+      %td= d.command
+      %td= d.can_create
