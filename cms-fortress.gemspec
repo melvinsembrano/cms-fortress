@@ -74,6 +74,7 @@ Gem::Specification.new do |s|
     "app/views/layouts/cms/fortress/default.html.erb",
     "app/views/layouts/cms/fortress/session.html.erb",
     "app/views/layouts/cms_admin/_body.html.haml",
+    "app/views/layouts/cms_admin/_head.html.haml",
     "app/views/layouts/cms_admin/_left.html.haml",
     "cms-fortress.gemspec",
     "config/initializers/devise.rb",
@@ -81,13 +82,18 @@ Gem::Specification.new do |s|
     "config/roles.yml",
     "config/routes.rb",
     "db/migrate/01_devise_create_cms_fortress_users.rb",
+    "db/migrate/02_create_cms_fortress_role_details.rb",
+    "db/migrate/03_create_cms_fortress_roles.rb",
     "lib/cms-fortress.rb",
     "lib/cms/fortress/application_controller_methods.rb",
     "lib/cms/fortress/auth.rb",
     "lib/cms/fortress/comfortable_mexican_sofa.rb",
     "lib/cms/fortress/devise.rb",
     "lib/cms/fortress/rails/engine.rb",
+    "lib/generators/cms/fortress/USAGE",
     "lib/generators/cms/fortress/fortress_generator.rb",
+    "lib/generators/cms/fortress/templates/README",
+    "lib/generators/comfy/cms/cms_generator.rb",
     "test/fixtures/cms/fortress/role_details.yml",
     "test/fixtures/cms/fortress/roles.yml",
     "test/functional/cms/fortress/roles_controller_test.rb",
@@ -111,7 +117,7 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rails>, [">= 0"])
-      s.add_runtime_dependency(%q<comfortable_mexican_sofa>, [">= 1.6.26"])
+      s.add_runtime_dependency(%q<comfortable_mexican_sofa>, ["= 1.8.1"])
       s.add_runtime_dependency(%q<devise>, [">= 1.5.4"])
       s.add_runtime_dependency(%q<cancan>, [">= 1.6.9"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
@@ -120,7 +126,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<simplecov>, [">= 0"])
     else
       s.add_dependency(%q<rails>, [">= 0"])
-      s.add_dependency(%q<comfortable_mexican_sofa>, [">= 1.6.26"])
+      s.add_dependency(%q<comfortable_mexican_sofa>, ["= 1.8.1"])
       s.add_dependency(%q<devise>, [">= 1.5.4"])
       s.add_dependency(%q<cancan>, [">= 1.6.9"])
       s.add_dependency(%q<rdoc>, [">= 0"])
@@ -130,7 +136,7 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency(%q<rails>, [">= 0"])
-    s.add_dependency(%q<comfortable_mexican_sofa>, [">= 1.6.26"])
+    s.add_dependency(%q<comfortable_mexican_sofa>, ["= 1.8.1"])
     s.add_dependency(%q<devise>, [">= 1.5.4"])
     s.add_dependency(%q<cancan>, [">= 1.6.9"])
     s.add_dependency(%q<rdoc>, [">= 0"])
