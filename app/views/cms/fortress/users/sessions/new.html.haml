@@ -1,0 +1,11 @@
+= render :partial => 'cms/fortress/shared/navbar'
+= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form-signin" }) do |f|
+  %h3.form-signin-heading Sign in
+  = f.email_field :email, :autofocus => true, :placeholder => "Email address", :class => "input-block-level"
+  = f.password_field :password, :placeholder => "Password", :class => "input-block-level"
+  - if devise_mapping.rememberable?
+    %label.checkbox
+      = f.check_box :remember_me
+      Remember me
+  = f.submit "Sign in", :class => "btn btn-primary"
+  = render "devise/shared/links"

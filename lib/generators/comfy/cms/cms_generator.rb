@@ -1,13 +1,14 @@
+require 'rails/generators/active_record'
+
 module Comfy
   module Generators
     class CmsGenerator < Rails::Generators::Base
 
-      require 'rails/generators/active_record'
       include Rails::Generators::Migration
       include Thor::Actions
 
       spec = Gem::Specification.find_by_name("comfortable_mexican_sofa")
-      source_root spec.gem_dir  # File.expand_path('../../../../..', __FILE__)
+      source_root spec.gem_dir # File.expand_path('../../../../..', __FILE__)
 
       def generate_migration
         destination   = File.expand_path('db/migrate/01_create_cms.rb', self.destination_root)
@@ -25,19 +26,23 @@ module Comfy
         copy_file 'config/initializers/comfortable_mexican_sofa.rb',
           'config/initializers/comfortable_mexican_sofa.rb'
       end
-
-=begin
+      
       def generate_routing
-        route "
-  ComfortableMexicanSofa::Routing.admin(:path => '/cms-admin')
-  
-  # Make sure this routeset is defined last
-  ComfortableMexicanSofa::Routing.content(:path => '/', :sitemap => false)"
+        route_string  = "  comfy_route :cms_admin, :path => '/cms-admin'\n\n"
+        route_string << "  # Make sure this routeset is defined last\n"
+        route_string << "  comfy_route :cms, :path => '/', :sitemap => false\n"
+        route route_string[2..-1]
       end
-=end
-
+      
       def generate_cms_seeds
         directory 'db/cms_fixtures', 'db/cms_fixtures'
+      end
+      
+      def generate_assets
+        directory 'app/assets/javascripts/comfortable_mexican_sofa/admin',
+          'app/assets/javascripts/comfortable_mexican_sofa/admin'
+        directory 'app/assets/stylesheets/comfortable_mexican_sofa/admin',
+          'app/assets/stylesheets/comfortable_mexican_sofa/admin'
       end
 
 =begin
@@ -52,4 +57,3 @@ module Comfy
     end
   end
 end
-

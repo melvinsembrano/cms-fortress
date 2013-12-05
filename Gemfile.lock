@@ -191,8 +191,8 @@ PLATFORMS
 DEPENDENCIES
   bundler
   cancan (>= 1.6.9)
-  comfortable_mexican_sofa (= 1.11.0)
-  devise (>= 1.5.4)
+  comfortable_mexican_sofa (~> 1.11.0)
+  devise (~> 3.2.2)
   jeweler
   rails
   rdoc

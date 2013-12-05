@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "cms-fortress"
-  s.version = "0.2.0"
+  s.version = "1.0.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Melvin Sembrano"]
-  s.date = "2013-05-01"
+  s.date = "2013-12-05"
   s.description = "Comfortable Mexican Sofa (CMS) - User and role management extension"
   s.email = "melvinsembrano@gmail.com"
   s.extra_rdoc_files = [
@@ -18,6 +18,8 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".document",
+    ".rbenv-gemsets",
+    ".ruby-version",
     ".rvmrc",
     "Gemfile",
     "Gemfile.lock",
@@ -109,7 +111,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/melvinsembrano/cms-fortress"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.10"
+  s.rubygems_version = "1.8.23"
   s.summary = "Comfortable Mexican Sofa (CMS) - User and role management extension"
 
   if s.respond_to? :specification_version then
@@ -117,7 +119,7 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rails>, [">= 0"])
-      s.add_runtime_dependency(%q<comfortable_mexican_sofa>, ["= 1.8.1"])
+      s.add_runtime_dependency(%q<comfortable_mexican_sofa>, ["~> 1.11.0"])
       s.add_runtime_dependency(%q<devise>, [">= 1.5.4"])
       s.add_runtime_dependency(%q<cancan>, [">= 1.6.9"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
@@ -126,7 +128,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<simplecov>, [">= 0"])
     else
       s.add_dependency(%q<rails>, [">= 0"])
-      s.add_dependency(%q<comfortable_mexican_sofa>, ["= 1.8.1"])
+      s.add_dependency(%q<comfortable_mexican_sofa>, ["~> 1.11.0"])
       s.add_dependency(%q<devise>, [">= 1.5.4"])
       s.add_dependency(%q<cancan>, [">= 1.6.9"])
       s.add_dependency(%q<rdoc>, [">= 0"])
@@ -136,7 +138,7 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency(%q<rails>, [">= 0"])
-    s.add_dependency(%q<comfortable_mexican_sofa>, ["= 1.8.1"])
+    s.add_dependency(%q<comfortable_mexican_sofa>, ["~> 1.11.0"])
     s.add_dependency(%q<devise>, [">= 1.5.4"])
     s.add_dependency(%q<cancan>, [">= 1.6.9"])
     s.add_dependency(%q<rdoc>, [">= 0"])

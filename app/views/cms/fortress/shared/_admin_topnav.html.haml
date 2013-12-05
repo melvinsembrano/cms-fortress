@@ -10,10 +10,10 @@
         %ul.nav
           - if @site && !@site.new_record?
             %li{:class => content_page? ? 'active' : ''}
-              = link_to t("cms.fortress.contents"), cms_admin_site_pages_path(@site)
+              = link_to t("cms.fortress.contents"), admin_cms_site_pages_path(@site)
             %li{:class => design_page? ? 'active' : ''}
-              = link_to t("cms.fortress.design"), cms_admin_site_layouts_path(@site)
+              = link_to t("cms.fortress.design"), admin_cms_site_layouts_path(@site)
           %li{:class => admin_page? ? 'active' : ''}
-            = link_to t("cms.fortress.settings"), cms_admin_sites_path
+            = link_to t("cms.fortress.settings"), admin_cms_sites_path
           %li
-            = link_to "Logout", destroy_cms_user_session_path, :method => 'delete'
+            = link_to "Logout", destroy_cms_fortress_user_session_path, :method => 'delete'
