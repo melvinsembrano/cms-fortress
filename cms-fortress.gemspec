@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Melvin Sembrano"]
-  s.date = "2013-12-05"
+  s.date = "2013-12-06"
   s.description = "Comfortable Mexican Sofa (CMS) - User and role management extension"
   s.email = "melvinsembrano@gmail.com"
   s.extra_rdoc_files = [
@@ -57,6 +57,8 @@ Gem::Specification.new do |s|
     "app/models/cms/fortress/role_detail.rb",
     "app/models/cms/fortress/user.rb",
     "app/models/cms_ability.rb",
+    "app/views/.DS_Store",
+    "app/views/admin/cms/partials/_body_before.html.haml",
     "app/views/cms/fortress/admin/design.html.haml",
     "app/views/cms/fortress/admin/roles.html.haml",
     "app/views/cms/fortress/admin/settings.html.haml",
@@ -72,17 +74,17 @@ Gem::Specification.new do |s|
     "app/views/cms/fortress/users/edit.html.haml",
     "app/views/cms/fortress/users/index.html.haml",
     "app/views/cms/fortress/users/new.html.haml",
-    "app/views/cms_users/sessions/new.html.erb",
+    "app/views/cms/fortress/users/sessions/.DS_Store",
+    "app/views/cms/fortress/users/sessions/new.html.haml",
+    "app/views/layouts/admin/_body.html.haml",
+    "app/views/layouts/admin/cms/.DS_Store",
+    "app/views/layouts/admin/cms/_head.html.haml",
+    "app/views/layouts/admin/cms/_left.html.haml",
     "app/views/layouts/cms/fortress/default.html.erb",
     "app/views/layouts/cms/fortress/session.html.erb",
-    "app/views/layouts/cms_admin/_body.html.haml",
-    "app/views/layouts/cms_admin/_head.html.haml",
-    "app/views/layouts/cms_admin/_left.html.haml",
     "cms-fortress.gemspec",
-    "config/initializers/devise.rb",
     "config/locales/en.yml",
     "config/roles.yml",
-    "config/routes.rb",
     "db/migrate/01_devise_create_cms_fortress_users.rb",
     "db/migrate/02_create_cms_fortress_role_details.rb",
     "db/migrate/03_create_cms_fortress_roles.rb",
@@ -92,6 +94,8 @@ Gem::Specification.new do |s|
     "lib/cms/fortress/comfortable_mexican_sofa.rb",
     "lib/cms/fortress/devise.rb",
     "lib/cms/fortress/rails/engine.rb",
+    "lib/cms/fortress/routes/admin.rb",
+    "lib/cms/fortress/routing.rb",
     "lib/generators/cms/fortress/USAGE",
     "lib/generators/cms/fortress/fortress_generator.rb",
     "lib/generators/cms/fortress/templates/README",
@@ -120,7 +124,7 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rails>, [">= 0"])
       s.add_runtime_dependency(%q<comfortable_mexican_sofa>, ["~> 1.11.0"])
-      s.add_runtime_dependency(%q<devise>, [">= 1.5.4"])
+      s.add_runtime_dependency(%q<devise>, ["~> 3.2.2"])
       s.add_runtime_dependency(%q<cancan>, [">= 1.6.9"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
       s.add_development_dependency(%q<bundler>, [">= 0"])
@@ -129,7 +133,7 @@ Gem::Specification.new do |s|
     else
       s.add_dependency(%q<rails>, [">= 0"])
       s.add_dependency(%q<comfortable_mexican_sofa>, ["~> 1.11.0"])
-      s.add_dependency(%q<devise>, [">= 1.5.4"])
+      s.add_dependency(%q<devise>, ["~> 3.2.2"])
       s.add_dependency(%q<cancan>, [">= 1.6.9"])
       s.add_dependency(%q<rdoc>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 0"])
@@ -139,7 +143,7 @@ Gem::Specification.new do |s|
   else
     s.add_dependency(%q<rails>, [">= 0"])
     s.add_dependency(%q<comfortable_mexican_sofa>, ["~> 1.11.0"])
-    s.add_dependency(%q<devise>, [">= 1.5.4"])
+    s.add_dependency(%q<devise>, ["~> 3.2.2"])
     s.add_dependency(%q<cancan>, [">= 1.6.9"])
     s.add_dependency(%q<rdoc>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 0"])

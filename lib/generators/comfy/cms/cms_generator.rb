@@ -28,7 +28,7 @@ module Comfy
       end
       
       def generate_routing
-        route_string  = "  cms_fortress_routes :path => '/cms-admin'\n\n"
+        route_string  = "  cms_fortress_routes :path => '/cms-admin'\n"
         route_string  << "  comfy_route :cms_admin, :path => '/cms-admin'\n\n"
         route_string << "  # Make sure this routeset is defined last\n"
         route_string << "  comfy_route :cms, :path => '/', :sitemap => false\n"

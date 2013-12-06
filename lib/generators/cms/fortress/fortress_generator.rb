@@ -2,6 +2,10 @@
 class Cms::FortressGenerator < Rails::Generators::Base
   source_root File.expand_path('../templates', __FILE__)
 
+  def install_devise
+    generate("devise:install")
+  end
+
   def install_comfortable_mexican_sofa
     generate("comfy:cms")
   end
