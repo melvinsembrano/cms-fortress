@@ -1,4 +1,4 @@
-class Cms::Fortress::RolesController < CmsAdmin::BaseController
+class Cms::Fortress::RolesController < Admin::Cms::BaseController
 
   # GET /cms/fortress/roles
   # GET /cms/fortress/roles.json

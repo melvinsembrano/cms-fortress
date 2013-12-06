@@ -1,4 +1,4 @@
-class Cms::Fortress::UsersController < CmsAdmin::BaseController
+class Cms::Fortress::UsersController < Admin::Cms::BaseController
   # GET /cms/fortress/users
   # GET /cms/fortress/users.json
   def index

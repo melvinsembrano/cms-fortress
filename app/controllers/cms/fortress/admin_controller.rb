@@ -1,6 +1,6 @@
 module Cms
   module Fortress
-    class AdminController < CmsAdmin::BaseController
+    class AdminController < Admin::Cms::BaseController
 
       def index
 
