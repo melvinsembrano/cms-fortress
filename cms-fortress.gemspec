@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Melvin Sembrano"]
-  s.date = "2013-12-06"
+  s.date = "2013-12-07"
   s.description = "Comfortable Mexican Sofa (CMS) - User and role management extension"
   s.email = "melvinsembrano@gmail.com"
   s.extra_rdoc_files = [
@@ -92,6 +92,7 @@ Gem::Specification.new do |s|
     "lib/cms/fortress/application_controller_methods.rb",
     "lib/cms/fortress/auth.rb",
     "lib/cms/fortress/comfortable_mexican_sofa.rb",
+    "lib/cms/fortress/content_renderer.rb",
     "lib/cms/fortress/devise.rb",
     "lib/cms/fortress/rails/engine.rb",
     "lib/cms/fortress/routes/admin.rb",
@@ -122,29 +123,32 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<rails>, [">= 0"])
-      s.add_runtime_dependency(%q<comfortable_mexican_sofa>, ["~> 1.11.0"])
-      s.add_runtime_dependency(%q<devise>, ["~> 3.2.2"])
+      s.add_runtime_dependency(%q<rails>, [">= 4.0.0"])
+      s.add_runtime_dependency(%q<comfortable_mexican_sofa>, ["~> 1.11"])
+      s.add_runtime_dependency(%q<devise>, ["~> 3.2"])
       s.add_runtime_dependency(%q<cancan>, [">= 1.6.9"])
+      s.add_runtime_dependency(%q<delayed_job>, ["~> 4"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
       s.add_development_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_development_dependency(%q<simplecov>, [">= 0"])
     else
-      s.add_dependency(%q<rails>, [">= 0"])
-      s.add_dependency(%q<comfortable_mexican_sofa>, ["~> 1.11.0"])
-      s.add_dependency(%q<devise>, ["~> 3.2.2"])
+      s.add_dependency(%q<rails>, [">= 4.0.0"])
+      s.add_dependency(%q<comfortable_mexican_sofa>, ["~> 1.11"])
+      s.add_dependency(%q<devise>, ["~> 3.2"])
       s.add_dependency(%q<cancan>, [">= 1.6.9"])
+      s.add_dependency(%q<delayed_job>, ["~> 4"])
       s.add_dependency(%q<rdoc>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<simplecov>, [">= 0"])
     end
   else
-    s.add_dependency(%q<rails>, [">= 0"])
-    s.add_dependency(%q<comfortable_mexican_sofa>, ["~> 1.11.0"])
-    s.add_dependency(%q<devise>, ["~> 3.2.2"])
+    s.add_dependency(%q<rails>, [">= 4.0.0"])
+    s.add_dependency(%q<comfortable_mexican_sofa>, ["~> 1.11"])
+    s.add_dependency(%q<devise>, ["~> 3.2"])
     s.add_dependency(%q<cancan>, [">= 1.6.9"])
+    s.add_dependency(%q<delayed_job>, ["~> 4"])
     s.add_dependency(%q<rdoc>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])

@@ -9,3 +9,8 @@ body#comfy .body-wrapper {
 .footer-container {
   margin-top: 1em;
 }
+
+body#comfy form.formatted.form-horizontal .control-group .controls select.status-control,
+body#comfy form.formatted.form-horizontal .control-group .controls input[type='text'].status-control {
+  width: 30%;
+}

@@ -6,6 +6,10 @@ module Cms
         app.config.to_prepare do
           Devise::SessionsController.layout "cms/fortress/session"
           ApplicationController.helper(Cms::Fortress::ApplicationHelper)
+
+          Cms::ContentController.send(:include, Cms::Fortress::ContentRenderer)
+          Cms::Page.send(:include, Cms::Fortress::PageMethods)
+
         end
         app.config.railties_order = [ :all, ComfortableMexicanSofa::Engine, Cms::Fortress::Engine ]
 

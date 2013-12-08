@@ -59,6 +59,8 @@ GEM
       paperclip (>= 3.4.0)
       rails (~> 4.0)
       sass-rails (>= 3.1.0)
+    delayed_job (4.0.0)
+      activesupport (>= 3.0, < 4.1)
     devise (3.2.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -191,9 +193,10 @@ PLATFORMS
 DEPENDENCIES
   bundler
   cancan (>= 1.6.9)
-  comfortable_mexican_sofa (~> 1.11.0)
-  devise (~> 3.2.2)
+  comfortable_mexican_sofa (~> 1.11)
+  delayed_job (~> 4)
+  devise (~> 3.2)
   jeweler
-  rails
+  rails (>= 4.0.0)
   rdoc
   simplecov
