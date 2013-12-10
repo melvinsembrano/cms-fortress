@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Melvin Sembrano"]
-  s.date = "2013-12-07"
+  s.date = "2013-12-10"
   s.description = "Comfortable Mexican Sofa (CMS) - User and role management extension"
   s.email = "melvinsembrano@gmail.com"
   s.extra_rdoc_files = [
@@ -56,8 +56,10 @@ Gem::Specification.new do |s|
     "app/models/cms/fortress/role.rb",
     "app/models/cms/fortress/role_detail.rb",
     "app/models/cms/fortress/user.rb",
+    "app/models/cms/page_workflow.rb",
     "app/models/cms_ability.rb",
     "app/views/.DS_Store",
+    "app/views/admin/cms/pages/_form.html.haml",
     "app/views/admin/cms/partials/_body_before.html.haml",
     "app/views/cms/fortress/admin/design.html.haml",
     "app/views/cms/fortress/admin/roles.html.haml",
@@ -88,12 +90,14 @@ Gem::Specification.new do |s|
     "db/migrate/01_devise_create_cms_fortress_users.rb",
     "db/migrate/02_create_cms_fortress_role_details.rb",
     "db/migrate/03_create_cms_fortress_roles.rb",
+    "db/migrate/04_create_cms_page_workflows.rb",
     "lib/cms-fortress.rb",
     "lib/cms/fortress/application_controller_methods.rb",
     "lib/cms/fortress/auth.rb",
     "lib/cms/fortress/comfortable_mexican_sofa.rb",
     "lib/cms/fortress/content_renderer.rb",
     "lib/cms/fortress/devise.rb",
+    "lib/cms/fortress/page_methods.rb",
     "lib/cms/fortress/rails/engine.rb",
     "lib/cms/fortress/routes/admin.rb",
     "lib/cms/fortress/routing.rb",
@@ -103,6 +107,7 @@ Gem::Specification.new do |s|
     "lib/generators/comfy/cms/cms_generator.rb",
     "test/fixtures/cms/fortress/role_details.yml",
     "test/fixtures/cms/fortress/roles.yml",
+    "test/fixtures/cms/page_workflows.yml",
     "test/functional/cms/fortress/roles_controller_test.rb",
     "test/functional/cms/fortress/users_controller_test.rb",
     "test/helper.rb",
