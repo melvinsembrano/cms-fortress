@@ -34,7 +34,7 @@
 - @page.page_workflow ||= Cms::PageWorkflow.new
 = form.fields_for :page_workflow do |wf|
   = wf.select :status_id, Cms::PageWorkflow.statuses_for_select, {}, {class: "status-control"}
-  = wf.text_field :published_date, class: "status-control", :data => {:utc_date => (@page.page_workflow.published_date.nil? ? Time.now : @page.page_workflow.published_date).utc.strftime("%d %B, %Y") }
+  = wf.text_field :published_date, class: "status-control", :data => {:utc_date => (@page.page_workflow.published_date.nil? ? Time.now : @page.page_workflow.published_date).strftime("%d %B, %Y") }
 
 = render 'admin/cms/partials/page_form_after', :object => form
 
