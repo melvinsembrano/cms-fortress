@@ -1,6 +1,8 @@
 contents:
   - pages
   - files
+  - page.review
+  - page.publish
 designs:
   - layouts
   - snippets

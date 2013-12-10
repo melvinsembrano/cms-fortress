@@ -41,10 +41,12 @@ class Cms::Fortress::RolesController < Admin::Cms::BaseController
   # POST /cms/fortress/roles
   # POST /cms/fortress/roles.json
   def create
-    @cms_fortress_role = Cms::Fortress::Role.new(params[:cms_fortress_role])
+    @cms_fortress_role = Cms::Fortress::Role.new(role_params)
+    @cms_fortress_role.load_defaults
 
     respond_to do |format|
       if @cms_fortress_role.save
+
         format.html { redirect_to @cms_fortress_role, notice: 'Role was successfully created.' }
         format.json { render json: @cms_fortress_role, status: :created, location: @cms_fortress_role }
       else
@@ -60,7 +62,7 @@ class Cms::Fortress::RolesController < Admin::Cms::BaseController
     @cms_fortress_role = Cms::Fortress::Role.find(params[:id])
 
     respond_to do |format|
-      if @cms_fortress_role.update_attributes(params[:cms_fortress_role])
+      if @cms_fortress_role.update_attributes(role_params)
         format.html { redirect_to cms_fortress_roles_path, notice: 'Role was successfully updated.' }
         format.json { head :no_content }
       else
@@ -80,5 +82,11 @@ class Cms::Fortress::RolesController < Admin::Cms::BaseController
       format.html { redirect_to cms_fortress_roles_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def role_params
+    params.require(:cms_fortress_role).permit(:name, :description)
   end
 end
