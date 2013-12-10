@@ -17,6 +17,10 @@ module Cms
           include Cms::Fortress::ApplicationControllerMethods
         end
       end
+
+      initializer :assets do |config|
+        Rails.application.config.assets.precompile += %w( cms/fortress/admin_overrides.css cms/fortress/session.css )
+      end
     end
   end
 end
