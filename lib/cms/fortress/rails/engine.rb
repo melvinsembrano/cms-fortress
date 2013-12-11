@@ -10,6 +10,33 @@ module Cms
           Cms::ContentController.send(:include, Cms::Fortress::ContentRenderer)
           Cms::Page.send(:include, Cms::Fortress::PageMethods)
 
+          # Insert Roles
+          Admin::Cms::SitesController.class_eval do
+            before_filter do
+              authorize! :manage, Cms::Site
+            end
+          end
+          Admin::Cms::LayoutsController.class_eval do
+            before_filter do
+              authorize! :manage, Cms::Layout
+            end
+          end
+          Admin::Cms::SnippetsController.class_eval do
+            before_filter do
+              authorize! :manage, Cms::Snippet
+            end
+          end
+          Admin::Cms::PagesController.class_eval do
+            before_filter do
+              authorize! :manage, Cms::Page
+            end
+          end
+          Admin::Cms::FilesController.class_eval do
+            before_filter do
+              authorize! :manage, Cms::File
+            end
+          end
+
         end
         app.config.railties_order = [ :all, ComfortableMexicanSofa::Engine, Cms::Fortress::Engine ]
 

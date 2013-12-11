@@ -1,4 +1,8 @@
 class Cms::Fortress::UsersController < Admin::Cms::BaseController
+  before_filter do
+    authorize! :manage, Cms::Fortress::User
+  end
+
   # GET /cms/fortress/users
   # GET /cms/fortress/users.json
   def index
@@ -40,7 +44,7 @@ class Cms::Fortress::UsersController < Admin::Cms::BaseController
   # POST /cms/fortress/users
   # POST /cms/fortress/users.json
   def create
-    @cms_fortress_user = Cms::Fortress::User.new(params[:cms_fortress_user])
+    @cms_fortress_user = Cms::Fortress::User.new(user_params)
 
     respond_to do |format|
       if @cms_fortress_user.save
@@ -58,14 +62,14 @@ class Cms::Fortress::UsersController < Admin::Cms::BaseController
   def update
     @cms_fortress_user = Cms::Fortress::User.find(params[:id])
 
-    user_params = params[:cms_fortress_user]
-    if user_params[:password].blank?
-      user_params.delete(:password)
-      user_params.delete(:password_confirmation) if user_params[:password_confirmation].blank?
+    user = user_params
+    if user[:password].blank?
+      user.delete(:password)
+      user.delete(:password_confirmation) if user[:password_confirmation].blank?
     end
 
     respond_to do |format|
-      if @cms_fortress_user.update_attributes(user_params)
+      if @cms_fortress_user.update_attributes(user)
         format.html { redirect_to cms_fortress_users_path, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
@@ -85,5 +89,11 @@ class Cms::Fortress::UsersController < Admin::Cms::BaseController
       format.html { redirect_to cms_fortress_users_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def user_params
+    params.require(:cms_fortress_user).permit(:email, :role_id, :password, :password_confirmation)
   end
 end

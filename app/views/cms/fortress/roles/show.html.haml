@@ -5,8 +5,20 @@
   %h2= "Role: #{ @cms_fortress_role.name }"
   %p= @cms_fortress_role.description
 
-%table.table
-  - @cms_fortress_role.role_details.each do |d|
+
+= form_for @cms_fortress_role, :html => {:class => ''} do |f|
+
+  %table.table
     %tr
-      %td= d.command
-      %td= d.can_create
+      %th 
+      %th Show
+      %th Manage
+    = f.fields_for :role_details do |role|
+      %tr
+        %td= role.object.command
+        %td= role.check_box :can_view
+        %td= role.check_box :can_create
+
+  .form-actions
+    = f.submit 'Save', :class => 'btn btn-primary'
+

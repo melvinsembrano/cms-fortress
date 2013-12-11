@@ -1,4 +1,8 @@
 class Cms::Fortress::RolesController < Admin::Cms::BaseController
+  before_filter do
+    authorize! :manage, Cms::Fortress::Role
+  end
+
 
   # GET /cms/fortress/roles
   # GET /cms/fortress/roles.json
@@ -87,6 +91,6 @@ class Cms::Fortress::RolesController < Admin::Cms::BaseController
   private
 
   def role_params
-    params.require(:cms_fortress_role).permit(:name, :description)
+    params.require(:cms_fortress_role).permit! #(:name, :description, :role_details_attributes)
   end
 end

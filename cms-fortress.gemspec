@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Melvin Sembrano"]
-  s.date = "2013-12-10"
+  s.date = "2013-12-11"
   s.description = "Comfortable Mexican Sofa (CMS) - User and role management extension"
   s.email = "melvinsembrano@gmail.com"
   s.extra_rdoc_files = [
@@ -43,7 +43,6 @@ Gem::Specification.new do |s|
     "app/models/cms/fortress/role_detail.rb",
     "app/models/cms/fortress/user.rb",
     "app/models/cms/page_workflow.rb",
-    "app/models/cms_ability.rb",
     "app/views/.DS_Store",
     "app/views/admin/cms/pages/_form.html.haml",
     "app/views/admin/cms/partials/_body_before.html.haml",
@@ -57,14 +56,12 @@ Gem::Specification.new do |s|
     "app/views/cms/fortress/roles/new.html.haml",
     "app/views/cms/fortress/roles/show.html.haml",
     "app/views/cms/fortress/shared/_admin_topnav.html.haml",
-    "app/views/cms/fortress/shared/_navbar.html.erb",
     "app/views/cms/fortress/users/_form.html.haml",
     "app/views/cms/fortress/users/edit.html.haml",
     "app/views/cms/fortress/users/index.html.haml",
     "app/views/cms/fortress/users/new.html.haml",
     "app/views/cms/fortress/users/sessions/.DS_Store",
     "app/views/cms/fortress/users/sessions/new.html.haml",
-    "app/views/layouts/admin/_body.html.haml",
     "app/views/layouts/admin/cms/.DS_Store",
     "app/views/layouts/admin/cms/_head.html.haml",
     "app/views/layouts/admin/cms/_left.html.haml",

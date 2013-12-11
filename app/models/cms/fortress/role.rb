@@ -4,6 +4,7 @@ class Cms::Fortress::Role < ActiveRecord::Base
   # attr_accessible :description, :name
   has_many :users
   has_many :role_details
+  accepts_nested_attributes_for :role_details, allow_destroy: true
 
   def load_defaults
     file = File.expand_path(File.join(File.dirname(__FILE__), "../../../../", "config", "roles.yml"))

@@ -1,3 +1,4 @@
+
 module Cms
   module Fortress
     module ApplicationControllerMethods
@@ -9,6 +10,21 @@ module Cms
         # request.referrer
         admin_cms_path
       end
+
+      def current_ability
+         @current_ability ||= CmsAbility.new(current_cms_fortress_user)
+      end
+
+      def self.included(base)
+        base.class_eval do
+
+          rescue_from CanCan::AccessDenied do |ex|
+            redirect_to cms_fortress_unauthorised_path #, :alert => ex.message
+          end
+
+        end
+      end
+
     end
   end
 end

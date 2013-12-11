@@ -9,11 +9,21 @@
       .nav-collapse.collapse
         %ul.nav
           - if @site && !@site.new_record?
-            %li{:class => content_page? ? 'active' : ''}
-              = link_to t("cms.fortress.contents"), admin_cms_site_pages_path(@site)
-            %li{:class => design_page? ? 'active' : ''}
-              = link_to t("cms.fortress.design"), admin_cms_site_layouts_path(@site)
-          %li{:class => admin_page? ? 'active' : ''}
-            = link_to t("cms.fortress.settings"), admin_cms_sites_path
-          %li
-            = link_to "Logout", destroy_cms_fortress_user_session_path, :method => 'delete'
+            - if can? :view, 'contents'
+              %li{:class => content_page? ? 'active' : ''}
+                = link_to t("cms.fortress.contents"), admin_cms_site_pages_path(@site)
+
+            - if can? :view, 'designs'
+              %li{:class => design_page? ? 'active' : ''}
+                = link_to t("cms.fortress.design"), admin_cms_site_layouts_path(@site)
+          - if can? :view, 'settings'
+            %li{:class => admin_page? ? 'active' : ''}
+              = link_to t("cms.fortress.settings"), admin_cms_sites_path
+        %ul.nav.nav-pill.pull-right
+          - if current_cms_fortress_user
+            %li
+              = link_to ":: #{ current_cms_fortress_user.email }", "#"
+            %li
+              = link_to "Logout", destroy_cms_fortress_user_session_path, :method => 'delete'
+
+
