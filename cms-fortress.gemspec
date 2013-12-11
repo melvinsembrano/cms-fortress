@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "cms-fortress"
-  s.version = "1.0.3"
+  s.version = "1.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Melvin Sembrano"]
@@ -43,12 +43,14 @@ Gem::Specification.new do |s|
     "app/models/cms/fortress/role_detail.rb",
     "app/models/cms/fortress/user.rb",
     "app/models/cms/page_workflow.rb",
+    "app/models/cms_ability.rb",
     "app/views/.DS_Store",
     "app/views/admin/cms/pages/_form.html.haml",
     "app/views/admin/cms/partials/_body_before.html.haml",
     "app/views/cms/fortress/admin/design.html.haml",
     "app/views/cms/fortress/admin/roles.html.haml",
     "app/views/cms/fortress/admin/settings.html.haml",
+    "app/views/cms/fortress/admin/unauthorised.html.haml",
     "app/views/cms/fortress/admin/users.html.haml",
     "app/views/cms/fortress/roles/_form.html.haml",
     "app/views/cms/fortress/roles/edit.html.haml",
@@ -56,6 +58,7 @@ Gem::Specification.new do |s|
     "app/views/cms/fortress/roles/new.html.haml",
     "app/views/cms/fortress/roles/show.html.haml",
     "app/views/cms/fortress/shared/_admin_topnav.html.haml",
+    "app/views/cms/fortress/shared/_navbar.html.haml",
     "app/views/cms/fortress/users/_form.html.haml",
     "app/views/cms/fortress/users/edit.html.haml",
     "app/views/cms/fortress/users/index.html.haml",
