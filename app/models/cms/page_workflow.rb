@@ -16,12 +16,16 @@ class Cms::PageWorkflow < ActiveRecord::Base
     }
   end
 
-  def self.statuses_for_select
-    self.statuses.map {|k,v| [v.to_s.titleize, k]}
+  def self.statuses_for_select(can_publish, can_review)
+    ret = [["Draft", 0]]
+    ret << ["Review", 1] if can_review
+    ret << ["Published", 3] if can_publish
+    # self.statuses.map {|k,v| [v.to_s.titleize, k]}
+    ret
   end
 
   def page_published?
-    status_id.eql?(3) || status_id.eql?(2) && published_date < Time.now
+    (status_id.eql?(3) || status_id.eql?(2)) && published_date <= Date.today
   end
 
 end

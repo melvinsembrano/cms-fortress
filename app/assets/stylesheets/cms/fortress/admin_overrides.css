@@ -1,5 +1,5 @@
 body#comfy .body-wrapper {
-  margin-top: 3em;
+  margin-top: 2.9em;
 }
 
 .navbar-container, .footer-container {
@@ -13,4 +13,8 @@ body#comfy .body-wrapper {
 body#comfy form.formatted.form-horizontal .control-group .controls select.status-control,
 body#comfy form.formatted.form-horizontal .control-group .controls input[type='text'].status-control {
   width: 30%;
+}
+
+body#comfy .nav-height {
+
 }

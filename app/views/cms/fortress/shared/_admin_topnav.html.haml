@@ -1,5 +1,5 @@
 .navbar.navbar-inverse.navbar-fixed-top
-  .navbar-inner
+  .navbar-inner.nav-height
     .navbar-container
       %button.btn.btn-navbar{'type' => 'button', 'data-toggle' => 'collapse', 'data-target' => '.nav-collapse'}
         %span.icon-bar
@@ -22,7 +22,7 @@
         %ul.nav.nav-pill.pull-right
           - if current_cms_fortress_user
             %li
-              = link_to ":: #{ current_cms_fortress_user.email }", "#"
+              = link_to "#{ current_cms_fortress_user.email } ::", "#"
             %li
               = link_to "Logout", destroy_cms_fortress_user_session_path, :method => 'delete'
 
