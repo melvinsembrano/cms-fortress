@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "cms-fortress"
-  s.version = "1.0.5"
+  s.version = "1.0.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Melvin Sembrano"]
@@ -47,6 +47,7 @@ Gem::Specification.new do |s|
     "app/views/.DS_Store",
     "app/views/admin/cms/pages/_form.html.haml",
     "app/views/admin/cms/partials/_body_before.html.haml",
+    "app/views/cms/fortress/admin/contents.html.haml",
     "app/views/cms/fortress/admin/design.html.haml",
     "app/views/cms/fortress/admin/roles.html.haml",
     "app/views/cms/fortress/admin/settings.html.haml",
