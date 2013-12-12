@@ -67,7 +67,7 @@ class Cms::Fortress::RolesController < Admin::Cms::BaseController
 
     respond_to do |format|
       if @cms_fortress_role.update_attributes(role_params)
-        format.html { redirect_to cms_fortress_roles_path, notice: 'Role was successfully updated.' }
+        format.html { redirect_to @cms_fortress_role, notice: 'Role was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

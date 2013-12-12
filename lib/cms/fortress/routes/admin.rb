@@ -13,6 +13,7 @@ class ActionDispatch::Routing::Mapper
 
       get 'settings' => 'admin#settings', :as => 'cms_fortress_settings'
       get 'design' => 'admin#design', :as => 'cms_fortress_design'
+      get 'contents' => 'admin#contents', :as => 'cms_fortress_contents'
       get 'settings/users' => 'admin#users', :as => 'cms_fortress_user_settings'
       get 'unauthorised' => 'admin#unauthorised', :as => 'cms_fortress_unauthorised'
 

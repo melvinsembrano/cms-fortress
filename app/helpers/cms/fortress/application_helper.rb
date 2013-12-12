@@ -17,6 +17,7 @@ module Cms
       end
 
       def content_page?
+        controller_name.eql?('admin') && %{contents}.include?(action_name) ||
         controller_name.eql?('pages') ||
           controller_name.eql?('files')
       end
