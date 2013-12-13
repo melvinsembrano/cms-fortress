@@ -10,15 +10,15 @@
         %ul.nav
           - if @site && !@site.new_record?
             - if can? :view, 'contents'
-              %li{:class => content_page? ? 'active' : ''}
-                = link_to t("cms.fortress.contents"), cms_fortress_contents_path # admin_cms_site_pages_path(@site)
+              = topnav_item t("cms.fortress.contents"), cms_fortress_contents_path, content_page?
 
             - if can? :view, 'designs'
-              %li{:class => design_page? ? 'active' : ''}
-                = link_to t("cms.fortress.design"), cms_fortress_design_path #(:site_id => @site)
+              = topnav_item t("cms.fortress.design"), cms_fortress_design_path, design_page?
+
           - if can? :view, 'settings'
-            %li{:class => admin_page? ? 'active' : ''}
-              = link_to t("cms.fortress.settings"), cms_fortress_settings_path
+            = topnav_item t("cms.fortress.settings"), cms_fortress_settings_path, admin_page?
+
+          = render 'cms/fortress/admin/topnav'
         %ul.nav.nav-pill.pull-right
           - if current_cms_fortress_user
             %li

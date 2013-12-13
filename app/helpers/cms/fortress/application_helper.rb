@@ -3,6 +3,11 @@ module Cms
 
     module ApplicationHelper
 
+      def topnav_item(title, path, is_current = false)
+        css_class = is_current ? "active" : ""
+        content_tag(:li, link_to(title, path), class: css_class)
+      end
+
       def admin_page?
         controller_name.eql?('admin') && %w{settings roles users}.include?(action_name) ||
           controller_name.eql?('sites') && %w{index}.include?(action_name) ||

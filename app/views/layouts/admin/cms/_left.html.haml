@@ -10,20 +10,31 @@
     - if can? :view, 'settings.users'
       %li= active_link_to t('cms.fortress.users.title'), cms_fortress_users_path
 
+    = render 'cms/fortress/admin/left_settings_nav'
+
   - elsif design_page?
     - if @site && !@site.new_record?
       - if can? :view, 'designs.layouts'
         %li= active_link_to t('admin.cms.base.layouts'), admin_cms_site_layouts_path(@site)
       - if can? :view, 'designs.snippets'
         %li= active_link_to t('admin.cms.base.snippets'), admin_cms_site_snippets_path(@site)
-  - else
+
+    = render 'cms/fortress/admin/left_designs_nav'
+
+  - elsif content_page?
     - if @site && !@site.new_record?
       - if can? :view, 'contents.pages'
         %li= active_link_to t('admin.cms.base.pages'), admin_cms_site_pages_path(@site)
       - if can? :view, 'contents.files'
         %li= active_link_to t('admin.cms.base.files'), admin_cms_site_files_path(@site)
 
+    = render 'cms/fortress/admin/left_contents_nav'
+
     = cms_hook :navigation
+
+  - else
+    = render 'cms/fortress/admin/left_nav'
+
 
   = render '/admin/cms/partials/navigation_inner'
 
