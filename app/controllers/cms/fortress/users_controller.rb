@@ -94,6 +94,6 @@ class Cms::Fortress::UsersController < Admin::Cms::BaseController
   private
 
   def user_params
-    params.require(:cms_fortress_user).permit(:email, :role_id, :password, :password_confirmation)
+    params.require(:cms_fortress_user).permit(:last_name, :first_name, :email, :role_id, :password, :password_confirmation)
   end
 end

@@ -6,6 +6,14 @@
         - @cms_fortress_user.errors.full_messages.each do |msg|
           %li= msg
   .control-group
+    = f.label :last_name, :class => 'control-label'
+    .controls
+      = f.text_field :last_name
+  .control-group
+    = f.label :first_name, :class => 'control-label'
+    .controls
+      = f.text_field :first_name
+  .control-group
     = f.label :email, :class => 'control-label'
     .controls
       = f.text_field :email

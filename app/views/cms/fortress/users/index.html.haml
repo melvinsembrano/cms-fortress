@@ -4,6 +4,8 @@
 
 %table.table.table-hover.table-bordered
   %tr
+    %th Lastname
+    %th Firstname
     %th Email
     %th Role
     %th
@@ -11,6 +13,8 @@
 
   - @cms_fortress_users.each do |cms_fortress_user|
     %tr
+      %td= cms_fortress_user.last_name
+      %td= cms_fortress_user.first_name
       %td= cms_fortress_user.email
       %td= cms_fortress_user.role.name
       %td

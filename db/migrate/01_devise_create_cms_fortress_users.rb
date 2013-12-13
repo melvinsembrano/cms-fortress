@@ -29,6 +29,8 @@ class DeviseCreateCmsFortressUsers < ActiveRecord::Migration
       t.string   :current_sign_in_ip
       t.string   :last_sign_in_ip
 
+      t.string :first_name, :last_name
+
       ## Confirmable
       # t.string   :confirmation_token
       # t.datetime :confirmed_at

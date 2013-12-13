@@ -8,6 +8,11 @@ module Cms
         content_tag(:li, link_to(title, path), class: css_class)
       end
 
+      def leftnav_item(title, path, options = {})
+        content_tag(:li, active_link_to(title, path, options))
+      end
+
+
       def admin_page?
         controller_name.eql?('admin') && %w{settings roles users}.include?(action_name) ||
           controller_name.eql?('sites') && %w{index}.include?(action_name) ||

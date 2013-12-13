@@ -4,29 +4,29 @@
 %ul.navigation
   - if admin_page?
     - if can? :view, 'settings.sites'
-      %li= active_link_to t('admin.cms.base.sites'), admin_cms_sites_path, :active => ['admin/cms/sites']
+      = leftnav_item t('admin.cms.base.sites'), admin_cms_sites_path, :active => ['admin/cms/sites']
     - if can? :view, 'settings.roles'
-      %li= active_link_to t('cms.fortress.roles.title'), cms_fortress_roles_path
+      = leftnav_item t('cms.fortress.roles.title'), cms_fortress_roles_path
     - if can? :view, 'settings.users'
-      %li= active_link_to t('cms.fortress.users.title'), cms_fortress_users_path
+      = leftnav_item t('cms.fortress.users.title'), cms_fortress_users_path
 
     = render 'cms/fortress/admin/left_settings_nav'
 
   - elsif design_page?
     - if @site && !@site.new_record?
       - if can? :view, 'designs.layouts'
-        %li= active_link_to t('admin.cms.base.layouts'), admin_cms_site_layouts_path(@site)
+        = leftnav_item t('admin.cms.base.layouts'), admin_cms_site_layouts_path(@site)
       - if can? :view, 'designs.snippets'
-        %li= active_link_to t('admin.cms.base.snippets'), admin_cms_site_snippets_path(@site)
+        = leftnav_item t('admin.cms.base.snippets'), admin_cms_site_snippets_path(@site)
 
     = render 'cms/fortress/admin/left_designs_nav'
 
   - elsif content_page?
     - if @site && !@site.new_record?
       - if can? :view, 'contents.pages'
-        %li= active_link_to t('admin.cms.base.pages'), admin_cms_site_pages_path(@site)
+        = leftnav_item t('admin.cms.base.pages'), admin_cms_site_pages_path(@site)
       - if can? :view, 'contents.files'
-        %li= active_link_to t('admin.cms.base.files'), admin_cms_site_files_path(@site)
+        = leftnav_item t('admin.cms.base.files'), admin_cms_site_files_path(@site)
 
     = render 'cms/fortress/admin/left_contents_nav'
 
