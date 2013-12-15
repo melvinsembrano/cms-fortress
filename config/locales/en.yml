@@ -15,6 +15,7 @@ en:
         edit_title: Edit Role
         new_title: Create New Role
         back: Back
+        load: Load New Roles
 
       users:
         title: Users

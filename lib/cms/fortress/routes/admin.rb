@@ -8,7 +8,11 @@ class ActionDispatch::Routing::Mapper
     }
 
     scope path, module: 'cms/fortress' do
-      resources :roles, :as => 'cms_fortress_roles'
+      resources :roles, :as => 'cms_fortress_roles' do
+        member do
+          post :refresh
+        end
+      end
       resources :users, :as => 'cms_fortress_users'
 
       get 'settings' => 'admin#settings', :as => 'cms_fortress_settings'

@@ -26,6 +26,21 @@ class Cms::Fortress::RolesController < Admin::Cms::BaseController
     end
   end
 
+  def refresh
+    @cms_fortress_role = Cms::Fortress::Role.find(params[:id])
+    @cms_fortress_role.load_defaults
+    
+    respond_to do |format|
+      if @cms_fortress_role.save
+        format.html { redirect_to @cms_fortress_role }
+        format.json { render json: @cms_fotress_role }
+      else
+        format.html { render action: "show" }
+        format.json { render json: @cms_fortress_role.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   # GET /cms/fortress/roles/new
   # GET /cms/fortress/roles/new.json
   def new

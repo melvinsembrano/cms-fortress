@@ -3,6 +3,8 @@ class Cms::Fortress::RoleDetail < ActiveRecord::Base
 
   belongs_to :role
 
+  default_scope { order(:command) }
+
   def can_manage?
     can_create?
   end

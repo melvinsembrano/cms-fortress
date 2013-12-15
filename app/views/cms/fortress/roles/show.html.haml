@@ -1,6 +1,7 @@
 .page-header
   .btn-group.pull-right
-    = link_to t('.edit'), edit_cms_fortress_role_path(@cms_fortress_role), :class => 'btn'
+    =# link_to t('.edit'), edit_cms_fortress_role_path(@cms_fortress_role), :class => 'btn'
+    = link_to t('cms.fortress.roles.load'), refresh_cms_fortress_role_path(@cms_fortress_role), :class => 'btn', :method => :post
     = link_to t('cms.fortress.roles.back'), cms_fortress_roles_path, :class => 'btn'
   %h2= "Role: #{ @cms_fortress_role.name }"
   %p= @cms_fortress_role.description
