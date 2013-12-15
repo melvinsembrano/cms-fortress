@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "cms-fortress"
-  s.version = "1.0.6"
+  s.version = "1.0.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Melvin Sembrano"]
-  s.date = "2013-12-12"
+  s.date = "2013-12-15"
   s.description = "Comfortable Mexican Sofa (CMS) - User and role management extension"
   s.email = "melvinsembrano@gmail.com"
   s.extra_rdoc_files = [
@@ -47,6 +47,8 @@ Gem::Specification.new do |s|
     "app/views/.DS_Store",
     "app/views/admin/cms/pages/_form.html.haml",
     "app/views/admin/cms/partials/_body_before.html.haml",
+    "app/views/cms/fortress/admin/_leftnav.html.haml",
+    "app/views/cms/fortress/admin/_topnav.html.haml",
     "app/views/cms/fortress/admin/contents.html.haml",
     "app/views/cms/fortress/admin/design.html.haml",
     "app/views/cms/fortress/admin/roles.html.haml",
