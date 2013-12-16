@@ -34,9 +34,7 @@
 = render :partial => 'form_blocks'
 
 =# form.check_box :is_published, :label => t('.is_published')
-= form.fields_for :page_workflow do |wf|
-  = wf.select :status_id, Cms::PageWorkflow.statuses_for_select(can?(:manage, 'contents.page.publish'), can?(:manage, 'contents.page.review')), {}, {class: "status-control"}
-  = wf.text_field :published_date, class: "status-control", :data => {:utc_date => (@page.page_workflow.published_date.nil? ? Time.now : @page.page_workflow.published_date).strftime("%d %B, %Y") }
+= render :partial => 'cms/fortress/shared/page_extend', :locals => {form: form}
 
 = render 'admin/cms/partials/page_form_after', :object => form
 
@@ -45,19 +43,4 @@
   = form.submit t(@page.new_record?? '.create' : '.update'), :class => 'btn btn-primary'
 
 
-:coffeescript
-  dateControl = $("#page_page_workflow_attributes_published_date")
-  wkControl = $("#page_page_workflow_attributes_status_id")
-  parentControl = $("#page_page_workflow_attributes_published_date").parents(".control-group:first")
-
-  dateControl.val(dateControl.data("utcDate")).datepicker(dateFormat: "d MM, yy")
-
-  if wkControl.val() in ["0","1"]
-    parentControl.hide()
-
-  wkControl.change ->
-    if $(this).val() in ["0","1"]
-      parentControl.hide()
-    else
-      parentControl.show()
-
+= render :partial => 'cms/fortress/shared/page_extend_js'

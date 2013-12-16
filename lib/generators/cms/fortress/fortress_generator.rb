@@ -14,7 +14,7 @@ class Cms::FortressGenerator < Rails::Generators::Base
   def generate_migrations
     rake("cms_fortress_engine:install:migrations")
   end
-
+=begin
   def generate_assets
     directory 'app/assets/javascripts/cms/fortress',
       'app/assets/javascripts/cms/fortress'
@@ -22,7 +22,7 @@ class Cms::FortressGenerator < Rails::Generators::Base
     directory 'app/assets/stylesheets/cms/fortress',
       'app/assets/stylesheets/cms/fortress'
   end
-
+=end
   def show_readme
     readme 'lib/generators/cms/fortress/templates/README'
   end

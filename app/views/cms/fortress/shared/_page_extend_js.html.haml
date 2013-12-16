@@ -1,0 +1,16 @@
+:coffeescript
+  dateControl = $("#page_page_workflow_attributes_published_date")
+  wkControl = $("#page_page_workflow_attributes_status_id")
+  parentControl = $("#page_page_workflow_attributes_published_date").parents(".control-group:first")
+
+  dateControl.val(dateControl.data("utcDate")).datepicker(dateFormat: "d MM, yy")
+
+  if wkControl.val() in ["0","1"]
+    parentControl.hide()
+
+  wkControl.change ->
+    if $(this).val() in ["0","1"]
+      parentControl.hide()
+    else
+      parentControl.show()
+

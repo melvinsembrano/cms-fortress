@@ -1,0 +1,5 @@
+= form.fields_for :page_workflow do |wf|
+  = wf.select :status_id, Cms::PageWorkflow.statuses_for_select(can?(:manage, 'contents.page.publish'), can?(:manage, 'contents.page.review')), {}, {class: "status-control"}
+  = wf.text_field :published_date, label: 'Published', class: "status-control", :data => {:utc_date => (@page.page_workflow.published_date.nil? ? Time.now : @page.page_workflow.published_date).strftime("%d %B, %Y") }
+
+= form.select :cached_timeout, Cms::PageWorkflow.cached_timeout_for_select, {label: 'Cached Timeout'}, {class: 'status-control'}
