@@ -1,3 +1,16 @@
+# Create a generator for an override file for this class
+# sample below:
+# class Ability < CmsAbility
+# 
+#   def setup_role(role)
+#     if role.command.eql?('contents.blog')
+#       can :manage, Blog
+#     else
+#       warn "#{ role.command } is not yet handled."
+#     end
+#   end
+# 
+# end
 class CmsAbility
   include CanCan::Ability
 
