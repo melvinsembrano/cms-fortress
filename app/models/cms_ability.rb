@@ -24,18 +24,12 @@ class CmsAbility
           elsif role.command.eql?("designs.snippets")
             can :manage, Cms::Snippet
           else
-            setup_role(role)
+            setup_role(role) if defined?(setup_role)
           end
         end
       end
     end
 
   end
-
-  # override this if you have custom role assignment
-  def setup_role(role)
-
-  end
-
 
 end

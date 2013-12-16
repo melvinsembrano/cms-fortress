@@ -11,8 +11,16 @@ module Cms
         admin_cms_path
       end
 
+      def ability_class
+        if File.exist?(File.join(Rails.root, "app", "models", "ability.rb"))
+          Ability
+        else
+          CmsAbility
+        end
+      end
+
       def current_ability
-         @current_ability ||= CmsAbility.new(current_cms_fortress_user)
+         @current_ability ||= ability_class.new(current_cms_fortress_user)
       end
 
       def self.included(base)
