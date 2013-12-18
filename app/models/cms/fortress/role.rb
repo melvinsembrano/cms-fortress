@@ -11,7 +11,6 @@ class Cms::Fortress::Role < ActiveRecord::Base
     if File.exist?(file = File.join(Rails.root, "config", "roles.yml"))
       load_from_file(file)
     end
-    puts file
 
     file = File.expand_path(File.join(File.dirname(__FILE__), "../../../../", "config", "roles.yml"))
     load_from_file(file)

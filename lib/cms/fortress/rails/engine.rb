@@ -4,7 +4,7 @@ module Cms
 
       initializer 'cms-fortress.setup' do |app|
         app.config.to_prepare do
-          Devise::SessionsController.layout "cms/fortress/session"
+          # Devise::SessionsController.layout "cms/fortress/session"
           ApplicationController.helper(Cms::Fortress::ApplicationHelper)
 
           Cms::ContentController.send(:include, Cms::Fortress::ContentRenderer)
@@ -12,27 +12,27 @@ module Cms
 
           # Insert Roles
           Admin::Cms::SitesController.class_eval do
-            before_filter do
+            before_action do
               authorize! :manage, Cms::Site
             end
           end
           Admin::Cms::LayoutsController.class_eval do
-            before_filter do
+            before_action do
               authorize! :manage, Cms::Layout
             end
           end
           Admin::Cms::SnippetsController.class_eval do
-            before_filter do
+            before_action do
               authorize! :manage, Cms::Snippet
             end
           end
           Admin::Cms::PagesController.class_eval do
-            before_filter do
+            before_action do
               authorize! :manage, Cms::Page
             end
           end
           Admin::Cms::FilesController.class_eval do
-            before_filter do
+            before_action do
               authorize! :manage, Cms::File
             end
           end

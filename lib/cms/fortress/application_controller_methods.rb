@@ -12,7 +12,7 @@ module Cms
       end
 
       def ability_class
-        if File.exist?(File.join(Rails.root, "app", "models", "ability.rb"))
+        if defined?(Ability)  #File.exist?(File.join(Rails.root, "app", "models", "ability.rb"))
           Ability
         else
           CmsAbility
