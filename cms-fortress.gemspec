@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "cms-fortress"
-  s.version = "1.0.7"
+  s.version = "1.0.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Melvin Sembrano"]
-  s.date = "2013-12-15"
+  s.date = "2013-12-18"
   s.description = "Comfortable Mexican Sofa (CMS) - User and role management extension"
   s.email = "melvinsembrano@gmail.com"
   s.extra_rdoc_files = [
@@ -35,6 +35,7 @@ Gem::Specification.new do |s|
     "app/assets/stylesheets/cms/fortress/session.css",
     "app/controllers/cms/fortress/admin_controller.rb",
     "app/controllers/cms/fortress/roles_controller.rb",
+    "app/controllers/cms/fortress/users/sessions_controller.rb",
     "app/controllers/cms/fortress/users_controller.rb",
     "app/helpers/cms/fortress/application_helper.rb",
     "app/helpers/cms/fortress/roles_helper.rb",
@@ -44,7 +45,6 @@ Gem::Specification.new do |s|
     "app/models/cms/fortress/user.rb",
     "app/models/cms/page_workflow.rb",
     "app/models/cms_ability.rb",
-    "app/views/.DS_Store",
     "app/views/admin/cms/pages/_form.html.haml",
     "app/views/admin/cms/partials/_body_before.html.haml",
     "app/views/cms/fortress/admin/_leftnav.html.haml",
@@ -62,6 +62,8 @@ Gem::Specification.new do |s|
     "app/views/cms/fortress/roles/show.html.haml",
     "app/views/cms/fortress/shared/_admin_topnav.html.haml",
     "app/views/cms/fortress/shared/_navbar.html.haml",
+    "app/views/cms/fortress/shared/_page_extend.html.haml",
+    "app/views/cms/fortress/shared/_page_extend_js.html.haml",
     "app/views/cms/fortress/users/_form.html.haml",
     "app/views/cms/fortress/users/edit.html.haml",
     "app/views/cms/fortress/users/index.html.haml",
@@ -80,6 +82,7 @@ Gem::Specification.new do |s|
     "db/migrate/02_create_cms_fortress_role_details.rb",
     "db/migrate/03_create_cms_fortress_roles.rb",
     "db/migrate/04_create_cms_page_workflows.rb",
+    "db/migrate/05_add_caching_info_to_pages.rb",
     "lib/cms-fortress.rb",
     "lib/cms/fortress/application_controller_methods.rb",
     "lib/cms/fortress/auth.rb",
