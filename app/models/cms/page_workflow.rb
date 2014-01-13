@@ -18,7 +18,7 @@ class Cms::PageWorkflow < ActiveRecord::Base
 
   def self.statuses_for_select(can_publish, can_review)
     ret = [["Draft", 0]]
-    ret << ["Review", 1] if can_review
+    ret << ["Reviewed", 1] if can_review
     ret << ["Published", 3] if can_publish
     # self.statuses.map {|k,v| [v.to_s.titleize, k]}
     ret
