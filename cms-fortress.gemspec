@@ -96,6 +96,7 @@ Gem::Specification.new do |s|
     "lib/cms/fortress/rails/engine.rb",
     "lib/cms/fortress/routes/admin.rb",
     "lib/cms/fortress/routing.rb",
+    "lib/comfortable_mexican_sofa/fixture/page.rb",
     "lib/generators/cms/fortress/USAGE",
     "lib/generators/cms/fortress/fortress_generator.rb",
     "lib/generators/cms/fortress/templates/README",
