@@ -4,7 +4,12 @@ An extension for the awesome Comfortable Mexican Sofa (https://github.com/comfy/
 
 * Added Role Management for proper workflow
 * Added Devise for User and Session Management
-* todo..
+* Added User Management
+* Added Page caching control
+* Added proper page workflow
+* Customizable menus, role abilities
+
+==== NOTE: with the major changes of comfy-sofa, cms-fortress supports only Rails 4.0++
 
 == Installation
 
@@ -19,6 +24,13 @@ Then from the Rails project's root run:
     rake db:migrate
 
 After that run your app and navigate to http://localhost:3000/cms-admin to start creating your pages, and also don't forget to delete your public/index.html file.
+
+    login using the following info below:
+    
+    username: admin@cmsfortress.com
+    password: 1234qwer
+
+===TODO: Customization documents and sample
 
 For more Comfortable Mexican Sofa awesomeness visit the wiki page here https://github.com/comfy/comfortable-mexican-sofa/wiki
 
