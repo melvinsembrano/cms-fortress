@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "cms-fortress"
-  s.version = "1.1.0"
+  s.version = "1.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Melvin Sembrano"]
-  s.date = "2014-01-21"
+  s.date = "2014-02-04"
   s.description = "Comfortable Mexican Sofa (CMS) - User and role management extension"
   s.email = "melvinsembrano@gmail.com"
   s.extra_rdoc_files = [
@@ -51,7 +51,7 @@ Gem::Specification.new do |s|
     "app/views/cms/fortress/admin/_left_designs_nav.html.haml",
     "app/views/cms/fortress/admin/_left_nav.html.haml",
     "app/views/cms/fortress/admin/_left_settings_nav.html.haml",
-    "app/views/cms/fortress/admin/_top_nav.html.haml",
+    "app/views/cms/fortress/admin/_topnav.html.haml",
     "app/views/cms/fortress/admin/contents.html.haml",
     "app/views/cms/fortress/admin/design.html.haml",
     "app/views/cms/fortress/admin/roles.html.haml",
@@ -117,11 +117,11 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/melvinsembrano/cms-fortress"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.23"
+  s.rubygems_version = "2.0.3"
   s.summary = "Comfortable Mexican Sofa (CMS) - User and role management extension"
 
   if s.respond_to? :specification_version then
-    s.specification_version = 3
+    s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rails>, [">= 4.0.0"])
