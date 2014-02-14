@@ -2,10 +2,10 @@
 
 - content_for :right_column do
   #form-save.box
-    
-    /%label.checkbox.inline
-    /  %input{:type => 'checkbox'}
-    /  = ::Cms::Page.human_attribute_name(:is_published)
+    - unless Cms::Fortress.configuration.enable_page_workflow
+      %label.checkbox.inline
+        %input{:type => 'checkbox'}
+        = ::Cms::Page.human_attribute_name(:is_published)
     %button.btn.btn-small.btn-primary.pull-right
   = render :partial => 'admin/cms/files/index'
 
@@ -20,7 +20,7 @@
 
 - if (options = ::Cms::Layout.options_for_select(@site)).present?
   = form.select :layout_id, options, {}, 'data-url' => form_blocks_admin_cms_site_page_path(@site, @page.id.to_i)
-  
+
 - if (options = ::Cms::Page.options_for_select(@site, @page)).present?
   = form.select :parent_id, options
 
@@ -33,7 +33,8 @@
 
 = render :partial => 'form_blocks'
 
-=# form.check_box :is_published, :label => t('.is_published')
+- unless Cms::Fortress.configuration.enable_page_workflow
+  = form.check_box :is_published, :label => t('.is_published')
 = render :partial => 'cms/fortress/shared/page_extend', :locals => {form: form}
 
 = render 'admin/cms/partials/page_form_after', :object => form

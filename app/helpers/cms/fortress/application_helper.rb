@@ -14,22 +14,22 @@ module Cms
 
 
       def admin_page?
-        controller_name.eql?('admin') && %w{settings roles users}.include?(action_name) ||
-          controller_name.eql?('sites') && %w{index}.include?(action_name) ||
-          controller_name.eql?('roles') ||
-          controller_name.eql?('users')
+        controller_name.eql?('admin') && %w{roles users}.include?(action_name) ||
+          Cms::Fortress.configuration.settings_resources.
+            map { |resource| resource[:name] }.
+            include?(controller_name)
       end
 
       def design_page?
-        controller_name.eql?('admin') && %{design}.include?(action_name) ||
-          controller_name.eql?('layouts') ||
-          controller_name.eql?('snippets')
+        Cms::Fortress.configuration.design_resources.
+            map { |resource| resource[:name] }.
+            include?(controller_name)
       end
 
       def content_page?
-        controller_name.eql?('admin') && %{contents}.include?(action_name) ||
-        controller_name.eql?('pages') ||
-          controller_name.eql?('files')
+        Cms::Fortress.configuration.content_resources.
+            map { |resource| resource[:name] }.
+            include?(controller_name)
       end
 
     end

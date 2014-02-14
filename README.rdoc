@@ -26,16 +26,63 @@ Then from the Rails project's root run:
 After that run your app and navigate to http://localhost:3000/cms-admin to start creating your pages, and also don't forget to delete your public/index.html file.
 
     login using the following info below:
-    
+
     username: admin@cmsfortress.com
     password: 1234qwer
 
-===TODO: Customization documents and sample
+===Adding custom role details
+
+You can create a custom role ability via a three-step process.
+
+1: Edit <tt>config/roles.yml</tt> and add the new role under the category you wish.
+
+    contents:
+      - pages
+      - files
+      - page.review
+      - page.publish
+    designs:
+      - layouts
+      - snippets
+    settings:
+      - sites
+      - roles
+      - users
+      - *my_role_detail*
+
+2: Configure cms-fortress to add a new resource. Add this in an initializer:
+
+    Cms::Fortress.configure do |config|
+      config.settings_resources << {
+        :name => 'my_role_detail',
+        :title => 'i18n.label.title', # this is passed to the t() function - can be plain text
+        :path => 'admin_my_role_details_path'
+      }
+      # the other two lists are "content_resources" and "design_resources"
+    end
+
+The path is eval'd at runtime, so you can use Rails helper methods such as
++current_user+ or <tt>@site</tt> in it. If the result is nil, the link will not show up
+in the left nav bar.
+
+3: Restart the server. Go into each Role you have defined and click
+"Load New Roles". Voila!
+
+=== Other configuration
+
+You can turn off page workflow or page caching via configuration:
+
+    Cms::Fortress.configure do |config|
+      config.enable_page_workflow = false
+      config.enable_page_caching = false
+    end
+
+===TODO: More customization documents and sample
 
 For more Comfortable Mexican Sofa awesomeness visit the wiki page here https://github.com/comfy/comfortable-mexican-sofa/wiki
 
 == Contributing to cms-fortress
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
 * Fork the project.

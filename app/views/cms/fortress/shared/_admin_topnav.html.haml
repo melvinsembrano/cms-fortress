@@ -9,14 +9,18 @@
       .nav-collapse.collapse
         %ul.nav
           - if @site && !@site.new_record?
-            - if can? :view, 'contents'
-              = topnav_item t("cms.fortress.contents"), cms_fortress_contents_path, content_page?
+            - if Cms::Fortress.configuration.content_resources.any? {|resource| can? :view, "contents.#{resource[:name]}" }
+              = topnav_item t("cms.fortress.contents"), |
+                @site && !@site.new_record? ? admin_cms_site_pages_path(@site) : admin_cms_sites_pages_path, |
+                content_page?
 
-            - if can? :view, 'designs'
-              = topnav_item t("cms.fortress.design"), cms_fortress_design_path, design_page?
+            - if Cms::Fortress.configuration.design_resources.any? {|resource| can? :view, "designs.#{resource[:name]}" }
+              = topnav_item t("cms.fortress.design"), |
+                @site && !@site.new_record? ? admin_cms_site_layouts_path(@site) : admin_cms_sites_pages_path, |
+                design_page?
 
-          - if can? :view, 'settings'
-            = topnav_item t("cms.fortress.settings"), cms_fortress_settings_path, admin_page?
+            - if Cms::Fortress.configuration.settings_resources.any? {|resource| can? :view, "settings.#{resource[:name]}" }
+              = topnav_item t("cms.fortress.settings"), admin_cms_sites_path, admin_page?
 
           = render 'cms/fortress/admin/topnav'
         %ul.nav.nav-pill.pull-right
