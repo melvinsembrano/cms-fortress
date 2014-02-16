@@ -18,9 +18,6 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".document",
-    ".rbenv-gemsets",
-    ".ruby-version",
-    ".rvmrc",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",

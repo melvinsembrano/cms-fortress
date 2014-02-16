@@ -14,6 +14,16 @@ class Cms::FortressGenerator < Rails::Generators::Base
   def generate_migrations
     rake("cms_fortress_engine:install:migrations")
   end
+
+  def copy_files
+    log 'Copying files...'
+    files = [
+      'config/roles.yml'
+    ]
+    files.each do |file|
+      copy_file file, file
+    end
+  end
 =begin
   def generate_assets
     directory 'app/assets/javascripts/cms/fortress',
