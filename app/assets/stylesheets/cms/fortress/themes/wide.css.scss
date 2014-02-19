@@ -1,0 +1,22 @@
+body#comfy {
+  background-color: inherit;
+  font-size: 13px;
+  line-height: 18px;
+
+  h1 { font-size: 32px; }
+
+  h2 { font-size: 24px; }
+  h3 { font-size: 22px; }
+  h4 { font-size: 18px; }
+  h5 { font-size: 16px; }
+
+  .wide-body {
+    width: 98%;
+    margin: 0 auto;
+    min-height: 320px;
+  }
+
+  .page-header {
+    margin-top: 3.2em;
+  }
+}

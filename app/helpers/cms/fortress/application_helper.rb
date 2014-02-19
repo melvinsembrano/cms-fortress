@@ -3,6 +3,18 @@ module Cms
 
     module ApplicationHelper
 
+      def theme_name
+        Cms::Fortress.configuration.theme.to_s
+      end
+
+      def default_theme?
+        theme_name.to_s.eql?('default')
+      end
+
+      def themed_partial(partial)
+        render partial: "cms/fortress/themes/#{ theme_name }/#{ partial }"
+      end
+
       def topnav_item(title, path, is_current = false)
         css_class = is_current ? "active" : ""
         content_tag(:li, link_to(title, path), class: css_class)

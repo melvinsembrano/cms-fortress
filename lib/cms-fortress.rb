@@ -23,9 +23,11 @@ module Cms
       attr_accessor :settings_resources
       attr_accessor :enable_page_workflow
       attr_accessor :enable_page_caching
+      attr_accessor :theme
 
       def initialize
         self.class.send(:include, Rails.application.routes.url_helpers)
+        @theme = :default
         @enable_page_workflow = true
         @enable_page_caching = true
         @content_resources = [

@@ -8,19 +8,23 @@
       %a.brand{'href' => '#'}= t('cms.fortress.title')
       .nav-collapse.collapse
         %ul.nav
-          - if @site && !@site.new_record?
-            - if Cms::Fortress.configuration.content_resources.any? {|resource| can? :view, "contents.#{resource[:name]}" }
-              = topnav_item t("cms.fortress.contents"), |
-                @site && !@site.new_record? ? admin_cms_site_pages_path(@site) : admin_cms_sites_pages_path, |
-                content_page?
+          - if default_theme?
+            - if @site && !@site.new_record?
+              - if Cms::Fortress.configuration.content_resources.any? {|resource| can? :view, "contents.#{resource[:name]}" }
+                = topnav_item t("cms.fortress.contents"), |
+                  @site && !@site.new_record? ? admin_cms_site_pages_path(@site) : admin_cms_sites_pages_path, |
+                  content_page?
 
-            - if Cms::Fortress.configuration.design_resources.any? {|resource| can? :view, "designs.#{resource[:name]}" }
-              = topnav_item t("cms.fortress.design"), |
-                @site && !@site.new_record? ? admin_cms_site_layouts_path(@site) : admin_cms_sites_pages_path, |
-                design_page?
+              - if Cms::Fortress.configuration.design_resources.any? {|resource| can? :view, "designs.#{resource[:name]}" }
+                = topnav_item t("cms.fortress.design"), |
+                  @site && !@site.new_record? ? admin_cms_site_layouts_path(@site) : admin_cms_sites_pages_path, |
+                  design_page?
 
-            - if Cms::Fortress.configuration.settings_resources.any? {|resource| can? :view, "settings.#{resource[:name]}" }
-              = topnav_item t("cms.fortress.settings"), admin_cms_sites_path, admin_page?
+              - if Cms::Fortress.configuration.settings_resources.any? {|resource| can? :view, "settings.#{resource[:name]}" }
+                = topnav_item t("cms.fortress.settings"), admin_cms_sites_path, admin_page?
+
+          - else
+            = themed_partial('admin_topnav')
 
           = render 'cms/fortress/admin/topnav'
         %ul.nav.nav-pill.pull-right

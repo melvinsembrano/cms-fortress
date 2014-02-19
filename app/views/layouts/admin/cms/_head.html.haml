@@ -6,9 +6,12 @@
   = stylesheet_link_tag 'comfortable_mexican_sofa/application'
   = stylesheet_link_tag 'comfortable_mexican_sofa/admin/application'
   = stylesheet_link_tag 'cms/fortress/admin_overrides'
+  - unless default_theme?
+    = stylesheet_link_tag "cms/fortress/themes/#{ theme_name }"
+
   = javascript_include_tag 'comfortable_mexican_sofa/application'
   = javascript_include_tag 'comfortable_mexican_sofa/admin/application'
-  
+
   = yield :head
   
   = render 'admin/cms/partials/html_head'
