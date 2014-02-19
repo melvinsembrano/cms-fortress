@@ -1,6 +1,7 @@
 require 'comfortable_mexican_sofa'
 require 'devise'
 require 'cancan'
+require 'tinymce-rails'
 
 require_relative 'comfortable_mexican_sofa/fixture/page'
 

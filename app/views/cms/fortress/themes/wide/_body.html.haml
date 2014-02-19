@@ -3,15 +3,15 @@
 = render :partial => 'layouts/admin/cms/footer'
 
 :coffeescript
-  ### iconize pages links ###
-  $(".wide-body ul.sortable li div.btn-group a:contains(Delete)").html("<i class='icon-remove icon-white' />").attr("title", "Delete").tooltip(placement: 'left')
-  $(".wide-body ul.sortable li div.btn-group a:contains(Edit)").html("<i class='icon-edit' />").attr("title", "Edit").tooltip(placement: 'left')
-  $(".wide-body ul.sortable li div.btn-group a:contains(Add Child Page)").html("<i class='icon-plus' /> Child Page").attr("title", "Add Child Page").tooltip(placement: 'left')
+  ### iconize delete and edit links ###
+  $(".wide-body div.btn-group a:contains(Delete)").html("<i class='icon-remove icon-white' />").attr("title", "Delete").tooltip(placement: 'left')
+  $(".wide-body div.btn-group a:contains(Edit)").html("<i class='icon-edit' />").attr("title", "Edit").tooltip(placement: 'left')
+  $(".wide-body div.btn-group a:contains(Add Child)").html("<i class='icon-plus' /> Child").attr("title", "Add Child").tooltip(placement: 'left')
 
   $(".wide-body .page-header a:contains(Create New Page)").html("<i class='icon-file' /> New Page").attr("title", "Create New Page").tooltip(placement: 'left')
 
   # New Page
-  index_path = "#{ admin_cms_site_pages_path }"
-  $(".wide-body .page-header h2:contains(New Page), .wide-body .page-header h2:contains(Editing Page)").parent()
+  index_path = "#{ back_path }"
+  $(".wide-body .page-header h2:contains(New), .wide-body .page-header h2:contains(Editing)").parent()
     .prepend('<a class="btn pull-right" href="' + index_path + '" title="" data-original-title="Create New Page"><i class="icon-list"></i> Back</a> ')
 

@@ -15,6 +15,21 @@ module Cms
         render partial: "cms/fortress/themes/#{ theme_name }/#{ partial }"
       end
 
+      def back_path
+        case controller_name
+        when "pages"
+          admin_cms_site_pages_path
+        when "files"
+          admin_cms_site_files_path
+        when "layouts"
+          admin_cms_site_layouts_path
+        when "snippets"
+          admin_cms_site_snippets_path
+        else
+          ""
+        end
+      end
+
       def topnav_item(title, path, is_current = false)
         css_class = is_current ? "active" : ""
         content_tag(:li, link_to(title, path), class: css_class)

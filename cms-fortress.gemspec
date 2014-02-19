@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Melvin Sembrano"]
-  s.date = "2014-02-16"
+  s.date = "2014-02-19"
   s.description = "Comfortable Mexican Sofa (CMS) - User and role management extension"
   s.email = "melvinsembrano@gmail.com"
   s.extra_rdoc_files = [
@@ -32,6 +32,7 @@ Gem::Specification.new do |s|
     "app/assets/stylesheets/cms/fortress/bootstrap-responsive.css",
     "app/assets/stylesheets/cms/fortress/bootstrap.css",
     "app/assets/stylesheets/cms/fortress/session.css",
+    "app/assets/stylesheets/cms/fortress/themes/wide.css.scss",
     "app/controllers/cms/fortress/admin_controller.rb",
     "app/controllers/cms/fortress/roles_controller.rb",
     "app/controllers/cms/fortress/users/sessions_controller.rb",
@@ -66,6 +67,8 @@ Gem::Specification.new do |s|
     "app/views/cms/fortress/shared/_navbar.html.haml",
     "app/views/cms/fortress/shared/_page_extend.html.haml",
     "app/views/cms/fortress/shared/_page_extend_js.html.haml",
+    "app/views/cms/fortress/themes/wide/_admin_topnav.html.haml",
+    "app/views/cms/fortress/themes/wide/_body.html.haml",
     "app/views/cms/fortress/users/_form.html.haml",
     "app/views/cms/fortress/users/edit.html.haml",
     "app/views/cms/fortress/users/index.html.haml",
@@ -73,6 +76,7 @@ Gem::Specification.new do |s|
     "app/views/cms/fortress/users/sessions/.DS_Store",
     "app/views/cms/fortress/users/sessions/new.html.haml",
     "app/views/layouts/admin/cms/.DS_Store",
+    "app/views/layouts/admin/cms/_body.html.haml",
     "app/views/layouts/admin/cms/_head.html.haml",
     "app/views/layouts/admin/cms/_left.html.haml",
     "app/views/layouts/cms/fortress/default.html.erb",
@@ -128,6 +132,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<devise>, ["~> 3.2"])
       s.add_runtime_dependency(%q<cancan>, [">= 1.6.9"])
       s.add_runtime_dependency(%q<delayed_job>, ["~> 4"])
+      s.add_runtime_dependency(%q<tinymce-rails>, ["= 4.0.12"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
       s.add_development_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
@@ -138,6 +143,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<devise>, ["~> 3.2"])
       s.add_dependency(%q<cancan>, [">= 1.6.9"])
       s.add_dependency(%q<delayed_job>, ["~> 4"])
+      s.add_dependency(%q<tinymce-rails>, ["= 4.0.12"])
       s.add_dependency(%q<rdoc>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
@@ -149,6 +155,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<devise>, ["~> 3.2"])
     s.add_dependency(%q<cancan>, [">= 1.6.9"])
     s.add_dependency(%q<delayed_job>, ["~> 4"])
+    s.add_dependency(%q<tinymce-rails>, ["= 4.0.12"])
     s.add_dependency(%q<rdoc>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])

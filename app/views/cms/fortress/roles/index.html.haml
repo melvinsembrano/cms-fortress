@@ -2,7 +2,7 @@
   = link_to t('cms.fortress.roles.new_link'), new_cms_fortress_role_path, :class => 'btn pull-right'
   %h2= t('cms.fortress.roles.title')
 
-%table.table.table-hover.table-bordered
+%table.table.table-hover.table-bordered.table-striped
   %tr
     %th Name
     %th{:style => 'width: 60%;'} Description
@@ -15,6 +15,6 @@
       %td
         .btn-group.pull-right
           = link_to 'Show Access Rights', cms_fortress_role, :class => 'btn btn-small btn-info'
-          = link_to 'Edit', edit_cms_fortress_role_path(cms_fortress_role), :class => 'btn btn-small btn-primary'
-          = link_to 'Destroy', cms_fortress_role, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-small btn-danger'
+          = link_to 'Edit', edit_cms_fortress_role_path(cms_fortress_role), :class => 'btn btn-small btn-default'
+          = link_to 'Delete', cms_fortress_role, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-small btn-danger'
 
