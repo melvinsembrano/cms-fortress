@@ -1,0 +1,12 @@
+%ul.thumbnails
+  - media.each do |m|
+    %li.span3
+      .thumbnail(href="#")
+        = image_item(m)
+        .caption
+          %p
+            = image_styles(m)
+
+
+
+

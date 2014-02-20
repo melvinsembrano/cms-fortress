@@ -9,6 +9,7 @@ module Cms
 
           Cms::ContentController.send(:include, Cms::Fortress::ContentRenderer)
           Cms::Page.send(:include, Cms::Fortress::PageMethods)
+          Cms::File.send(:include, Cms::Fortress::FileMethods)
 
           # Insert Roles
           Admin::Cms::SitesController.class_eval do

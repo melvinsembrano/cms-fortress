@@ -20,8 +20,11 @@ class ActionDispatch::Routing::Mapper
       end
       resources :users, :as => 'cms_fortress_users'
 
-      get 'settings/users' => 'admin#users', :as => 'cms_fortress_user_settings'
-      get 'unauthorised' => 'admin#unauthorised', :as => 'cms_fortress_unauthorised'
+      get 'settings/users' => 'admin#users', as: 'cms_fortress_user_settings'
+      get 'unauthorised' => 'admin#unauthorised', as: 'cms_fortress_unauthorised'
+
+      get 'sites/:site_id/files/images' => 'admin#images', as: 'cms_fortress_files_images'
+      get 'sites/:site_id/files/videos' => 'admin#videos', as: 'cms_fortress_videos_images'
 
     end
 

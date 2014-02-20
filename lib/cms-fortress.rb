@@ -7,6 +7,7 @@ require_relative 'comfortable_mexican_sofa/fixture/page'
 
 require_relative 'cms/fortress/application_controller_methods'
 require_relative 'cms/fortress/page_methods'
+require_relative 'cms/fortress/file_methods'
 require_relative 'cms/fortress/rails/engine'
 require_relative 'cms/fortress/auth'
 require_relative 'cms/fortress/content_renderer'
