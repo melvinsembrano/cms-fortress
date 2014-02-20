@@ -1,3 +1,4 @@
+{<img src="https://badge.fury.io/rb/cms-fortress.png" alt="Gem Version" />}[http://badge.fury.io/rb/cms-fortress]
 = cms-fortress
 
 An extension for the awesome Comfortable Mexican Sofa (https://github.com/comfy/comfortable-mexican-sofa) CMS Engine

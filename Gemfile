@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 # Add dependencies required to use your gem here.
   gem 'rails', '>=4.0.0'
-  gem 'comfortable_mexican_sofa', '~>1.11'
+  gem 'comfortable_mexican_sofa', '~>1.11.0'
   gem 'devise', '~>3.2'
   gem 'cancan', '>=1.6.9'
   gem 'delayed_job', '~>4'
