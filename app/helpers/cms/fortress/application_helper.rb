@@ -30,6 +30,12 @@ module Cms
         end
       end
 
+      def image_files_path
+        if params[:site_id]
+          cms_fortress_files_images_path
+        end
+      end
+
       def image_item(m)
         styles = {original: m.file.url}
         m.file.styles.keys.each {|k,v| styles[k] = m.file.url(k) }
