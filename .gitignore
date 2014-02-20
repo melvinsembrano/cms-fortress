@@ -30,6 +30,9 @@ pkg
 #
 .DS_Store
 
+.rbenv-gemsets
+.ruby-version
+
 # For TextMate
 #*.tmproj
 #tmtags
