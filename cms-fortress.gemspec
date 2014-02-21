@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Melvin Sembrano"]
-  s.date = "2014-02-20"
+  s.date = "2014-02-21"
   s.description = "Comfortable Mexican Sofa (CMS) - User and role management extension"
   s.email = "melvinsembrano@gmail.com"
   s.extra_rdoc_files = [
@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "app/assets/javascripts/cms/fortress/cms_fortress.js",
+    "app/assets/javascripts/cms/fortress/media.js.coffee",
     "app/assets/javascripts/cms/fortress/themes/wide.js.coffee",
     "app/assets/javascripts/html5shiv.js",
     "app/assets/stylesheets/cms/fortress/admin_overrides.css",
@@ -63,6 +64,8 @@ Gem::Specification.new do |s|
     "app/views/cms/fortress/roles/new.html.haml",
     "app/views/cms/fortress/roles/show.html.haml",
     "app/views/cms/fortress/shared/_admin_topnav.html.haml",
+    "app/views/cms/fortress/shared/_media_items.html.haml",
+    "app/views/cms/fortress/shared/_mediaboxes.html.haml",
     "app/views/cms/fortress/shared/_navbar.html.haml",
     "app/views/cms/fortress/shared/_page_extend.html.haml",
     "app/views/cms/fortress/shared/_page_extend_js.html.haml",
@@ -95,6 +98,7 @@ Gem::Specification.new do |s|
     "lib/cms/fortress/comfortable_mexican_sofa.rb",
     "lib/cms/fortress/content_renderer.rb",
     "lib/cms/fortress/devise.rb",
+    "lib/cms/fortress/file_methods.rb",
     "lib/cms/fortress/page_methods.rb",
     "lib/cms/fortress/rails/engine.rb",
     "lib/cms/fortress/routes/admin.rb",

@@ -5,6 +5,9 @@ window.media =
 
   loading: "<p>Loading...</p>"
 
+  othersUrl: ->
+    this.othersPath
+
   showImageDialog: (ed) ->
     this.ed = ed
     this.dlg.modal(show: true, backdrop: false)

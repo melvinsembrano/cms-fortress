@@ -37,7 +37,7 @@ module Cms
           elsif type.eql?(:video)
             cms_fortress_files_videos_path
           else
-
+            cms_fortress_files_others_url(format: :json)
           end
         end
       end

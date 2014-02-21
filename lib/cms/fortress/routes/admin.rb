@@ -25,6 +25,7 @@ class ActionDispatch::Routing::Mapper
 
       get 'sites/:site_id/files/images' => 'admin#images', as: 'cms_fortress_files_images'
       get 'sites/:site_id/files/videos' => 'admin#videos', as: 'cms_fortress_files_videos'
+      get 'sites/:site_id/files/others' => 'admin#other_files', as: 'cms_fortress_files_others'
 
     end
 
