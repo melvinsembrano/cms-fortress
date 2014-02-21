@@ -15,6 +15,11 @@ class Cms::FortressGenerator < Rails::Generators::Base
     rake("cms_fortress_engine:install:migrations")
   end
 
+  def generate_initialization
+    copy_file 'config/initializers/cms_fortress.rb',
+      'config/initializers/cms_fortress.rb'
+  end
+
   def copy_files
     log 'Copying files...'
     files = [

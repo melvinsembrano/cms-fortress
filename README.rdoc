@@ -9,6 +9,9 @@ An extension for the awesome Comfortable Mexican Sofa (https://github.com/comfy/
 * Added Page caching control
 * Added proper page workflow
 * Customizable menus, role abilities
+* Added layout theming, current themes (:default, :wide)
+* Integrate Cms::Files (image,video and link) attachements into WYSIWYG editor buttons (wide theme only)
+
 
 ==== NOTE: with the major changes of comfy-sofa, cms-fortress supports only Rails 4.0++
 

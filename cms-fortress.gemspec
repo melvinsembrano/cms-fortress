@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "app/assets/javascripts/cms/fortress/bootstrap.js",
     "app/assets/javascripts/cms/fortress/cms_fortress.js",
     "app/assets/javascripts/cms/fortress/media.js.coffee",
     "app/assets/javascripts/cms/fortress/themes/wide.js.coffee",
