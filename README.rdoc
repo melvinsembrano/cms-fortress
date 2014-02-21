@@ -77,11 +77,24 @@ in the left nav bar.
 You can turn off page workflow or page caching via configuration:
 
     Cms::Fortress.configure do |config|
+      config.theme = :wide
       config.enable_page_workflow = false
       config.enable_page_caching = false
     end
 
-===TODO: More customization documents and sample
+=== Wide Theme
+With wide theme, the layout and menus are being compacted so that you have all the area for authoring.  Files are also being nicely integrated to the WYSIWYG editor (tinymce).
+Below are the fetures for wide theme:
+
+* Compact Layout and Menus
+* Responsive Layout
+* Fullcreen Editing
+* Integrated image file attachement
+* Integrated video file attachment
+* Integrated link file attachement
+
+
+=== TODO: More customization documents and sample
 
 For more Comfortable Mexican Sofa awesomeness visit the wiki page here https://github.com/comfy/comfortable-mexican-sofa/wiki
 
