@@ -93,6 +93,7 @@ Below are the fetures for wide theme:
 * Integrated video file attachment
 * Integrated link file attachement
 
+{<img src="https://raw.github.com/melvinsembrano/cms-fortress/master/docs/screens/compact-layout-01.png'" alt="Layout" />}[Compact Layout]
 
 === TODO: More customization documents and sample
 
