@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "cms-fortress"
-  s.version = "1.1.3"
+  s.version = "1.1.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Melvin Sembrano"]
@@ -86,6 +86,7 @@ Gem::Specification.new do |s|
     "app/views/layouts/cms/fortress/default.html.erb",
     "app/views/layouts/cms/fortress/session.html.erb",
     "cms-fortress.gemspec",
+    "config/initializers/cms_fortress.rb",
     "config/locales/en.yml",
     "config/roles.yml",
     "db/migrate/01_devise_create_cms_fortress_users.rb",
@@ -93,6 +94,12 @@ Gem::Specification.new do |s|
     "db/migrate/03_create_cms_fortress_roles.rb",
     "db/migrate/04_create_cms_page_workflows.rb",
     "db/migrate/05_add_caching_info_to_pages.rb",
+    "docs/screens/compact-layout-01.png",
+    "docs/screens/compact-layout-02.png",
+    "docs/screens/files-integration-01.png",
+    "docs/screens/files-integration-02.png",
+    "docs/screens/files-integration-03.png",
+    "docs/screens/files-integration-04.png",
     "lib/cms-fortress.rb",
     "lib/cms/fortress/application_controller_methods.rb",
     "lib/cms/fortress/auth.rb",
