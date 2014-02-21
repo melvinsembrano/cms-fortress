@@ -95,14 +95,7 @@ Below are the fetures for wide theme:
 
 http://raw.github.com/melvinsembrano/cms-fortress/master/docs/screens/compact-layout-01.png
 
-http://raw.github.com/melvinsembrano/cms-fortress/master/docs/screens/compact-layout-02.png
-
 http://raw.github.com/melvinsembrano/cms-fortress/master/docs/screens/files-integration-01.png
-
-http://raw.github.com/melvinsembrano/cms-fortress/master/docs/screens/files-integration-02.png
-
-http://raw.github.com/melvinsembrano/cms-fortress/master/docs/screens/files-integration-03.png
-
 
 === TODO: More customization documents and sample
 
