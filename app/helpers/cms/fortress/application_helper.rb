@@ -30,9 +30,15 @@ module Cms
         end
       end
 
-      def image_files_path
+      def media_files_path(type)
         if params[:site_id]
-          cms_fortress_files_images_path
+          if type.eql?(:image)
+            cms_fortress_files_images_path
+          elsif type.eql?(:video)
+            cms_fortress_files_videos_path
+          else
+
+          end
         end
       end
 
@@ -44,7 +50,9 @@ module Cms
 
       def image_styles(m)
         links = []
-        m.file.styles.each {|k,v| links << link_to(k.to_s.titleize, m.file.url(k), class: 'label label-info editor-image-style', target: '_blank') }
+        links << link_to("Orig", m.file.url, class: 'badge badge-info editor-image-style', target: '_blank', title: "Select original size")
+        i = 0
+        m.file.styles.each {|k,v| links << link_to("#{ i+=1 }", m.file.url(k), class: 'badge badge-info editor-image-style', target: '_blank', title: "Select #{ k.to_s.titleize }") }
         raw links.join(" ")
       end
 

@@ -1,11 +1,27 @@
 %ul.thumbnails
   - media.each do |m|
-    %li.span3
-      .thumbnail(href="#")
-        = image_item(m)
-        .caption
-          %p
-            = image_styles(m)
+    - if type.eql?(:image)
+      %li.span2
+        .thumbnail(href="#")
+          = image_item(m)
+          .caption
+            %p
+              = image_styles(m)
+
+    - elsif type.eql?(:video)
+      %li.span2
+        .thumbnail(href="#")
+
+          %a.editor-video(src='#')
+            %video(width='128' height='90')
+              %source(src="#{ m.file.url }")
+
+            %p
+              %strong= m.label
+            %p
+              %small
+                = truncate m.description, length: 60
+    - else
 
 
 

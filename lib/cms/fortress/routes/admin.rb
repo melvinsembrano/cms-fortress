@@ -24,7 +24,7 @@ class ActionDispatch::Routing::Mapper
       get 'unauthorised' => 'admin#unauthorised', as: 'cms_fortress_unauthorised'
 
       get 'sites/:site_id/files/images' => 'admin#images', as: 'cms_fortress_files_images'
-      get 'sites/:site_id/files/videos' => 'admin#videos', as: 'cms_fortress_videos_images'
+      get 'sites/:site_id/files/videos' => 'admin#videos', as: 'cms_fortress_files_videos'
 
     end
 
