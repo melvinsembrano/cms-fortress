@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Cms-fortress by melvinsembrano</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Cms-fortress</h1>
+        <p class="header">Comfortable Mexican Sofa (CMS) - Users and Role Management extension</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/melvinsembrano/cms-fortress/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/melvinsembrano/cms-fortress/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/melvinsembrano/cms-fortress">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/melvinsembrano">melvinsembrano</a></p>
+
+
+      </header>
+      <section>
+        <p><img src="https://badge.fury.io/rb/cms-fortress.png" alt=""></p>
+
+<h1>
+<a name="cms-fortress" class="anchor" href="#cms-fortress"><span class="octicon octicon-link"></span></a>cms-fortress</h1>
+
+<p>An extension for the awesome Comfortable Mexican Sofa (<a href="https://github.com/comfy/comfortable-mexican-sofa">https://github.com/comfy/comfortable-mexican-sofa</a>) CMS Engine</p>
+
+<ul>
+<li>Added Role Management for proper workflow</li>
+<li>Added Devise for User and Session Management</li>
+<li>Added User Management</li>
+<li>Added Page caching control</li>
+<li>Added proper page workflow</li>
+<li>Customizable menus, role abilities</li>
+<li>Added layout theming, current themes (:default, :wide)</li>
+<li>Integrate Cms::Files (image,video and link) attachements into WYSIWYG editor buttons (wide theme only)</li>
+</ul><h3>
+<a name="note-with-the-major-changes-of-comfy-sofa-cms-fortress-supports-only-rails-40" class="anchor" href="#note-with-the-major-changes-of-comfy-sofa-cms-fortress-supports-only-rails-40"><span class="octicon octicon-link"></span></a>NOTE: with the major changes of comfy-sofa, cms-fortress supports only Rails 4.0++</h3>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Add gem defintion to your Gemfile:</p>
+
+<p>gem 'cms-fortress'</p>
+
+<p>Then from the Rails project's root run:</p>
+
+<pre><code>bundle install
+rails generate cms:fortress
+rake db:migrate
+</code></pre>
+
+<p>After that run your app and navigate to http://localhost:3000/cms-admin to start creating your pages, and also don't forget to delete your public/index.html file.</p>
+
+<pre><code>login using the following info below:
+
+username: admin@cmsfortress.com
+password: 1234qwer
+</code></pre>
+
+<p>===Adding custom role details</p>
+
+<p>You can create a custom role ability via a three-step process.</p>
+
+<p>1: Edit <tt>config/roles.yml</tt> and add the new role under the category you wish.</p>
+
+<pre><code>contents:
+  - pages
+  - files
+  - page.review
+  - page.publish
+designs:
+  - layouts
+  - snippets
+settings:
+  - sites
+  - roles
+  - users
+  - *my_role_detail*
+</code></pre>
+
+<p>2: Configure cms-fortress to add a new resource. Add this in an initializer:</p>
+
+<pre><code>Cms::Fortress.configure do |config|
+  config.settings_resources &lt;&lt; {
+    :name =&gt; 'my_role_detail',
+    :title =&gt; 'i18n.label.title', # this is passed to the t() function - can be plain text
+    :path =&gt; 'admin_my_role_details_path'
+  }
+  # the other two lists are "content_resources" and "design_resources"
+end
+</code></pre>
+
+<p>The path is eval'd at runtime, so you can use Rails helper methods such as
++current_user+ or <tt>@site</tt> in it. If the result is nil, the link will not show up
+in the left nav bar.</p>
+
+<p>3: Restart the server. Go into each Role you have defined and click
+"Load New Roles". Voila!</p>
+
+<h3>
+<a name="other-configuration" class="anchor" href="#other-configuration"><span class="octicon octicon-link"></span></a>Other configuration</h3>
+
+<p>You can turn off page workflow or page caching via configuration:</p>
+
+<pre><code>Cms::Fortress.configure do |config|
+  config.theme = :wide
+  config.enable_page_workflow = false
+  config.enable_page_caching = false
+end
+</code></pre>
+
+<h3>
+<a name="wide-theme" class="anchor" href="#wide-theme"><span class="octicon octicon-link"></span></a>Wide Theme</h3>
+
+<p>With wide theme, the layout and menus are being compacted so that you have all the area for authoring.  Files are also being nicely integrated to the WYSIWYG editor (tinymce).
+Below are the fetures for wide theme:</p>
+
+<ul>
+<li>Compact Layout and Menus</li>
+<li>Responsive Layout</li>
+<li>Fullcreen Editing</li>
+<li>Integrated image file attachement</li>
+<li>Integrated video file attachment</li>
+<li>Integrated link file attachement</li>
+</ul><p><img src="http://raw.github.com/melvinsembrano/cms-fortress/master/docs/screens/compact-layout-01.png" alt=""></p>
+
+<p><img src="http://raw.github.com/melvinsembrano/cms-fortress/master/docs/screens/files-integration-02.png" alt=""></p>
+
+<h3>
+<a name="todo-more-customization-documents-and-sample" class="anchor" href="#todo-more-customization-documents-and-sample"><span class="octicon octicon-link"></span></a>TODO: More customization documents and sample</h3>
+
+<p>For more Comfortable Mexican Sofa awesomeness visit the wiki page here <a href="https://github.com/comfy/comfortable-mexican-sofa/wiki">https://github.com/comfy/comfortable-mexican-sofa/wiki</a></p>
+
+<h2>
+<a name="contributing-to-cms-fortress" class="anchor" href="#contributing-to-cms-fortress"><span class="octicon octicon-link"></span></a>Contributing to cms-fortress</h2>
+
+<ul>
+<li>Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.</li>
+<li>Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.</li>
+<li>Fork the project.</li>
+<li>Start a feature/bugfix branch.</li>
+<li>Commit and push until you are happy with your contribution.</li>
+<li>Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.</li>
+<li>Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.</li>
+</ul>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
