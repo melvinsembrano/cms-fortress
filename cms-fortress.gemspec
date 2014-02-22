@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Melvin Sembrano"]
-  s.date = "2014-02-21"
+  s.date = "2014-02-22"
   s.description = "Comfortable Mexican Sofa (CMS) - User and role management extension"
   s.email = "melvinsembrano@gmail.com"
   s.extra_rdoc_files = [
@@ -144,7 +144,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<devise>, ["~> 3.2"])
       s.add_runtime_dependency(%q<cancan>, [">= 1.6.9"])
       s.add_runtime_dependency(%q<delayed_job>, ["~> 4"])
-      s.add_runtime_dependency(%q<tinymce-rails>, ["= 4.0.12"])
+      s.add_runtime_dependency(%q<tinymce-rails>, ["~> 4.0.0"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
       s.add_development_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
@@ -155,7 +155,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<devise>, ["~> 3.2"])
       s.add_dependency(%q<cancan>, [">= 1.6.9"])
       s.add_dependency(%q<delayed_job>, ["~> 4"])
-      s.add_dependency(%q<tinymce-rails>, ["= 4.0.12"])
+      s.add_dependency(%q<tinymce-rails>, ["~> 4.0.0"])
       s.add_dependency(%q<rdoc>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
@@ -167,7 +167,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<devise>, ["~> 3.2"])
     s.add_dependency(%q<cancan>, [">= 1.6.9"])
     s.add_dependency(%q<delayed_job>, ["~> 4"])
-    s.add_dependency(%q<tinymce-rails>, ["= 4.0.12"])
+    s.add_dependency(%q<tinymce-rails>, ["~> 4.0.0"])
     s.add_dependency(%q<rdoc>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
