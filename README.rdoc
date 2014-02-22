@@ -1,4 +1,7 @@
 {<img src="https://badge.fury.io/rb/cms-fortress.png" alt="Gem Version" />}[http://badge.fury.io/rb/cms-fortress]
+{<img src="https://gemnasium.com/melvinsembrano/cms-fortress.png" alt="Dependencies" />}[https://gemnasium.com/melvinsembrano/cms-fortress]
+{<img src="https://codeclimate.com/github/melvinsembrano/cms-fortress.png" alt="Code Climate" />}[https://codeclimate.com/github/melvinsembrano/cms-fortress]
+
 = cms-fortress
 
 An extension for the awesome Comfortable Mexican Sofa (https://github.com/comfy/comfortable-mexican-sofa) CMS Engine
