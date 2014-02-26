@@ -6,19 +6,19 @@ window.CMS.wysiwyg = ->
     menubar: 'tools format view'
     toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | fullscreen code | image fmedia link"
     plugins: ['code', 'fullscreen', 'media', 'link']
-    link_list: media.othersUrl()
+    link_list: CmsFortress.media.othersUrl()
     setup: (ed) ->
       ed.addButton 'image',
         title: 'Insert Image'
         onclick: ->
-          media.showImageDialog(ed)
+          CmsFortress.media.showImageDialog(ed)
 
       ed.addButton 'fmedia',
         tooltip: 'Insert Video'
         icon: 'media'
         stateSelector: ['img[data-mce-object=video]', 'img[data-mce-object=iframe]']
         onclick: ->
-          media.showVideoDialog(ed)
+          CmsFortress.media.showVideoDialog(ed)
 
 
 

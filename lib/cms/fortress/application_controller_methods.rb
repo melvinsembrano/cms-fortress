@@ -2,13 +2,30 @@
 module Cms
   module Fortress
     module ApplicationControllerMethods
+
       def after_sign_in_path_for(resource)
-        admin_cms_path
+        if resource.class.eql?(Cms::Fortress::User)
+          admin_cms_path
+        else
+          begin
+            stored_location_for(resource) || send("after_sign_in_path_for_#{ resource.class.name.underscore }", resource)
+          rescue
+            raise "Cannot find `after_sign_in_path_for_#{ resource.class.name.underscore }` in your ApplicationController class."
+          end
+        end
       end
 
       def after_sign_out_path_for(resource_or_scope)
         # request.referrer
-        admin_cms_path
+        if resource_or_scope.eql?(:cms_fortress_user)
+          admin_cms_path
+        else
+          begin
+            stored_location_for(resource_or_scope) || send("after_sign_out_path_for_#{ resource_or_scope.to_s }", resource_or_scope)
+          rescue
+            raise "Cannot find `after_sign_out_path_for_#{ resource.class.name.underscore }` in your ApplicationController class."
+          end
+        end
       end
 
       def ability_class

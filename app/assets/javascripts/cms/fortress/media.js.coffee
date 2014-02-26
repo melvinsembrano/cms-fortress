@@ -62,7 +62,9 @@ window.media =
     this.ed.selection.setContent(img)
     this.ed.nodeChanged()
 
+window.CmsFortress = window.CmsFortress || {}
 
+window.CmsFortress.media = media
 
 $(document).ready ->
-  media.init()
+  CmsFortress.media.init()
