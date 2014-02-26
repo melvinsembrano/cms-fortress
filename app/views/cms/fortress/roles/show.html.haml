@@ -16,7 +16,7 @@
       %th Manage
     = f.fields_for :role_details do |role|
       %tr
-        %td= role.object.name
+        %td= role_display(role.object.command)
         %td= role.check_box :can_view
         %td= role.check_box :can_create
 

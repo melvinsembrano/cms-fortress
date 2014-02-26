@@ -3,6 +3,11 @@ module Cms
 
     module ApplicationHelper
 
+      def role_display(command)
+        res = command.split(".")
+        raw "#{content_tag(:strong, res.first.titleize) } / #{ res[1..-1].map {|r| r.titleize}.join(" - ") }"
+      end
+
       def theme_name
         Cms::Fortress.configuration.theme.to_s
       end
