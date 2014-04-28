@@ -6,12 +6,8 @@ class Cms::Fortress::User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :timeoutable
 
-  # Setup accessible (or protected) attributes for your model
-  # TODO: remove this deprecation
-  # attr_accessible :email, :password, :password_confirmation, :remember_me, :role_id
-  # attr_accessible :title, :body
   belongs_to :role
 
 end
