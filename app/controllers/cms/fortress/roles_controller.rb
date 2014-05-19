@@ -1,4 +1,4 @@
-class Cms::Fortress::RolesController < Admin::Cms::BaseController
+class Cms::Fortress::RolesController < Comfy::Admin::Cms::BaseController
   before_filter do
     authorize! :manage, Cms::Fortress::Role
   end
@@ -65,8 +65,8 @@ class Cms::Fortress::RolesController < Admin::Cms::BaseController
 
     respond_to do |format|
       if @cms_fortress_role.save
-
-        format.html { redirect_to @cms_fortress_role, notice: 'Role was successfully created.' }
+        flash[:success] = "Role was successfully created."
+        format.html { redirect_to @cms_fortress_role }
         format.json { render json: @cms_fortress_role, status: :created, location: @cms_fortress_role }
       else
         format.html { render action: "new" }
@@ -82,7 +82,8 @@ class Cms::Fortress::RolesController < Admin::Cms::BaseController
 
     respond_to do |format|
       if @cms_fortress_role.update_attributes(role_params)
-        format.html { redirect_to @cms_fortress_role, notice: 'Role was successfully updated.' }
+        flash[:success] = "Role was successfully updated."
+        format.html { redirect_to @cms_fortress_role }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

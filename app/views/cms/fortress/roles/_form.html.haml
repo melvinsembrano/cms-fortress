@@ -1,19 +1,6 @@
-= form_for @cms_fortress_role, :html => {:class => 'form-horizontal'} do |f|
-  - if @cms_fortress_role.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@cms_fortress_role.errors.count, "error")} prohibited this role from being saved:"
-      %ul
-        - @cms_fortress_role.errors.full_messages.each do |msg|
-          %li= msg
+= form.text_field :name
+= form.text_area :description, :rows => 2
 
-  .control-group
-    = f.label :name, :class => 'control-label'
-    .controls
-      = f.text_field :name, :class => 'input-large'
-  .control-group
-    = f.label :description, :class => 'control-label'
-    .controls
-      = f.text_area :description, :rows => 2, :class => 'input-xxlarge'
-  .form-actions
-    = f.submit 'Save', :class => 'btn btn-primary'
-    = link_to 'Cancel', cms_fortress_roles_path, :class => 'btn'
+= form.form_group :class => 'form-actions' do
+  = form.submit @cms_fortress_role.new_record? ? 'Create' : 'Update', :class => 'btn btn-primary'
+

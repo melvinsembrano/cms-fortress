@@ -7,7 +7,7 @@ module Cms
       end
 
       def images
-        @files = Cms::File.images
+        @files = Comfy::Cms::File.images
         respond_to do |format|
           format.html { render partial: 'cms/fortress/shared/media_items', locals: {media: @files, type: :image} }
           format.json { render json: @files }
@@ -15,7 +15,7 @@ module Cms
       end
 
       def videos
-        @files = Cms::File.videos
+        @files = Comfy::Cms::File.videos
         respond_to do |format|
           format.html { render partial: 'cms/fortress/shared/media_items', locals: {media: @files, type: :video} }
           format.json { render json: @files }
@@ -23,7 +23,7 @@ module Cms
       end
 
       def other_files
-        @files = Cms::File.others.map {|f| {title: f.label, value: f.file.url}}
+        @files = Comfy::Cms::File.others.map {|f| {title: f.label, value: f.file.url}}
         respond_to do |format|
           format.html { render partial: 'cms/fortress/shared/media_items', locals: {media: @files, type: :others} }
           format.json { render json: @files }

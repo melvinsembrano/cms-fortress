@@ -1,5 +1,10 @@
 .page-header
-  %h3= t('cms.fortress.users.edit_title')
+  .btn-group.pull-right
+    = link_to "Cancel", cms_fortress_users_path, class: 'btn btn-default btn-sm'
 
-= render 'form'
+  %h3= t('cms.fortress.users.new_title')
+
+= comfy_form_for @cms_fortress_user, url: {action: :update} do |form|
+  = render form
+
 

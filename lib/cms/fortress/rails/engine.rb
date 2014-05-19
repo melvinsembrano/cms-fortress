@@ -7,34 +7,34 @@ module Cms
           # Devise::SessionsController.layout "cms/fortress/session"
           ApplicationController.helper(Cms::Fortress::ApplicationHelper)
 
-          Cms::ContentController.send(:include, Cms::Fortress::ContentRenderer)
-          Cms::Page.send(:include, Cms::Fortress::PageMethods)
-          Cms::File.send(:include, Cms::Fortress::FileMethods)
+          Comfy::Cms::ContentController.send(:include, Cms::Fortress::ContentRenderer)
+          Comfy::Cms::Page.send(:include, Cms::Fortress::PageMethods)
+          Comfy::Cms::File.send(:include, Cms::Fortress::FileMethods)
 
           # Insert Roles
-          Admin::Cms::SitesController.class_eval do
+          Comfy::Admin::Cms::SitesController.class_eval do
             before_action do
-              authorize! :manage, Cms::Site
+              authorize! :manage, Comfy::Cms::Site
             end
           end
-          Admin::Cms::LayoutsController.class_eval do
+          Comfy::Admin::Cms::LayoutsController.class_eval do
             before_action do
-              authorize! :manage, Cms::Layout
+              authorize! :manage, Comfy::Cms::Layout
             end
           end
-          Admin::Cms::SnippetsController.class_eval do
+          Comfy::Admin::Cms::SnippetsController.class_eval do
             before_action do
-              authorize! :manage, Cms::Snippet
+              authorize! :manage, Comfy::Cms::Snippet
             end
           end
-          Admin::Cms::PagesController.class_eval do
+          Comfy::Admin::Cms::PagesController.class_eval do
             before_action do
-              authorize! :manage, Cms::Page
+              authorize! :manage, Comfy::Cms::Page
             end
           end
-          Admin::Cms::FilesController.class_eval do
+          Comfy::Admin::Cms::FilesController.class_eval do
             before_action do
-              authorize! :manage, Cms::File
+              authorize! :manage, Comfy::Cms::File
             end
           end
 
@@ -47,7 +47,7 @@ module Cms
       end
 
       initializer :assets do |config|
-        Rails.application.config.assets.precompile += %w( cms/fortress/bootstrap.css cms/fortress/bootstrap-responsive.css cms/fortress/bootstrap.js cms/fortress/admin_overrides.css cms/fortress/session.css cms/fortress/themes/wide.css cms/fortress/themes/wide.js cms/fortress/media.js)
+        Rails.application.config.assets.precompile += %w( cms/fortress/bootstrap.css cms/fortress/bootstrap-responsive.css cms/fortress/bootstrap.js cms/fortress/admin_overrides.css cms/fortress/session.css cms/fortress/themes/wide.css cms/fortress/themes/wide.js cms/fortress/media.js html5shiv.js cms/fortress/cms_fortress.js)
       end
     end
   end

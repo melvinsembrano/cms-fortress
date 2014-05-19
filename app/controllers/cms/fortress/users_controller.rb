@@ -1,4 +1,4 @@
-class Cms::Fortress::UsersController < Admin::Cms::BaseController
+class Cms::Fortress::UsersController < Comfy::Admin::Cms::BaseController
   before_filter do
     authorize! :manage, Cms::Fortress::User
   end
@@ -48,7 +48,8 @@ class Cms::Fortress::UsersController < Admin::Cms::BaseController
 
     respond_to do |format|
       if @cms_fortress_user.save
-        format.html { redirect_to cms_fortress_users_path, notice: 'User was successfully created.' }
+        flash[:success] = "User was successfully created."
+        format.html { redirect_to cms_fortress_users_path }
         format.json { render json: @cms_fortress_user, status: :created, location: @cms_fortress_user }
       else
         format.html { render action: "new" }
@@ -70,7 +71,8 @@ class Cms::Fortress::UsersController < Admin::Cms::BaseController
 
     respond_to do |format|
       if @cms_fortress_user.update_attributes(user)
-        format.html { redirect_to cms_fortress_users_path, notice: 'User was successfully updated.' }
+        flash[:success] = "User was successfully updated."
+        format.html { redirect_to cms_fortress_users_path }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

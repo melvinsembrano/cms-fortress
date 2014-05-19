@@ -4,7 +4,7 @@ module Cms
 
       def after_sign_in_path_for(resource)
         if resource.class.eql?(Cms::Fortress::User)
-          admin_cms_path
+          comfy_admin_cms_path
         else
           begin
             stored_location_for(resource) || send("after_sign_in_path_for_#{ resource.class.name.underscore }", resource)

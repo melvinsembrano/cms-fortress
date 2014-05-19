@@ -1,5 +1,9 @@
 .page-header
+  .btn-group.pull-right
+    = link_to 'Cancel', cms_fortress_roles_path, :class => 'btn btn-default'
+
   %h3= t('cms.fortress.roles.new_title')
 
-= render 'form'
+= comfy_form_for @cms_fortress_role, url: {action: :create} do |form|
+  = render form
 

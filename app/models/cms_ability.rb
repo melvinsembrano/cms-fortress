@@ -26,17 +26,17 @@ class CmsAbility
             when 'settings.roles'
               can :manage, Cms::Fortress::Role
             when 'settings.sites'
-              can :manage, Cms::Site
+              can :manage, Comfy::Cms::Site
             when 'settings.users'
               can :manage, Cms::Fortress::User
             when 'contents.pages'
-              can :manage, Cms::Page
+              can :manage, Comfy::Cms::Page
             when 'contents.files'
-              can :manage, Cms::File
+              can :manage, Comfy::Cms::File
             when 'designs.layouts'
-              can :manage, Cms::Layout
+              can :manage, Comfy::Cms::Layout
             when 'designs.snippets'
-              can :manage, Cms::Snippet
+              can :manage, Comfy::Cms::Snippet
             else
               setup_role(role_detail, user) if defined?(setup_role)
           end
