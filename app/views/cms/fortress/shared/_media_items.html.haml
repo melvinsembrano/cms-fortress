@@ -13,7 +13,7 @@
         .thumbnail(href="#")
 
           %a.editor-video(href='#{ m.file.url }')
-            %video(width='128' height='90')
+            %video(width='128' height='90' data-video-title="#{ m.label }")
               %source(src="#{ m.file.url }")
 
             %p
