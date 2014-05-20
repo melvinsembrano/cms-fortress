@@ -1,7 +1,7 @@
 :coffeescript
   dateControl = $("#page_page_workflow_attributes_published_date")
   wkControl = $("#page_page_workflow_attributes_status_id")
-  parentControl = $("#page_page_workflow_attributes_published_date").parents(".control-group:first")
+  parentControl = $("#page_page_workflow_attributes_published_date").parents(".form-group:first")
 
   dateControl.val(dateControl.data("utcDate")).datepicker(dateFormat: "d MM, yy")
 

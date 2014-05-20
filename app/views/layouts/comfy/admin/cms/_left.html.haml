@@ -1,5 +1,4 @@
-
-= render '/admin/cms/partials/navigation_before'
+= render 'comfy/admin/cms/partials/navigation_before'
 
 %ul.navigation
   - if admin_page?
@@ -28,13 +27,11 @@
           = leftnav_item t(resource[:title]), path
 
     = render 'cms/fortress/admin/left_contents_nav'
-
     = cms_hook :navigation
 
   - else
     = render 'cms/fortress/admin/left_nav'
 
+  = render 'comfy/admin/cms/partials/navigation_inner'
 
-  = render '/admin/cms/partials/navigation_inner'
-
-= render '/admin/cms/partials/navigation_after'
+= render 'comfy/admin/cms/partials/navigation_after'

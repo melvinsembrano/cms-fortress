@@ -1,17 +1,19 @@
-.wide-body
-  = render :partial => 'layouts/admin/cms/center'
-= render :partial => 'layouts/admin/cms/footer'
+.container.wide-body
+  = render :partial => 'layouts/comfy/admin/cms/center'
+
+= render :partial => 'layouts/comfy/admin/cms/footer'
 
 :coffeescript
   ### iconize delete and edit links ###
-  $(".wide-body div.btn-group a:contains(Delete)").html("<i class='icon-remove icon-white' />").attr("title", "Delete").tooltip(placement: 'left')
-  $(".wide-body div.btn-group a:contains(Edit)").html("<i class='icon-edit' />").attr("title", "Edit").tooltip(placement: 'left')
-  $(".wide-body div.btn-group a:contains(Add Child)").html("<i class='icon-plus' /> Child").attr("title", "Add Child").tooltip(placement: 'left')
+  $(".wide-body div.btn-group a:contains(Delete)").html("<i class='glyphicon glyphicon-remove' />").attr("title", "Delete").tooltip(placement: 'left')
+  $(".wide-body div.btn-group a:contains(Edit)").html("<i class='glyphicon glyphicon-edit' />").attr("title", "Edit").tooltip(placement: 'left')
+  $(".wide-body div.btn-group a:contains(Add Child)").html("<i class='glyphicon glyphicon-plus' /> Child").attr("title", "Add Child").tooltip(placement: 'left')
 
-  $(".wide-body .page-header a:contains(Create New Page)").html("<i class='icon-file' /> New Page").attr("title", "Create New Page").tooltip(placement: 'left')
+  $(".wide-body .page-header a:contains(Create New Page)").html("<i class='glyphicon glyphicon-file' /> New Page").attr("title", "Create New Page").tooltip(placement: 'left')
 
   # New Page
   index_path = "#{ back_path }"
   $(".wide-body .page-header h2:contains(New), .wide-body .page-header h2:contains(Editing)").parent()
-    .prepend('<a class="btn pull-right" href="' + index_path + '" title="" data-original-title="Create New Page"><i class="icon-list"></i> Back</a> ')
-
+    .prepend('<a class="btn btn-default pull-right" href="' + index_path + '" title="" data-original-title="Create New Page"><i class="glyphicon glyphicon-chevron-left"></i> Back</a> ')
+  
+  $(".wide-body .page-header .btn").removeClass("pull-right").wrapAll("<div class='btn-group pull-right'></div>")

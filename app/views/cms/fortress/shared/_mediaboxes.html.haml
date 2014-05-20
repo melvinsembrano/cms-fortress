@@ -1,13 +1,15 @@
-#media-box-dialog.modal.hide(tabindex="-1" role="dialog" aria-labelledby="Image Selector" aria-hidden="true")
-  .modal-header
-    %button(type="button" class="close" data-dismiss="modal" aria-hidden="true") x
-    %h5.title Image Selector
-  #modal-body.modal-body
-    =# render partial: 'cms/fortress/shared/media_items', locals: {media: media}
+#media-box-dialog.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button(type="button" class="close" data-dismiss="modal" aria-hidden="true") x
+        %h5.title Image Selector
+      #modal-body.modal-body
+        =# render partial: 'cms/fortress/shared/media_items', locals: {media: media}
 
-  .modal-footer
-    %small.muted
-      Click the thumbnail to insert item to the selected editor.
+      .modal-footer
+        %small.muted
+          Click the thumbnail to insert item to the selected editor.
 
 :coffeescript
   CmsFortress.media.imagesPath = "#{ media_files_path(:image) }"

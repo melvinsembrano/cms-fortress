@@ -11,7 +11,7 @@ window.media =
   showImageDialog: (ed) ->
     this.ed = ed
     this.dlg.modal(show: true, backdrop: false)
-      .css("left", $(document).width() - (this.dlg.width() / 2))
+      #.css("left", $(document).width() - (this.dlg.width() / 2))
       .find(".title").html("Image Selector")
 
     $("#modal-body").html(this.loading).load this.imagesPath, ->
@@ -22,7 +22,7 @@ window.media =
   showVideoDialog: (ed) ->
     this.ed = ed
     this.dlg.modal(show: true, backdrop: false)
-      .css("left", $(document).width() - (this.dlg.width() / 2))
+      #.css("left", $(document).width() - (this.dlg.width() / 2))
       .find(".title").html("Video Selector")
 
     $("#modal-body").html(this.loading).load this.videosPath, ->

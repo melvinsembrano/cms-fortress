@@ -1,6 +1,6 @@
 module Cms
   module Fortress
-    class AdminController < Admin::Cms::BaseController
+    class AdminController < Comfy::Admin::Cms::BaseController
 
       def roles
         @roles = Role.all

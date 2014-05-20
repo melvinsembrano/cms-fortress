@@ -1,16 +1,16 @@
-%ul.thumbnails
+.row
   - media.each do |m|
     - if type.eql?(:image)
-      %li.span2
-        .thumbnail(href="#")
+      .col-xs-6.col-md-3
+        .thumbnail
           = image_item(m)
           .caption
             %p
               = image_styles(m)
 
     - elsif type.eql?(:video)
-      %li.span2
-        .thumbnail(href="#")
+      .col-xs-6.col-md-3
+        .thumbnail
 
           %a.editor-video(href='#{ m.file.url }')
             %video(width='128' height='90' data-video-title="#{ m.label }")
@@ -21,8 +21,5 @@
             %p
               %small
                 = truncate m.description, length: 60
-    - else
-
-
 
 

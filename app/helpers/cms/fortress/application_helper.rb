@@ -23,13 +23,13 @@ module Cms
       def back_path
         case controller_name
         when "pages"
-          admin_cms_site_pages_path
+          comfy_admin_cms_site_pages_path
         when "files"
-          admin_cms_site_files_path
+          comfy_admin_cms_site_files_path
         when "layouts"
-          admin_cms_site_layouts_path
+          comfy_admin_cms_site_layouts_path
         when "snippets"
-          admin_cms_site_snippets_path
+          comfy_admin_cms_site_snippets_path
         else
           ""
         end
@@ -50,14 +50,14 @@ module Cms
       def image_item(m)
         styles = {original: m.file.url}
         m.file.styles.keys.each {|k,v| styles[k] = m.file.url(k) }
-        image_tag m.file.url(:cms_thumb), alt: m.label, class: 'editor-image', data: styles
+        link_to image_tag(m.file.url(:cms_thumb), alt: m.label, class: 'editor-image', data: styles), "#"
       end
 
       def image_styles(m)
         links = []
-        links << link_to("Orig", m.file.url, class: 'badge badge-info editor-image-style', target: '_blank', title: "Select original size")
+        links << link_to("Original", m.file.url, class: 'label label-primary editor-image-style', target: '_blank', title: "Select original size")
         i = 0
-        m.file.styles.each {|k,v| links << link_to("#{ i+=1 }", m.file.url(k), class: 'badge badge-info editor-image-style', target: '_blank', title: "Select #{ k.to_s.titleize }") }
+        m.file.styles.each {|k,v| links << link_to("#{ i+=1 }", m.file.url(k), class: 'label label-primary editor-image-style', target: '_blank', title: "Select #{ k.to_s.titleize }") }
         raw links.join(" ")
       end
 

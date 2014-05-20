@@ -1,7 +1,7 @@
 class Cms::PageWorkflow < ActiveRecord::Base
   self.table_name = 'cms_page_workflows'
 
-  belongs_to :page, :foreign_key => 'cms_page_id'
+  belongs_to :page, :class_name => 'Comfy::Cms::Page', :foreign_key => 'cms_page_id'
 
   after_save do |record|
     record.page.update_attribute(:is_published, record.page_published?)
