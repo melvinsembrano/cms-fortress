@@ -46,14 +46,14 @@ module Cms
           rescue_from CanCan::AccessDenied do |ex|
             # if cannot view page check if can on files
             if controller_name.eql?('pages')
-              if can? :view, Cms::File
-                redirect_to admin_cms_site_files_path
+              if can? :view, Comfy::Cms::File
+                redirect_to comfy_admin_cms_site_files_path
               else
               redirect_to cms_fortress_unauthorised_path
               end
             elsif controller_name.eql?('layouts')
-              if can? :view, Cms::Snippet
-                redirect_to admin_cms_site_snippets_path
+              if can? :view, Comfy::Cms::Snippet
+                redirect_to comfy_admin_cms_site_snippets_path
               else
               redirect_to cms_fortress_unauthorised_path
               end
