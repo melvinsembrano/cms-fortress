@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "cms-fortress"
-  s.version = "1.1.8"
+  s.version = "1.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Melvin Sembrano"]
-  s.date = "2014-05-19"
+  s.date = "2014-05-20"
   s.description = "Comfortable Mexican Sofa (CMS) - User and role management extension"
   s.email = "melvinsembrano@gmail.com"
   s.extra_rdoc_files = [
@@ -46,8 +46,6 @@ Gem::Specification.new do |s|
     "app/models/cms/fortress/user.rb",
     "app/models/cms/page_workflow.rb",
     "app/models/cms_ability.rb",
-    "app/views/admin/cms/pages/_form.html.haml",
-    "app/views/admin/cms/partials/_body_before.html.haml",
     "app/views/cms/fortress/admin/_left_contents_nav.html.haml",
     "app/views/cms/fortress/admin/_left_designs_nav.html.haml",
     "app/views/cms/fortress/admin/_left_nav.html.haml",
@@ -64,27 +62,27 @@ Gem::Specification.new do |s|
     "app/views/cms/fortress/roles/index.html.haml",
     "app/views/cms/fortress/roles/new.html.haml",
     "app/views/cms/fortress/roles/show.html.haml",
-    "app/views/cms/fortress/shared/_admin_topnav.html.haml",
     "app/views/cms/fortress/shared/_media_items.html.haml",
     "app/views/cms/fortress/shared/_mediaboxes.html.haml",
+    "app/views/cms/fortress/shared/_menu.html.haml",
     "app/views/cms/fortress/shared/_navbar.html.haml",
     "app/views/cms/fortress/shared/_page_extend.html.haml",
     "app/views/cms/fortress/shared/_page_extend_js.html.haml",
-    "app/views/cms/fortress/themes/wide/_admin_topnav.html.haml",
     "app/views/cms/fortress/themes/wide/_body.html.haml",
+    "app/views/cms/fortress/themes/wide/_menu.html.haml",
     "app/views/cms/fortress/users/_form.html.haml",
     "app/views/cms/fortress/users/edit.html.haml",
     "app/views/cms/fortress/users/index.html.haml",
     "app/views/cms/fortress/users/new.html.haml",
     "app/views/cms/fortress/users/sessions/.DS_Store",
     "app/views/cms/fortress/users/sessions/new.html.haml",
-    "app/views/layouts/admin/cms/.DS_Store",
-    "app/views/layouts/admin/cms/_body.html.haml",
-    "app/views/layouts/admin/cms/_footer.html.haml",
-    "app/views/layouts/admin/cms/_head.html.haml",
-    "app/views/layouts/admin/cms/_left.html.haml",
-    "app/views/layouts/cms/fortress/default.html.erb",
-    "app/views/layouts/cms/fortress/session.html.erb",
+    "app/views/comfy/admin/cms/pages/_form.html.haml",
+    "app/views/comfy/admin/cms/partials/_body_before.html.haml",
+    "app/views/layouts/cms/fortress/session.html.haml",
+    "app/views/layouts/comfy/admin/cms/_body.html.haml",
+    "app/views/layouts/comfy/admin/cms/_footer.html.haml",
+    "app/views/layouts/comfy/admin/cms/_head.html.haml",
+    "app/views/layouts/comfy/admin/cms/_left.html.haml",
     "cms-fortress.gemspec",
     "config/initializers/cms_fortress.rb",
     "config/locales/en.yml",
