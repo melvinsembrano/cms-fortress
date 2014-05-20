@@ -1,20 +1,14 @@
-body#comfy .body-wrapper {
-  margin-top: 2.9em;
+
+.alert-notice {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
 }
 
-.navbar-container, .footer-container {
-  margin-left: 1.4em;
+.alert-notice hr {
+  border-top-color: #c9e2b3;
 }
 
-.footer-container {
-  margin-top: 1em;
-}
-
-body#comfy form.formatted.form-horizontal .control-group .controls select.status-control,
-body#comfy form.formatted.form-horizontal .control-group .controls input[type='text'].status-control {
-  width: 30%;
-}
-
-body#comfy .nav-height {
-
+.alert-notice .alert-link {
+  color: #2b542c;
 }

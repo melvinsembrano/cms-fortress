@@ -1,10 +1,13 @@
-.navbar.navbar-inverse.navbar-fixed-top
-  .navbar-inner
-    .container
-      %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
+%nav.navbar.navbar-default(role="navigation")
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle(type="button" data-toggle="collapse" data-target="#main-nav")
+        %span.sr-only Toggle Navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.brand{:href => "#"}= t('cms.fortress.title')
-      .nav-collapse.collapse
-      / /.nav-collapse
+      %a.navbar-brand(href="#")= t('cms.fortress.title')
+
+    .collapse.navbar-collapse#main-nav
+      %ul.nav.navbar-nav
+

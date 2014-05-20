@@ -17,7 +17,7 @@ module Cms
       def after_sign_out_path_for(resource_or_scope)
         # request.referrer
         if resource_or_scope.eql?(:cms_fortress_user)
-          admin_cms_path
+          comfy_admin_cms_path
         else
           begin
             stored_location_for(resource_or_scope) || send("after_sign_out_path_for_#{ resource_or_scope.to_s }", resource_or_scope)
