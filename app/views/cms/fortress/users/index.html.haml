@@ -6,12 +6,11 @@
 
 %table.table.table-hover.table-bordered
   %tr
-    %th Lastname
-    %th Firstname
-    %th Email
-    %th Role
+    %th= t('cms.fortress.users.last_name')
+    %th= t('cms.fortress.users.first_name')
+    %th= t('cms.fortress.users.email')
+    %th= t('cms.fortress.users.role')
     %th
-
 
   - @cms_fortress_users.each do |cms_fortress_user|
     %tr
@@ -21,6 +20,6 @@
       %td= cms_fortress_user.role.name
       %td
         .btn-group.pull-right
-          = link_to 'Edit', edit_cms_fortress_user_path(cms_fortress_user), :class => 'btn btn-sm btn-default'
-          = link_to 'Delete', cms_fortress_user, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-sm btn-danger'
+          = link_to t('cms.fortress.edit'), edit_cms_fortress_user_path(cms_fortress_user), :class => 'btn btn-sm btn-default'
+          = link_to t('cms.fortress.users.delete'), cms_fortress_user, method: :delete, data: { confirm: t('cms.fortress.are_you_sure') }, :class => 'btn btn-sm btn-danger'
 
