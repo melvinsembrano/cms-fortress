@@ -1,0 +1,63 @@
+de:
+  cms:
+    fortress:
+      page_title: CMS Fortress Admin
+      title: CMS Fortress
+      contents: Inhalte
+      design: Design
+      admin: Admin
+      login: Logout
+      logout: Logout
+      create: Erstellen
+      update: Aktualisieren
+      delete: Löschen
+      edit: Bearbeiten
+      are_you_sure: Sind Sie sicher?
+      cancel: Abbrechen
+      published: Publiziert
+      cached_timeout: Cached Timeout
+      toggle_navigation: Navigation einklappen
+      image_selector: Bildauswahl
+      insert_item: Ein Bild anklicken um es in den ausgewählten Editor einzufügen.
+      setttings: Einstellungen
+
+      admin:
+        users: Benutzer
+        not_authorized: Sie sind nicht berechtigt diese Funktionalität zu nutzen
+        settings_dashboard: Dashboard für Einstellungen
+        roles: Rollen
+        design_dashboard: Dashboard für Designs
+        design_related_information: Diese Seite wird Design spezifische Einstellungen zeigen.
+        content_dashboard: Dashboard für Inhalte
+        content_related_information: "Diese Seite wird Inhalt spezifische Einstellungen zeigen (Historie, Graphen, Analytics und andere.)"
+
+      roles:
+        title: Rollen
+        new_link: Neue Rolle
+        edit_title: Rolle bearbeiten
+        new_title: Neue Rolle erstellen
+        back: Zurück
+        load: Neue Rollen laden
+        role: Rolle
+        show: Anzeigen
+        manage: Verwalten
+        save: Speichern
+        description: Beschreibung
+        show_access_rights: Zugriffsrechte anzeigen
+        name: Name
+
+      users:
+        title: Benutzer
+        new_link: Neuer Benutzer
+        edit_title: Benutzer bearbeiten
+        new_title: Neuen benutzer erstellen
+        last_name: Nachname
+        first_name: Vorname
+        email: E-Mail
+        role: Rolle
+        sessions:
+          new:
+            sign_in: Anmelden
+            email_address: E-Mail Adresse
+            password: Password
+            remember_me: Angemeldet bleiben
