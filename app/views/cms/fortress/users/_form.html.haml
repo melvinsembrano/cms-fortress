@@ -6,5 +6,5 @@
 = form.password_field :password_confirmation
 
 = form.form_group :class => 'form-actions' do
-  = form.submit @cms_fortress_user.new_record? ? 'Create' : 'Update', :class => 'btn btn-primary'
+  = form.submit @cms_fortress_user.new_record? ? t('cms.fortress.create') : t('cms.fortress.update'), :class => 'btn btn-primary'
 

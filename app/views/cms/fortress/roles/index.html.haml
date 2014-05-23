@@ -4,8 +4,8 @@
 
 %table.table.table-hover.table-bordered.table-striped
   %tr
-    %th Name
-    %th{:style => 'width: 60%;'} Description
+    %th= t('cms.fortress.roles.name')
+    %th{:style => 'width: 60%;'}= t('cms.fortress.roles.description')
     %th
 
   - @cms_fortress_roles.each do |cms_fortress_role|
@@ -14,7 +14,7 @@
       %td= cms_fortress_role.description
       %td
         .btn-group.pull-right
-          = link_to 'Show Access Rights', cms_fortress_role, :class => 'btn btn-sm btn-info'
-          = link_to 'Edit', edit_cms_fortress_role_path(cms_fortress_role), :class => 'btn btn-sm btn-default'
-          = link_to 'Delete', cms_fortress_role, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-sm btn-danger'
+          = link_to t('cms.fortress.roles.show_access_rights'), cms_fortress_role, :class => 'btn btn-sm btn-info'
+          = link_to t('cms.fortress.edit'), edit_cms_fortress_role_path(cms_fortress_role), :class => 'btn btn-sm btn-default'
+          = link_to t('cms.fortress.delete'), cms_fortress_role, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-sm btn-danger'
 

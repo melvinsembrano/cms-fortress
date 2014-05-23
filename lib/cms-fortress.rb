@@ -33,20 +33,20 @@ module Cms
         @enable_page_workflow = true
         @enable_page_caching = true
         @content_resources = [
-          {:name => 'pages', :title => 'admin.cms.base.pages',
+          {:name => 'pages', :title => 'comfy.admin.cms.base.pages',
            :path => 'comfy_admin_cms_site_pages_path(@site) if @site && !@site.new_record?'},
-          {:name => 'files', :title => 'admin.cms.base.files',
+          {:name => 'files', :title => 'comfy.admin.cms.base.files',
           :path => 'comfy_admin_cms_site_files_path(@site) if @site && !@site.new_record?'}
         ]
         @design_resources = [
-          {:name => 'layouts', :title => 'admin.cms.base.layouts',
+          {:name => 'layouts', :title => 'comfy.admin.cms.base.layouts',
            :path => 'comfy_admin_cms_site_layouts_path(@site) if @site && !@site.new_record?'
           },
-          {:name => 'snippets', :title => 'admin.cms.base.snippets',
+          {:name => 'snippets', :title => 'comfy.admin.cms.base.snippets',
           :path => 'comfy_admin_cms_site_snippets_path(@site) if @site && !@site.new_record?'}
         ]
         @settings_resources = [
-          {:name => 'sites', :title => 'admin.cms.base.sites',
+          {:name => 'sites', :title => 'comfy.admin.cms.base.sites',
           :path => 'comfy_admin_cms_sites_path'},
           {:name => 'roles', :title => 'cms.fortress.roles.title',
           :path => 'cms_fortress_roles_path'},

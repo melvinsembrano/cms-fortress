@@ -1,7 +1,7 @@
 - if Cms::Fortress.configuration.enable_page_workflow
   = form.fields_for :page_workflow, control_col: "col-sm-4" do |wf|
     = wf.select :status_id, Cms::PageWorkflow.statuses_for_select(can?(:manage, 'contents.page.publish'), can?(:manage, 'contents.page.review')), {}, {class: "status-control"}
-    = wf.text_field :published_date, label: 'Published', class: "status-control", :data => {:utc_date => (@page.page_workflow.published_date.nil? ? Time.now : @page.page_workflow.published_date).strftime("%d %B, %Y") }
+    = wf.text_field :published_date, label: t('cms.fortress.published'), class: "status-control", :data => {:utc_date => (@page.page_workflow.published_date.nil? ? Time.now : @page.page_workflow.published_date).strftime("%d %B, %Y") }
 
 - if Cms::Fortress.configuration.enable_page_caching
-  = form.select :cached_timeout, Cms::PageWorkflow.cached_timeout_for_select, {label: 'Cached Timeout', control_col: "col-sm-4"}, {class: 'status-control'}
+  = form.select :cached_timeout, Cms::PageWorkflow.cached_timeout_for_select, {label: t('cms.fortress.cached_timeout'), control_col: "col-sm-4"}, {class: 'status-control'}

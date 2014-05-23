@@ -1,6 +1,5 @@
 - if @site && !@site.new_record?
   - if Cms::Fortress.configuration.content_resources.any? {|resource| can? :view, "contents.#{resource[:name]}" }
-
     %li.dropdown(class="#{ "active" if content_page? }")
       %a.dropdown-toggle(data-toggle='dropdown' href='#')
         = t("cms.fortress.contents")
@@ -13,9 +12,7 @@
             - if path
               = topnav_item t(resource[:title]), path, current_page?(path)
 
-
   - if Cms::Fortress.configuration.design_resources.any? {|resource| can? :view, "designs.#{resource[:name]}" }
-
     %li.dropdown(class="#{ "active" if design_page? }")
       %a.dropdown-toggle(data-toggle='dropdown' href='#')
         = t("cms.fortress.design")
@@ -26,8 +23,6 @@
             - path = begin; eval(resource[:path]);rescue;end
             - if path
               = topnav_item t(resource[:title]), path, current_page?(path)
-
-
 
   - if Cms::Fortress.configuration.settings_resources.any? {|resource| can? :view, "settings.#{resource[:name]}" }
     %li.dropdown(class="#{ "active" if admin_page? }")
@@ -40,6 +35,3 @@
             - path = begin; eval(resource[:path]); rescue; end
             - if path
               = topnav_item t(resource[:title]), path, current_page?(path)
-
-
-
