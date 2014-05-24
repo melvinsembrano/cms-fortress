@@ -3,13 +3,13 @@
     .modal-content
       .modal-header
         %button(type="button" class="close" data-dismiss="modal" aria-hidden="true") x
-        %h5.title Image Selector
+        %h5.title= t('cms.fortress.image_selector')
       #modal-body.modal-body
         =# render partial: 'cms/fortress/shared/media_items', locals: {media: media}
 
       .modal-footer
         %small.muted
-          Click the thumbnail to insert item to the selected editor.
+          = t('cms.fortress.insert_item')
 
 :coffeescript
   CmsFortress.media.imagesPath = "#{ media_files_path(:image) }"

@@ -3,7 +3,6 @@ class Cms::Fortress::RolesController < Comfy::Admin::Cms::BaseController
     authorize! :manage, Cms::Fortress::Role
   end
 
-
   # GET /cms/fortress/roles
   # GET /cms/fortress/roles.json
   def index
@@ -29,7 +28,7 @@ class Cms::Fortress::RolesController < Comfy::Admin::Cms::BaseController
   def refresh
     @cms_fortress_role = Cms::Fortress::Role.find(params[:id])
     @cms_fortress_role.load_defaults
-    
+
     respond_to do |format|
       if @cms_fortress_role.save
         format.html { redirect_to @cms_fortress_role }

@@ -8,6 +8,28 @@ en:
       admin: Admin
       login: Logout
       logout: Logout
+      create: Create
+      update: Update
+      delete: Delete
+      edit: Edit
+      are_you_sure: Are you sure?
+      cancel: Cancel
+      published: Published
+      cached_timeout: Cached Timeout
+      toggle_navigation: Toggle Navigation
+      image_selector: Image Selector
+      insert_item: Click the thumbnail to insert item to the selected editor.
+      settings: Settings
+
+      admin:
+        users: Users
+        not_authorized: You are not authorized to access this functionality
+        settings_dashboard: Settings Dashboard
+        roles: Roles
+        design_dashboard: Design Dashboard
+        design_related_information: This page will show design related information.
+        content_dashboard: Content Dashboard
+        content_related_information: "This page will show contents related information (history, graphs, analytics and etc.)"
 
       roles:
         title: Roles
@@ -16,11 +38,26 @@ en:
         new_title: Create New Role
         back: Back
         load: Load New Roles
+        role: Role
+        show: Show
+        manage: Manage
+        save: Save
+        description: Description
+        show_access_rights: Show Access Rights
+        name: Name
 
       users:
         title: Users
         new_link: New User
         edit_title: Edit User
         new_title: Create New User
-
-
+        last_name: Lastname
+        first_name: Firstname
+        email: Email
+        role: Role
+        sessions:
+          new:
+            sign_in: Sign In
+            email_address: Email Address
+            password: Password
+            remember_me: Remember me
