@@ -19,6 +19,7 @@ en:
       toggle_navigation: Toggle Navigation
       image_selector: Image Selector
       insert_item: Click the thumbnail to insert item to the selected editor.
+      settings: Settings
 
       admin:
         users: Users
