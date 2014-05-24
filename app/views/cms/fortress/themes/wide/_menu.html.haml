@@ -27,7 +27,7 @@
   - if Cms::Fortress.configuration.settings_resources.any? {|resource| can? :view, "settings.#{resource[:name]}" }
     %li.dropdown(class="#{ "active" if admin_page? }")
       %a.dropdown-toggle(data-toggle='dropdown' href='#')
-        = t("cms.fortress.setttings")
+        = t("cms.fortress.settings")
         %b.caret
       %ul.dropdown-menu
         - Cms::Fortress.configuration.settings_resources.each do |resource|
