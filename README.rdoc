@@ -77,7 +77,7 @@ in the left nav bar.
 
 === Other configuration
 
-You can turn off page workflow or page caching via configuration:
+You can turn off page workflow or page caching via configuration and you can set the theme to +:wide+ or +:default+:
 
     Cms::Fortress.configure do |config|
       config.theme = :wide
