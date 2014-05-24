@@ -1,5 +1,16 @@
 .container.wide-body
-  = render :partial => 'layouts/comfy/admin/cms/center'
+  - if controller_name.eql?('revisions')
+    .row
+      .col-sm-9
+        = render :partial => 'layouts/comfy/admin/cms/center'
+      .col-sm-3
+        .panel.panel-default.revision-list
+          .panel-heading
+            Revisions
+          .panel-body
+            = yield :right_column
+  - else
+    = render :partial => 'layouts/comfy/admin/cms/center'
 
 = render :partial => 'layouts/comfy/admin/cms/footer'
 
