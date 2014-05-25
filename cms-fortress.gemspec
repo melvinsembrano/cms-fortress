@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "cms-fortress"
-  s.version = "1.2.0"
+  s.version = "1.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Melvin Sembrano"]
-  s.date = "2014-05-20"
+  s.date = "2014-05-25"
   s.description = "Comfortable Mexican Sofa (CMS) - User and role management extension"
   s.email = "melvinsembrano@gmail.com"
   s.extra_rdoc_files = [
@@ -82,6 +82,7 @@ Gem::Specification.new do |s|
     "app/views/layouts/comfy/admin/cms/_left.html.haml",
     "cms-fortress.gemspec",
     "config/initializers/cms_fortress.rb",
+    "config/locales/de.yml",
     "config/locales/en.yml",
     "config/roles.yml",
     "db/migrate/01_devise_create_cms_fortress_users.rb",
