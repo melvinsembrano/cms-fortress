@@ -47,12 +47,25 @@ de:
         description: Beschreibung
         show_access_rights: Zugriffsrechte anzeigen
         name: Name
+        contents: Inhalte
+        designs: Designs
+        settings: Einstellungen
+        files: Dateien
+        page: Seite
+        publish: publizieren
+        review: reviewen
+        pages: Seiten
+        layouts: Layouts
+        snippets: Schnipsel
+        roles: Rollen
+        sites: Seiten
+        users: Benutzer
 
       users:
         title: Benutzer
         new_link: Neuer Benutzer
         edit_title: Benutzer bearbeiten
-        new_title: Neuen benutzer erstellen
+        new_title: Neuen Benutzer erstellen
         last_name: Nachname
         first_name: Vorname
         email: E-Mail
@@ -63,3 +76,19 @@ de:
             email_address: E-Mail Adresse
             password: Password
             remember_me: Angemeldet bleiben
+
+  activerecord:
+    attributes:
+      cms/fortress/user:
+        last_name: Nachname
+        first_name: Vorname
+        email: E-Mail
+        role_id: Rolle
+        password: Passwort
+        password_confirmation: Passwort Bestätigung
+      cms/fortress/role:
+        name: Name
+        description: Beschreibung
+      cms/fortress/role_detail:
+        contents: Inhalte
+
