@@ -5,6 +5,13 @@
   color: #3c763d;
 }
 
+.alert-error {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: center;
+}
+
 .alert-notice hr {
   border-top-color: #c9e2b3;
 }
@@ -12,3 +19,5 @@
 .alert-notice .alert-link {
   color: #2b542c;
 }
+
+
