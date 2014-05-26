@@ -86,3 +86,12 @@ en:
         role_id: Role
         password: Password
         password_confirmation: Password Confirmation
+      cms/fortress/role:
+        name: Name
+        description: Description
+      cms/fortress/role_detail:
+        contents: Contents
+      comfy/cms/page:
+        full_path: Path
+        parent_id: Parent page
+        slug: Slug

@@ -4,9 +4,10 @@ window.CMS.wysiwyg = ->
   tinymce.init
     selector: 'textarea[data-cms-rich-text]'
     menubar: 'tools format view'
-    toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | fullscreen code | image fmedia link"
-    plugins: ['code', 'fullscreen', 'media', 'link']
+    toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table | fullscreen code | image fmedia link"
+    plugins: ['code', 'fullscreen', 'media', 'link', 'table']
     link_list: CmsFortress.media.othersUrl()
+    language : 'en'
     setup: (ed) ->
       ed.addButton 'image',
         title: 'Insert Image'

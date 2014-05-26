@@ -15,7 +15,7 @@ de:
       are_you_sure: Sind Sie sicher?
       cancel: Abbrechen
       published: Publiziert
-      cached_timeout: Cached Timeout
+      cached_timeout: Cache Dauer
       toggle_navigation: Navigation einklappen
       image_selector: Bildauswahl
       insert_item: Ein Bild anklicken um es in den ausgewählten Editor einzufügen.
@@ -91,4 +91,8 @@ de:
         description: Beschreibung
       cms/fortress/role_detail:
         contents: Inhalte
+      comfy/cms/page:
+        full_path: Pfad
+        parent_id: Übergeordnete Seite
+        slug: URL-Pfad
 
