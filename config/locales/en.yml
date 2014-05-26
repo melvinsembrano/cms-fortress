@@ -30,6 +30,8 @@ en:
         design_related_information: This page will show design related information.
         content_dashboard: Content Dashboard
         content_related_information: "This page will show contents related information (history, graphs, analytics and etc.)"
+        errors:
+          missing_roles_yaml_file: "The configuration file config/roles.yml is missing."
 
       roles:
         title: Roles

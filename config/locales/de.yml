@@ -30,6 +30,8 @@ de:
         design_related_information: Diese Seite wird Design spezifische Einstellungen zeigen.
         content_dashboard: Dashboard für Inhalte
         content_related_information: "Diese Seite wird Inhalt spezifische Einstellungen zeigen (Historie, Graphen, Analytics und andere.)"
+        errors:
+          missing_roles_yaml_file: "Die Konfigurationsdatei config/roles.yml ist nicht vorhanden."
 
       roles:
         title: Rollen
