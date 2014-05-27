@@ -7,6 +7,8 @@ module Cms
           # Devise::SessionsController.layout "cms/fortress/session"
           ApplicationController.helper(Cms::Fortress::ApplicationHelper)
 
+          Sprockets::Context.send :include, Cms::Fortress::SprocketHelper
+
           Comfy::Cms::ContentController.send(:include, Cms::Fortress::ContentRenderer)
           Comfy::Cms::Page.send(:include, Cms::Fortress::PageMethods)
           Comfy::Cms::File.send(:include, Cms::Fortress::FileMethods)
