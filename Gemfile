@@ -6,6 +6,7 @@ source "http://rubygems.org"
   gem 'cancan', '>=1.6.9'
   gem 'delayed_job', '~>4'
   gem 'tinymce-rails', '~>4.0.0'
+  gem 'tinymce-rails-langs', '~>4.0'
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
