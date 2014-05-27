@@ -1,7 +1,7 @@
 module Cms::Fortress::ApplicationHelper
   def role_display(command)
     res = command.split(".")
-    raw "#{content_tag(:strong, res.first.titleize) } / #{ res[1..-1].map {|r| r.titleize}.join(" - ") }"
+    raw "#{content_tag(:strong, t("cms.fortress.roles.#{res.first}")) } / #{ res[1..-1].map {|r| t("cms.fortress.roles.#{r}")}.join(" - ") }"
   end
 
   def theme_name

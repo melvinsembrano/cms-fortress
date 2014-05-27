@@ -47,6 +47,19 @@ en:
         description: Description
         show_access_rights: Show Access Rights
         name: Name
+        contents: Contents
+        designs: Designs
+        settings: Settings
+        files: Files
+        page: Page
+        publish: publish
+        review: review
+        pages: Pages
+        layouts: Layouts
+        snippets: Snippets
+        roles: Roles
+        sites: Sites
+        users: Users
 
       users:
         title: Users
@@ -63,3 +76,13 @@ en:
             email_address: Email Address
             password: Password
             remember_me: Remember me
+
+  activerecord:
+    attributes:
+      cms/fortress/user:
+        last_name: Lastname
+        first_name: Firstname
+        email: Email
+        role_id: Role
+        password: Password
+        password_confirmation: Password Confirmation
