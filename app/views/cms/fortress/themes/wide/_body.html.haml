@@ -1,3 +1,8 @@
+- unless @site.nil? || @site.new_record?
+  .container.current-site-info
+    %span.label.label-primary
+      = @site.label
+
 .container.wide-body
   - if controller_name.eql?('revisions')
     .row
