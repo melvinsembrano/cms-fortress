@@ -10,10 +10,10 @@ class Cms::Fortress::Role < ActiveRecord::Base
     # load user custom roles
     if File.exist?(file = File.join(Rails.root, "config", "roles.yml"))
       load_from_file(file)
+    else
+      errors[:base] << I18n.t('cms.fortress.admin.errors.missing_roles_yaml_file')
+      raise Cms::Fortress::Error::MissingRoleConfigurationFile
     end
-
-    file = File.expand_path(File.join(File.dirname(__FILE__), "../../../../", "config", "roles.yml"))
-    load_from_file(file)
   end
 
   private

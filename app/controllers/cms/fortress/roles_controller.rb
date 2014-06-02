@@ -60,7 +60,12 @@ class Cms::Fortress::RolesController < Comfy::Admin::Cms::BaseController
   # POST /cms/fortress/roles.json
   def create
     @cms_fortress_role = Cms::Fortress::Role.new(role_params)
-    @cms_fortress_role.load_defaults
+    begin
+      @cms_fortress_role.load_defaults
+    rescue Cms::Fortress::Error::MissingRoleConfigurationFile
+      flash[:error] = @cms_fortress_role.errors.messages[:base].first
+      render action: "new" and return
+    end
 
     respond_to do |format|
       if @cms_fortress_role.save
