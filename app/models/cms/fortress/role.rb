@@ -12,7 +12,7 @@ class Cms::Fortress::Role < ActiveRecord::Base
       load_from_file(file)
     else
       errors[:base] << I18n.t('cms.fortress.admin.errors.missing_roles_yaml_file')
-      raise Error::MissingRoleConfigurationFile
+      raise Cms::Fortress::Error::MissingRoleConfigurationFile
     end
   end
 

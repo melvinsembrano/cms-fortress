@@ -1,3 +1,6 @@
+require 'cms/fortress/settings'
+require 'cms/fortress/error'
+
 module Cms::Fortress::ApplicationHelper
   def role_display(command)
     res = command.split(".")
@@ -84,6 +87,11 @@ module Cms::Fortress::ApplicationHelper
     Cms::Fortress.configuration.content_resources.
         map { |resource| resource[:name] }.
         include?(controller_name)
+  end
+
+  def settings
+    settings = Settings.new(:global_settings)
+    settings
   end
 end
 

@@ -62,7 +62,7 @@ class Cms::Fortress::RolesController < Comfy::Admin::Cms::BaseController
     @cms_fortress_role = Cms::Fortress::Role.new(role_params)
     begin
       @cms_fortress_role.load_defaults
-    rescue Error::MissingRoleConfigurationFile
+    rescue Cms::Fortress::Error::MissingRoleConfigurationFile
       flash[:error] = @cms_fortress_role.errors.messages[:base].first
       render action: "new" and return
     end

@@ -1,0 +1,13 @@
+default: &default
+  title: "Kenny CMS"
+  title_link: "#"
+
+development:
+  title: "Kenny CMS"
+  title_link: "#"
+
+production:
+  <<: *default
+
+test:
+  <<: *default
