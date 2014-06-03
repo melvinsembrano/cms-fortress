@@ -5,8 +5,8 @@ class Cms::Fortress::User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
-  # devise :database_authenticatable,
-  #        :recoverable, :rememberable, :trackable, :validatable, :timeoutable
+  devise :database_authenticatable,
+         :recoverable, :rememberable, :trackable, :validatable, :timeoutable
 
   belongs_to :role
   belongs_to :site, class_name: "Comfy::Cms::Site", foreign_key: :site_id
