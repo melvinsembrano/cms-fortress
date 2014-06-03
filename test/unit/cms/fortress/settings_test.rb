@@ -1,8 +1,16 @@
 require 'test_helper'
 
-class Cms::Fortress::SettingsTest < MiniTest::Test
+class Cms::Fortress::SettingsTest < ActiveSupport::TestCase
 
-  # test "it should create a Settings instance" do
-  #   # test
-  # end
+  test "it_should_raise_MissingConfigFile_exception" do
+    assert_raises (Cms::Fortress::Error::MissingConfigFile) {
+      Cms::Fortress::Settings.new(:bla)
+    }
+  end
+
+  test "test_it_should_return_the_config_file" do
+    settings = Cms::Fortress::Settings.new(:global_settings)
+    assert_equal(settings.title, 'Kenny CMS')
+  end
+
 end

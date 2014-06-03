@@ -1,13 +1,12 @@
 # encoding: utf-8
-require 'rubygems'
-require 'bundler'
+require 'bundler/gem_tasks'
 require 'rake/testtask'
 require 'rdoc/task'
 
-Rake::TestTask.new(:test) do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
+Rake::TestTask.new do |t|
+  t.libs << 'test'
+  t.test_files = FileList['test/**/*_test.rb']
+  t.verbose = false
 end
 
 task :default => :test

@@ -3,15 +3,15 @@
 one:
   name: MyString
   command: MyString
-  create: false
-  update: false
-  delete: false
-  view: false
+  can_create: false
+  can_update: false
+  can_delete: false
+  can_view: false
 
 two:
   name: MyString
   command: MyString
-  create: false
-  update: false
-  delete: false
-  view: false
+  can_create: false
+  can_update: false
+  can_delete: false
+  can_view: false
