@@ -15,6 +15,7 @@ de:
       are_you_sure: Sind Sie sicher?
       cancel: Abbrechen
       published: Publiziert
+      published_date: geplante Veröffentlichung
       cached_timeout: Cache Dauer
       toggle_navigation: Navigation einklappen
       image_selector: Bildauswahl
@@ -76,6 +77,15 @@ de:
             email_address: E-Mail Adresse
             password: Password
             remember_me: Angemeldet bleiben
+  comfy:
+    admin:
+      cms:
+        pages:
+          form:
+            review: Überprüfen
+            schedule: Veröffentlichung planen
+            publish: Veröffentlichen
+            draft: Zurücksetzen
 
   activerecord:
     attributes:

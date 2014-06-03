@@ -51,6 +51,9 @@ pkg
 # For rubinius:
 #*.rbc
 
+#For Rubymine
+.idea
+
 # Rails stuff
 .rvmrc
 db/test.sqlite3

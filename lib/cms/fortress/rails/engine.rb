@@ -10,6 +10,7 @@ module Cms
           Sprockets::Context.send :include, Cms::Fortress::SprocketHelper
 
           Comfy::Cms::ContentController.send(:include, Cms::Fortress::ContentRenderer)
+          Comfy::Admin::Cms::PagesController.send(:include, Cms::Fortress::PagesControllerMethods)
           Comfy::Cms::Page.send(:include, Cms::Fortress::PageMethods)
           Comfy::Cms::File.send(:include, Cms::Fortress::FileMethods)
           Comfy::Cms::Site.send(:include, Cms::Fortress::SiteMethods)

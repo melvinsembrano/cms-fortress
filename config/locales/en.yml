@@ -15,6 +15,7 @@ en:
       are_you_sure: Are you sure?
       cancel: Cancel
       published: Published
+      published_date: scheduled publication
       cached_timeout: Cached Timeout
       toggle_navigation: Toggle Navigation
       image_selector: Image Selector
@@ -90,6 +91,16 @@ en:
             email_address: Email Address
             password: Password
             remember_me: Remember me
+
+  comfy:
+    admin:
+      cms:
+        pages:
+          form:
+            review: review
+            schedule: scheduled publish
+            publish: publish
+            draft: reset
 
   activerecord:
     attributes:

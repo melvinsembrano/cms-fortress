@@ -1,5 +1,3 @@
-- @page.page_workflow ||= Cms::PageWorkflow.new
-
 - content_for :right_column do
   #form-save.box
     %label.checkbox-inline
@@ -39,7 +37,10 @@
 = render 'comfy/admin/cms/partials/page_form_after', :object => form
 
 = form.form_group :class => 'form-actions' do
-  = form.submit t('.preview'), :name => 'preview', :id => nil, :class => 'btn btn-default'
-  = form.submit t(@page.new_record?? '.create' : '.update'), :class => 'btn btn-primary'
+  = form.button t('.preview'), :name => 'preview', :id => nil, :class => 'btn btn-default'
+  = form.button t(@page.new_record?? '.create' : '.update'), :class => 'btn btn-primary', :value => 'save', :name => 'commit'
+  - if Cms::Fortress.configuration.enable_page_workflow
+    - page_actions(@page).each do |page_action|
+      = form.button t('.'+page_action.to_s), :class => 'btn btn-success', :value => page_action, :name => 'commit'
 
 = render :partial => 'cms/fortress/shared/page_extend_js'
