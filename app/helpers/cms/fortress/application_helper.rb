@@ -90,8 +90,7 @@ module Cms::Fortress::ApplicationHelper
   end
 
   def settings
-    settings = Settings.new(:global_settings)
-    settings
+    Cms::Fortress::Settings.new(:global_settings)
   end
 end
 
