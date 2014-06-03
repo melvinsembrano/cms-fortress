@@ -1,4 +1,4 @@
 require 'test_helper'
 
-class Cms::Fortress::UsersHelperTest < ActionView::TestCase
+class Cms::Fortress::UsersHelperTest < MiniTest::Test
 end
