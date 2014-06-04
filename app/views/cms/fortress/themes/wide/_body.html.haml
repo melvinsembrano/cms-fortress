@@ -27,9 +27,10 @@
 
   $(".wide-body .page-header a:contains(Create New Page)").html("<i class='glyphicon glyphicon-file' /> New Page").attr("title", "Create New Page").tooltip(placement: 'left')
 
-  # New Page
-  index_path = "#{ back_path }"
-  $(".wide-body .page-header h2:contains(New), .wide-body .page-header h2:contains(Editing)").parent()
-    .prepend('<a class="btn btn-default pull-right" href="' + index_path + '" title="" data-original-title="Create New Page"><i class="glyphicon glyphicon-chevron-left"></i> Back</a> ')
-  
-  $(".wide-body .page-header .btn").removeClass("pull-right").wrapAll("<div class='btn-group pull-right'></div>")
+- unless @no_back_button
+  :coffeescript
+    index_path = "#{ back_path }"
+    $(".wide-body .page-header h2:contains(New), .wide-body .page-header h2:contains(Editing)").parent()
+      .prepend('<a class="btn btn-default pull-right" href="' + index_path + '" title="" data-original-title="Create New Page"><i class="glyphicon glyphicon-chevron-left"></i> Back</a> ')
+
+    $(".wide-body .page-header .btn").removeClass("pull-right").wrapAll("<div class='btn-group pull-right'></div>")
