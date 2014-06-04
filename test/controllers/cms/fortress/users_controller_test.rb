@@ -1,20 +1,22 @@
 # http://api.rubyonrails.org/classes/ActionController/TestCase.html
 require 'test_helper'
 
-class Cms::Fortress::UsersControllerTest < ActiveSupport::TestCase
+class Cms::Fortress::UsersControllerTest < ActionController::TestCase
   def setup
     @cms_fortress_user = cms_fortress_users(:one)
     @cms_fortress_role_details = cms_fortress_role_details(:one)
+    sign_in Cms::Fortress::User, @cms_fortress_user
   end
 
   def test_it_should_get_index
+    get :index
     assert_not_nil assigns(:cms_fortress_users)
   end
 
-  # test "should get new" do
-  #   get :new
-  #   assert_response :success
-  # end
+  test "should get new" do
+    get :new
+    assert_response :success
+  end
 
   # test "should create cms_fortress_user" do
   #   assert_difference('Cms::Fortress::User.count') do

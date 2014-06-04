@@ -1,5 +1,7 @@
 # encoding: utf-8
-require 'bundler/gem_tasks'
+require 'bundler'
+Bundler.setup
+
 require 'rake/testtask'
 require 'rdoc/task'
 
@@ -8,6 +10,9 @@ Rake::TestTask.new do |t|
   t.test_files = FileList['test/**/*_test.rb']
   t.verbose = false
 end
+
+require_relative 'config/application'
+Cms::Fortress::Application.load_tasks
 
 task :default => :test
 
