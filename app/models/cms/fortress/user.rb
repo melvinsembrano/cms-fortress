@@ -11,6 +11,8 @@ class Cms::Fortress::User < ActiveRecord::Base
   belongs_to :role
   belongs_to :site, class_name: "Comfy::Cms::Site", foreign_key: :site_id
 
+  scope :all_super, -> { where(type_id: 1) }
+
   def self.types
     {
       1 => :super_user,

@@ -47,8 +47,12 @@ module Cms
           :path => 'comfy_admin_cms_site_snippets_path(@site) if @site && !@site.new_record?'}
         ]
         @settings_resources = [
+          {name: 'dropdown-header', title: "cms.fortress.admin.super_user.menu_header", super_user: true},
           {:name => 'sites', :title => 'comfy.admin.cms.base.sites',
           :path => 'comfy_admin_cms_sites_path', :super_user => true},
+          {:name => 'super_users', :title => 'cms.fortress.admin.super_user.title',
+          :path => 'super_cms_fortress_users_path', :super_user => true},
+          {name: 'divider', super_user: true},
           {:name => 'roles', :title => 'cms.fortress.roles.title',
           :path => 'cms_fortress_roles_path'},
           {:name => 'users', :title => 'cms.fortress.users.title',
