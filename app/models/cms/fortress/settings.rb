@@ -7,7 +7,7 @@ class Cms::Fortress::Settings < OpenStruct
   private
 
   def load_settings
-    raise Cms::Fortress::Error::MissingConfigFile unless config_file_exists?
+    raise Cms::Fortress::Error::MissingSettingsFile unless config_file_exists?
     YAML.load(ERB.new(File.read(Rails.root.join("config/cms/fortress", "#{@config_file_base_name}.yml"))).result)[Rails.env]
   end
 
