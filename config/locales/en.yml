@@ -22,6 +22,10 @@ en:
       settings: Settings
 
       admin:
+        super_user:
+          title: Super Users
+          menu_header: Super Users Only
+
         users: Users
         not_authorized: You are not authorized to access this functionality
         settings_dashboard: Settings Dashboard
@@ -64,6 +68,7 @@ en:
       users:
         title: Users
         new_link: New User
+        new_super_link: New Super User
         edit_title: Edit User
         new_title: Create New User
         last_name: Lastname

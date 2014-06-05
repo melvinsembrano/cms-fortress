@@ -4,6 +4,7 @@ module Cms
 
       def after_sign_in_path_for(resource)
         if resource.class.eql?(Cms::Fortress::User)
+          session[:site_id] = resource.site_id
           comfy_admin_cms_path
         else
           begin

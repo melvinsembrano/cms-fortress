@@ -7,10 +7,11 @@
       %ul.dropdown-menu
 
         - Cms::Fortress.configuration.content_resources.each do |resource|
-          - if can? :view, "contents.#{resource[:name]}"
-            - path = begin; eval(resource[:path]);rescue;end
-            - if path
-              = topnav_item t(resource[:title]), path, current_page?(path)
+          - if resource[:super_user]
+            - if current_cms_fortress_user.type.eql?(:super_user)
+              = topnav_resource_item("contents", resource)
+          - else
+            = topnav_resource_item("contents", resource)
 
   - if Cms::Fortress.configuration.design_resources.any? {|resource| can? :view, "designs.#{resource[:name]}" }
     %li.dropdown(class="#{ "active" if design_page? }")
@@ -19,10 +20,11 @@
         %b.caret
       %ul.dropdown-menu
         - Cms::Fortress.configuration.design_resources.each do |resource|
-          - if can? :view, "designs.#{resource[:name]}"
-            - path = begin; eval(resource[:path]);rescue;end
-            - if path
-              = topnav_item t(resource[:title]), path, current_page?(path)
+          - if resource[:super_user]
+            - if current_cms_fortress_user.type.eql?(:super_user)
+              = topnav_resource_item("designs", resource)
+          - else
+            = topnav_resource_item("designs", resource)
 
   - if Cms::Fortress.configuration.settings_resources.any? {|resource| can? :view, "settings.#{resource[:name]}" }
     %li.dropdown(class="#{ "active" if admin_page? }")
@@ -31,7 +33,9 @@
         %b.caret
       %ul.dropdown-menu
         - Cms::Fortress.configuration.settings_resources.each do |resource|
-          - if can? :view, "settings.#{resource[:name]}"
-            - path = begin; eval(resource[:path]); rescue; end
-            - if path
-              = topnav_item t(resource[:title]), path, current_page?(path)
+          - if resource[:super_user]
+            - if current_cms_fortress_user.type.eql?(:super_user)
+              = topnav_resource_item("settings", resource)
+          - else
+            = topnav_resource_item("settings", resource)
+

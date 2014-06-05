@@ -18,7 +18,12 @@ class ActionDispatch::Routing::Mapper
           post :refresh
         end
       end
-      resources :users, :as => 'cms_fortress_users'
+      resources :users, :as => 'cms_fortress_users' do
+        collection do
+          get :super
+          get "super/new", action: "new_super"
+        end
+      end
 
       get 'settings/users' => 'admin#users', as: 'cms_fortress_user_settings'
       get 'unauthorised' => 'admin#unauthorised', as: 'cms_fortress_unauthorised'

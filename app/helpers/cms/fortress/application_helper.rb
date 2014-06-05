@@ -34,6 +34,26 @@ module Cms::Fortress::ApplicationHelper
     end
   end
 
+  def topnav_resource_item(key, resource)
+    if ["divider", "dropdown-header"].include?(resource[:name])
+      title = resource[:title].nil? ? "" : t(resource[:title])
+      content_tag(:li, title, class: resource[:name], role: "presentation")
+    else
+      if can? :view, "#{ key }.#{ resource[:name] }"
+        if path = resource_path(resource[:path])
+          topnav_item t(resource[:title]), path, current_page?(path)
+        end
+      end
+    end
+  end
+
+  def resource_path(path)
+    begin
+      eval(path)
+    rescue
+    end
+  end
+
   def media_files_path(type)
     if params[:site_id]
       if type.eql?(:image)
@@ -62,7 +82,7 @@ module Cms::Fortress::ApplicationHelper
 
   def topnav_item(title, path, is_current = false)
     css_class = is_current ? "active" : ""
-    content_tag(:li, link_to(title, path), class: css_class)
+    content_tag(:li, link_to(title, path), class: css_class, role: "presentation")
   end
 
   def leftnav_item(title, path, options = {})

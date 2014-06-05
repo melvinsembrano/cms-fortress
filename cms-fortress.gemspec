@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Melvin Sembrano"]
-  s.date = "2014-06-01"
+  s.date = "2014-06-05"
   s.description = "Comfortable Mexican Sofa (CMS) - User and role management extension"
   s.email = "melvinsembrano@gmail.com"
   s.extra_rdoc_files = [
@@ -39,8 +39,10 @@ Gem::Specification.new do |s|
     "app/helpers/cms/fortress/roles_helper.rb",
     "app/helpers/cms/fortress/sprocket_helper.rb",
     "app/models/cms/fortress.rb",
+    "app/models/cms/fortress/error.rb",
     "app/models/cms/fortress/role.rb",
     "app/models/cms/fortress/role_detail.rb",
+    "app/models/cms/fortress/settings.rb",
     "app/models/cms/fortress/user.rb",
     "app/models/cms/page_workflow.rb",
     "app/models/cms_ability.rb",
@@ -83,6 +85,7 @@ Gem::Specification.new do |s|
     "app/views/layouts/comfy/admin/cms/_head.html.haml",
     "app/views/layouts/comfy/admin/cms/_left.html.haml",
     "cms-fortress.gemspec",
+    "config/cms/fortress/global_settings.yml",
     "config/initializers/cms_fortress.rb",
     "config/locales/de.yml",
     "config/locales/en.yml",
@@ -92,6 +95,7 @@ Gem::Specification.new do |s|
     "db/migrate/03_create_cms_fortress_roles.rb",
     "db/migrate/04_create_cms_page_workflows.rb",
     "db/migrate/05_add_caching_info_to_pages.rb",
+    "db/migrate/06_add_type_to_users.rb",
     "docs/screens/compact-layout-01.png",
     "docs/screens/compact-layout-02.png",
     "docs/screens/files-integration-01.png",
@@ -110,10 +114,12 @@ Gem::Specification.new do |s|
     "lib/cms/fortress/routes/admin.rb",
     "lib/cms/fortress/routing.rb",
     "lib/comfortable_mexican_sofa/fixture/page.rb",
+    "lib/generators/cms/comfy/comfy_generator.rb",
     "lib/generators/cms/fortress/USAGE",
     "lib/generators/cms/fortress/fortress_generator.rb",
     "lib/generators/cms/fortress/templates/README",
-    "lib/generators/comfy/cms/cms_generator.rb",
+    "lib/generators/cms/fortress/upgrade/USAGE",
+    "lib/generators/cms/fortress/upgrade/upgrade_generator.rb",
     "test/fixtures/cms/fortress/role_details.yml",
     "test/fixtures/cms/fortress/roles.yml",
     "test/fixtures/cms/page_workflows.yml",

@@ -1,15 +1,22 @@
 .page-header
-  .btn-group.pull-right
-    = link_to t('cms.fortress.users.new_link'), new_cms_fortress_user_path, :class => 'btn btn-primary btn-sm'
+  - unless @super_user
+    = link_to t('cms.fortress.users.new_link'), new_cms_fortress_user_path, :class => 'btn btn-primary btn-sm pull-right'
+  - else
+    = link_to t('cms.fortress.users.new_super_link'), super_new_cms_fortress_users_path, :class => 'btn btn-primary btn-sm pull-right'
 
-  %h3= t('cms.fortress.users.title')
+  %h3
+    - unless @super_user
+      = t('cms.fortress.users.title')
+    - else
+      = t('cms.fortress.admin.super_user.title')
 
 %table.table.table-hover.table-bordered
   %tr
     %th= t('cms.fortress.users.last_name')
     %th= t('cms.fortress.users.first_name')
     %th= t('cms.fortress.users.email')
-    %th= t('cms.fortress.users.role')
+    - unless @super_user
+      %th= t('cms.fortress.users.role')
     %th
 
   - @cms_fortress_users.each do |cms_fortress_user|
@@ -17,7 +24,9 @@
       %td= cms_fortress_user.last_name
       %td= cms_fortress_user.first_name
       %td= cms_fortress_user.email
-      %td= cms_fortress_user.role.name
+      - unless @super_user
+        - if cms_fortress_user.role
+          %td= cms_fortress_user.role.name
       %td
         .btn-group.pull-right
           = link_to t('cms.fortress.edit'), edit_cms_fortress_user_path(cms_fortress_user), :class => 'btn btn-sm btn-default'
