@@ -12,6 +12,7 @@ module Cms
           Comfy::Cms::ContentController.send(:include, Cms::Fortress::ContentRenderer)
           Comfy::Cms::Page.send(:include, Cms::Fortress::PageMethods)
           Comfy::Cms::File.send(:include, Cms::Fortress::FileMethods)
+          Comfy::Cms::Site.send(:include, Cms::Fortress::SiteMethods)
 
           # Insert Roles
           Comfy::Admin::Cms::SitesController.class_eval do

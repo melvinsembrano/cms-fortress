@@ -1,4 +1,5 @@
 require 'generators/cms/comfy/comfy_generator'
+require 'fileutils'
 
 class Cms::FortressGenerator < Rails::Generators::Base
   # source_root File.expand_path('../templates', __FILE__)
@@ -36,7 +37,8 @@ class Cms::FortressGenerator < Rails::Generators::Base
   def copy_files
     log 'Copying files...'
     files = [
-      'config/roles.yml'
+      'config/roles.yml',
+      'config/cms/fortress/global_settings.yml'
     ]
     files.each do |file|
       copy_file file, file

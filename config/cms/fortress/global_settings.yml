@@ -1,10 +1,9 @@
 default: &default
-  title: "Kenny CMS"
+  title: "CMS Fortress"
   title_link: "#"
 
 development:
-  title: "Kenny CMS"
-  title_link: "#"
+  <<: *default
 
 production:
   <<: *default

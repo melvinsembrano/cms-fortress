@@ -9,5 +9,20 @@ class Cms::Fortress::User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :timeoutable
 
   belongs_to :role
+  belongs_to :site, class_name: "Comfy::Cms::Site", foreign_key: :site_id
 
+  def self.types
+    {
+      1 => :super_user,
+      2 => :site_user
+    }
+  end
+
+  def type
+    self.class.types[type_id]
+  end
+
+  def display_name
+    "#{ email } (#{ type.to_s.titleize })"
+  end
 end
