@@ -50,3 +50,8 @@ pkg
 
 # For rubinius:
 #*.rbc
+
+# Rails stuff
+.rvmrc
+db/test.sqlite3
+log/
