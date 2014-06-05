@@ -48,7 +48,7 @@ module Cms
         ]
         @settings_resources = [
           {:name => 'sites', :title => 'comfy.admin.cms.base.sites',
-          :path => 'comfy_admin_cms_sites_path'},
+          :path => 'comfy_admin_cms_sites_path', :super_user => true},
           {:name => 'roles', :title => 'cms.fortress.roles.title',
           :path => 'cms_fortress_roles_path'},
           {:name => 'users', :title => 'cms.fortress.users.title',

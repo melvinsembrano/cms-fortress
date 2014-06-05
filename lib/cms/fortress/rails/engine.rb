@@ -14,10 +14,23 @@ module Cms
           Comfy::Cms::File.send(:include, Cms::Fortress::FileMethods)
           Comfy::Cms::Site.send(:include, Cms::Fortress::SiteMethods)
 
+
+          Comfy::Admin::Cms::BaseController.class_eval do
+            before_action do
+              if current_cms_fortress_user && current_cms_fortress_user.type.eql?(:site_user)
+                @site = current_cms_fortress_user.site
+                session[:site_id] = @site.id if @site
+              end
+            end
+          end
+
           # Insert Roles
           Comfy::Admin::Cms::SitesController.class_eval do
             before_action do
               authorize! :manage, Comfy::Cms::Site
+            end
+            before_action only: [:new, :create] do
+              raise CanCan::AccessDenied.new("Youa are not allowed to create a site.") unless current_cms_fortress_user.type.eql?(:super_user)
             end
           end
           Comfy::Admin::Cms::LayoutsController.class_eval do

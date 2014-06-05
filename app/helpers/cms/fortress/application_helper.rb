@@ -34,6 +34,21 @@ module Cms::Fortress::ApplicationHelper
     end
   end
 
+  def topnav_resource_item(key, resource)
+    if can? :view, "#{ key }.#{ resource[:name] }"
+      if path = resource_path(resource[:path])
+        topnav_item t(resource[:title]), path, current_page?(path)
+      end
+    end
+  end
+
+  def resource_path(path)
+    begin
+      eval(path)
+    rescue
+    end
+  end
+
   def media_files_path(type)
     if params[:site_id]
       if type.eql?(:image)

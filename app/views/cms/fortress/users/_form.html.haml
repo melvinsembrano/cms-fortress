@@ -1,7 +1,7 @@
 = form.text_field :last_name
 = form.text_field :first_name
 = form.text_field :email
-= form.select :role_id, Cms::Fortress::Role.all.collect {|role| [role.name, role.id]}
+= form.select :role_id, @site.roles.collect {|role| [role.name, role.id]}
 = form.password_field :password
 = form.password_field :password_confirmation
 

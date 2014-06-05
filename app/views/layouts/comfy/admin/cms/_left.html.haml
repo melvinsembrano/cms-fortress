@@ -3,28 +3,31 @@
 %ul.navigation
   - if admin_page?
     - Cms::Fortress.configuration.settings_resources.each do |resource|
-      - if can? :view, "settings.#{resource[:name]}"
-        - path = begin; eval(resource[:path]); rescue; end
-        - if path
-          = leftnav_item t(resource[:title]), path
+      - if resource[:super_user]
+        - if current_cms_fortress_user.type.eql?(:super_user)
+          = topnav_resource_item("settings", resource)
+      - else
+        = topnav_resource_item("settings", resource)
 
     = render 'cms/fortress/admin/left_settings_nav'
 
   - elsif design_page?
     - Cms::Fortress.configuration.design_resources.each do |resource|
-      - if can? :view, "designs.#{resource[:name]}"
-        - path = begin; eval(resource[:path]);rescue;end
-        - if path
-          = leftnav_item t(resource[:title]), path
+      - if resource[:super_user]
+        - if current_cms_fortress_user.type.eql?(:super_user)
+          = topnav_resource_item("designs", resource)
+      - else
+        = topnav_resource_item("designs", resource)
 
     = render 'cms/fortress/admin/left_designs_nav'
 
   - elsif content_page?
     - Cms::Fortress.configuration.content_resources.each do |resource|
-      - if can? :view, "contents.#{resource[:name]}"
-        - path = begin; eval(resource[:path]);rescue;end
-        - if path
-          = leftnav_item t(resource[:title]), path
+      - if resource[:super_user]
+        - if current_cms_fortress_user.type.eql?(:super_user)
+          = topnav_resource_item("contents", resource)
+      - else
+        = topnav_resource_item("contents", resource)
 
     = render 'cms/fortress/admin/left_contents_nav'
     = cms_hook :navigation
