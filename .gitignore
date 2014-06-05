@@ -55,3 +55,4 @@ pkg
 .rvmrc
 db/test.sqlite3
 log/
+tmp
