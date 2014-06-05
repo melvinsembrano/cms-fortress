@@ -1,7 +1,7 @@
 one:
   email: 'bla@blub.de'
   encrypted_password: asdf<sdf
-  role_id: 1
+  role: Administrator
   reset_password_token: adsfgasd
   reset_password_sent_at:
   remember_created_at:

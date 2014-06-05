@@ -4,12 +4,7 @@ require 'rails/test_help'
 require 'rails/all'
 require 'cms-fortress'
 require 'minitest/pride'
-
-# require 'minitest/unit'
-# require 'minitest/autorun'
-# require 'minitest/pride'
-# require 'minitest/spec'
-# require 'minitest/rails'
+require 'minitest/reporters'
 
 # test without creating a test database.
 ActiveRecord::Base.establish_connection(
@@ -17,7 +12,9 @@ ActiveRecord::Base.establish_connection(
   :database => ':memory:'
 )
 
-load File.dirname(__FILE__) + '/schema.rb'
+MiniTest::Reporters.use! [Minitest::Reporters::SpecReporter.new]
+
+load File.dirname(__FILE__) + '/../db/schema.rb'
 
 class ActiveSupport::TestCase
   fixtures :all

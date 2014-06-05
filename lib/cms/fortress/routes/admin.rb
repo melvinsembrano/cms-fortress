@@ -3,14 +3,14 @@ class ActionDispatch::Routing::Mapper
   def cms_fortress_routes(options = {})
     path = options[:path] || "cms-admin"
 
-    # devise_for "cms/fortress/users",
-    #   :path => path,
-    #   :path_names => {
-    #     :sign_in => 'login', :sign_out => 'logout'
-    #   },
-    #   :controllers => {
-    #     :sessions => 'cms/fortress/users/sessions'
-    #   }
+    devise_for "cms/fortress/users",
+      :path => path,
+      :path_names => {
+        :sign_in => 'login', :sign_out => 'logout'
+      },
+      :controllers => {
+        :sessions => 'cms/fortress/users/sessions'
+      }
 
     scope path, module: 'cms/fortress' do
       resources :roles, :as => 'cms_fortress_roles' do
@@ -18,7 +18,8 @@ class ActionDispatch::Routing::Mapper
           post :refresh
         end
       end
-      resources :users, :as => 'cms_fortress_users' do
+
+      resources :users, :except => :show, :as => 'cms_fortress_users' do
         collection do
           get :super
           get "super/new", action: "new_super"

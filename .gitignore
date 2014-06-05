@@ -55,5 +55,5 @@ pkg
 .rvmrc
 db/test.sqlite3
 log/
-tmp
+/tmp/cache
 /.idea/

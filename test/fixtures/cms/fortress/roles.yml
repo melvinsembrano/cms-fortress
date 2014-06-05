@@ -1,5 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
+Administrator:
+  name: Administrator
+  description: Administrator
+
+Author:
+  name: Author
+  description: Author
+
+Contributor:
+  name: Contributor
+  description: Contributor
+
 one:
   name: MyString
   description: MyText
