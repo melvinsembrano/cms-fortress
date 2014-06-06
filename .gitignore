@@ -57,3 +57,5 @@ db/test.sqlite3
 log/
 /tmp/cache
 /.idea/
+
+00_create_cms.rb
