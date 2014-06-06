@@ -47,12 +47,14 @@ class Cms::Fortress::UsersController < Comfy::Admin::Cms::BaseController
     raise CanCan::AccessDenied.new("Your are not allowed to create a super user.") if @cms_fortress_user.type.eql?(:super_user) && !current_cms_fortress_user.type.eql?(:super_user)
     @cms_fortress_user.site_id = nil if @cms_fortress_user.type.eql?(:super_user)
 
-    respond_to do |format|
-      if @cms_fortress_user.save
-        flash[:success] = "User was successfully created."
+    if @cms_fortress_user.save
+      flash[:success] = "User was successfully created."
+      respond_to do |format|
         format.html { redirect_to @cms_fortress_user.type.eql?(:super_user) ? super_cms_fortress_users_path : cms_fortress_users_path }
         format.json { render json: @cms_fortress_user, status: :created, location: @cms_fortress_user }
-      else
+      end
+    else
+      respond_to do |format|
         format.html { render action: "new" }
         format.json { render json: @cms_fortress_user.errors, status: :unprocessable_entity }
       end

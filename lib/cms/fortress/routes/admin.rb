@@ -18,7 +18,8 @@ class ActionDispatch::Routing::Mapper
           post :refresh
         end
       end
-      resources :users, :as => 'cms_fortress_users' do
+
+      resources :users, :except => :show, :as => 'cms_fortress_users' do
         collection do
           get :super
           get "super/new", action: "new_super"
