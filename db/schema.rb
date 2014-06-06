@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 5) do
+ActiveRecord::Schema.define(version: 6) do
 
   create_table "cms_fortress_role_details", force: true do |t|
     t.string   "name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 5) do
     t.integer  "role_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "site_id"
   end
 
   create_table "cms_fortress_roles", force: true do |t|
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define(version: 5) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "site_id"
   end
 
   create_table "cms_fortress_users", force: true do |t|
@@ -48,6 +50,8 @@ ActiveRecord::Schema.define(version: 5) do
     t.string   "last_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "type_id"
+    t.integer  "site_id"
   end
 
   add_index "cms_fortress_users", ["email"], name: "index_cms_fortress_users_on_email", unique: true
@@ -59,6 +63,7 @@ ActiveRecord::Schema.define(version: 5) do
     t.date     "published_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "site_id"
   end
 
   create_table "comfy_cms_blocks", force: true do |t|
