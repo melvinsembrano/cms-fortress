@@ -4,6 +4,7 @@ class Cms::Fortress::Role < ActiveRecord::Base
   # attr_accessible :description, :name
   has_many :users
   has_many :role_details
+  belongs_to :site, class_name: "Comfy::Cms::Site", foreign_key: :site_id
   accepts_nested_attributes_for :role_details, allow_destroy: true
 
   def load_defaults
