@@ -7,9 +7,6 @@
   .row
     .col-sm-6
       = dashboard_widget t(".draft_widget"), @site.pages.drafts.order(updated_at: :desc).limit(5)
-    .col-sm-6
-      = dashboard_widget t(".reviewed_widget"), @site.pages.reviewed.order(updated_at: :desc).limit(5)
-  .row
-    .col-sm-6
       = dashboard_widget t(".updated_pages"), @site.pages.order(updated_at: :desc).limit(5)
     .col-sm-6
+      = dashboard_widget t(".reviewed_widget"), @site.pages.reviewed.order(updated_at: :desc).limit(5)
