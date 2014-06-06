@@ -15,9 +15,15 @@ module Cms
 
       # generate default roles specific for the site
       def generate_defaults
-
+        #TODO: implement I18n below
+        role = Cms::Fortress::Role.create!(:site_id => id, :name => "#{label} Administrator", :description => "#{ label } administrator users")
+        role.load_defaults
+        role.save
       end
 
+      module ClassMethods
+
+      end
     end
   end
 end

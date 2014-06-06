@@ -6,13 +6,13 @@ module Cms::Fortress::Error
 
   class MissingRoleConfigFile < StandardError
     def initialize
-      Error.log_error(self, "missing the roles.yml file in config/roles.yml")
+      Cms::Fortress::Error.log_error(self, "missing the roles.yml file in config/roles.yml")
     end
   end
 
-  class MissingConfigFile < StandardError
+  class MissingSettingsFile < StandardError
     def initialize
-      Error.log_error(self, "missing cms-fortress configuration file")
+      Cms::Fortress::Error.log_error(self, "missing cms-fortress settings file")
     end
   end
 end

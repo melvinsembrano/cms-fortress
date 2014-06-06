@@ -53,6 +53,7 @@ module Cms
           {:name => 'super_users', :title => 'cms.fortress.admin.super_user.title',
           :path => 'super_cms_fortress_users_path', :super_user => true},
           {name: 'divider', super_user: true},
+          {name: 'dropdown-header', title: "cms.fortress.admin.sites.menu_header"},
           {:name => 'roles', :title => 'cms.fortress.roles.title',
           :path => 'cms_fortress_roles_path'},
           {:name => 'users', :title => 'cms.fortress.users.title',

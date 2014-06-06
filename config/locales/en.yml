@@ -22,6 +22,8 @@ en:
       settings: Settings
 
       admin:
+        sites:
+          menu_header: "Site/ %{site_name}"
         super_user:
           title: Super Users
           menu_header: Super Users Only
