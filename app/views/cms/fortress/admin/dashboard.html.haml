@@ -3,7 +3,7 @@
     = "#{ t(".title") } /"
     = @site.label
 
-.container
+.container-fluid
   .row
     .col-sm-6
       = dashboard_widget t(".draft_widget"), @site.pages.drafts.order(updated_at: :desc).limit(5)

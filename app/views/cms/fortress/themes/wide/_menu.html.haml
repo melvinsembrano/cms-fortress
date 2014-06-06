@@ -1,44 +1,70 @@
-- if @site && !@site.new_record?
-  %li
-    = topnav_item "Dashboard", dashboard_site_path, current_page?(dashboard_site_path)
+%nav.navbar.navbar-default(role="navigation")
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle(type="button" data-toggle="collapse" data-target="#main-nav")
+        %span.sr-only= t('cms.fortress.toggle_navigation')
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to settings.title, settings.title_link, class: 'navbar-brand'
 
-  - if Cms::Fortress.configuration.content_resources.any? {|resource| can? :view, "contents.#{resource[:name]}" }
-    %li.dropdown(class="#{ "active" if content_page? }")
-      %a.dropdown-toggle(data-toggle='dropdown' href='#')
-        = t("cms.fortress.contents")
-        %b.caret
-      %ul.dropdown-menu
+    .collapse.navbar-collapse#main-nav
+      %ul.nav.navbar-nav
 
-        - Cms::Fortress.configuration.content_resources.each do |resource|
-          - if resource[:super_user]
-            - if current_cms_fortress_user.type.eql?(:super_user)
-              = topnav_resource_item("contents", resource)
-          - else
-            = topnav_resource_item("contents", resource)
+        - if @site && !@site.new_record?
+          %li= topnav_item "Dashboard", dashboard_site_path, current_page?(dashboard_site_path)
 
-  - if Cms::Fortress.configuration.design_resources.any? {|resource| can? :view, "designs.#{resource[:name]}" }
-    %li.dropdown(class="#{ "active" if design_page? }")
-      %a.dropdown-toggle(data-toggle='dropdown' href='#')
-        = t("cms.fortress.design")
-        %b.caret
-      %ul.dropdown-menu
-        - Cms::Fortress.configuration.design_resources.each do |resource|
-          - if resource[:super_user]
-            - if current_cms_fortress_user.type.eql?(:super_user)
-              = topnav_resource_item("designs", resource)
-          - else
-            = topnav_resource_item("designs", resource)
+          - if Cms::Fortress.configuration.content_resources.any? {|resource| can? :view, "contents.#{resource[:name]}" }
+            %li.dropdown(class="#{ "active" if content_page? }")
+              %a.dropdown-toggle(data-toggle='dropdown' href='#')
+                = t("cms.fortress.contents")
+                %b.caret
+              %ul.dropdown-menu
 
-  - if Cms::Fortress.configuration.settings_resources.any? {|resource| can? :view, "settings.#{resource[:name]}" }
-    %li.dropdown(class="#{ "active" if admin_page? }")
-      %a.dropdown-toggle(data-toggle='dropdown' href='#')
-        = t("cms.fortress.settings")
-        %b.caret
-      %ul.dropdown-menu
-        - Cms::Fortress.configuration.settings_resources.each do |resource|
-          - if resource[:super_user]
-            - if current_cms_fortress_user.type.eql?(:super_user)
-              = topnav_resource_item("settings", resource)
-          - else
-            = topnav_resource_item("settings", resource)
+                - Cms::Fortress.configuration.content_resources.each do |resource|
+                  - if resource[:super_user]
+                    - if current_cms_fortress_user.type.eql?(:super_user)
+                      = topnav_resource_item("contents", resource)
+                  - else
+                    = topnav_resource_item("contents", resource)
+
+          - if Cms::Fortress.configuration.design_resources.any? {|resource| can? :view, "designs.#{resource[:name]}" }
+            %li.dropdown(class="#{ "active" if design_page? }")
+              %a.dropdown-toggle(data-toggle='dropdown' href='#')
+                = t("cms.fortress.design")
+                %b.caret
+              %ul.dropdown-menu
+                - Cms::Fortress.configuration.design_resources.each do |resource|
+                  - if resource[:super_user]
+                    - if current_cms_fortress_user.type.eql?(:super_user)
+                      = topnav_resource_item("designs", resource)
+                  - else
+                    = topnav_resource_item("designs", resource)
+
+          - if Cms::Fortress.configuration.settings_resources.any? {|resource| can? :view, "settings.#{resource[:name]}" }
+            %li.dropdown(class="#{ "active" if admin_page? }")
+              %a.dropdown-toggle(data-toggle='dropdown' href='#')
+                = t("cms.fortress.settings")
+                %b.caret
+              %ul.dropdown-menu
+                - Cms::Fortress.configuration.settings_resources.each do |resource|
+                  - if resource[:super_user]
+                    - if current_cms_fortress_user.type.eql?(:super_user)
+                      = topnav_resource_item("settings", resource)
+                  - else
+                    = topnav_resource_item("settings", resource)
+
+
+
+        = render 'cms/fortress/admin/topnav'
+
+      - if current_cms_fortress_user
+        .btn-group.pull-right(style="margin-top: 8px;")
+          %button.btn.btn-default.dropdown-toggle(type="button" data-toggle="dropdown")
+            = current_cms_fortress_user.display_name
+            %span.caret
+          %ul.dropdown-menu(role="menu")
+            %li
+              = link_to t('cms.fortress.logout'), destroy_cms_fortress_user_session_path, :method => 'delete'
+
 
