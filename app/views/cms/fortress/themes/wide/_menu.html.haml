@@ -1,4 +1,7 @@
 - if @site && !@site.new_record?
+  %li
+    = topnav_item "Dashboard", dashboard_site_path, current_page?(dashboard_site_path)
+
   - if Cms::Fortress.configuration.content_resources.any? {|resource| can? :view, "contents.#{resource[:name]}" }
     %li.dropdown(class="#{ "active" if content_page? }")
       %a.dropdown-toggle(data-toggle='dropdown' href='#')

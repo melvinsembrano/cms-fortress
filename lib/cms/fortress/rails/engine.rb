@@ -25,14 +25,8 @@ module Cms
           end
 
           # Insert Roles
-          Comfy::Admin::Cms::SitesController.class_eval do
-            before_action do
-              authorize! :manage, Comfy::Cms::Site
-            end
-            before_action only: [:new, :create] do
-              raise CanCan::AccessDenied.new("Youa are not allowed to create a site.") unless current_cms_fortress_user.type.eql?(:super_user)
-            end
-          end
+          Comfy::Admin::Cms::SitesController.send :include, Cms::Fortress::SiteControllerMethods
+
           Comfy::Admin::Cms::LayoutsController.class_eval do
             before_action do
               authorize! :manage, Comfy::Cms::Layout

@@ -2,6 +2,11 @@ require 'cms/fortress/settings'
 require 'cms/fortress/error'
 
 module Cms::Fortress::ApplicationHelper
+
+  def dashboard_widget(title, collection)
+    render partial: "cms/fortress/shared/dashboard_widget", locals: {title: title, collection: collection}
+  end
+
   def role_display(command)
     res = command.split(".")
     raw "#{content_tag(:strong, t("cms.fortress.roles.#{res.first}")) } / #{ res[1..-1].map {|r| t("cms.fortress.roles.#{r}")}.join(" - ") }"
@@ -22,13 +27,13 @@ module Cms::Fortress::ApplicationHelper
   def back_path
     case controller_name
     when "pages"
-      comfy_admin_cms_site_pages_path
+      comfy_admin_cms_site_pages_path(@site)
     when "files"
-      comfy_admin_cms_site_files_path
+      comfy_admin_cms_site_files_path(@site)
     when "layouts"
-      comfy_admin_cms_site_layouts_path
+      comfy_admin_cms_site_layouts_path(@site)
     when "snippets"
-      comfy_admin_cms_site_snippets_path
+      comfy_admin_cms_site_snippets_path(@site)
     else
       ""
     end

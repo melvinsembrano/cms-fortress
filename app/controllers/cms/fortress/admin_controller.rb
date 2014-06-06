@@ -1,4 +1,9 @@
 class Cms::Fortress::AdminController < Comfy::Admin::Cms::BaseController
+
+  def dashboard
+
+  end
+
   def roles
     @roles = Role.all
   end

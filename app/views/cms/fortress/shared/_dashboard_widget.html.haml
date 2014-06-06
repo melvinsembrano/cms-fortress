@@ -1,0 +1,29 @@
+.panel-group(id="accordion-#{ title.parameterize }")
+  .panel.panel-default
+    .panel-heading
+      = title
+      %a.btn.btn-xs.btn-default.pull-right(data-toggle="collapse" href="#cl-#{ title.parameterize }" data-parent="#accordion-#{ title.parameterize }")
+        %span.glyphicon.glyphicon-minus
+
+    .panel-collapse.collapse.in(id="cl-#{ title.parameterize }")
+      .panel-body
+        %ul.list-group
+          - collection.each do |c|
+            %li.list-group-item
+              .row
+                .col-xs-6
+                  = c.label
+                  %br
+                  %small
+                    (
+                    = c.full_path
+                    )
+                .col-xs-6
+                  = link_to edit_comfy_admin_cms_site_page_path(@site, c), class: "btn btn-xs btn-default" do
+                    %span.glyphicon.glyphicon-edit
+                    Edit
+
+                  = link_to comfy_admin_cms_site_page_path(@site, c, preview: true), target: "_blank", method: :put, class: "btn btn-xs btn-default" do
+                    %span.glyphicon.glyphicon-search
+                    Preview
+

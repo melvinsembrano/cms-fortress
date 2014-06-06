@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Melvin Sembrano"]
-  s.date = "2014-06-05"
+  s.date = "2014-06-06"
   s.description = "Comfortable Mexican Sofa (CMS) - User and role management extension"
   s.email = "melvinsembrano@gmail.com"
   s.extra_rdoc_files = [
@@ -46,7 +46,6 @@ Gem::Specification.new do |s|
     "app/models/cms/fortress/user.rb",
     "app/models/cms/page_workflow.rb",
     "app/models/cms_ability.rb",
-    "app/models/error/missing_role_configuration_file.rb",
     "app/views/cms/fortress/admin/_left_contents_nav.html.haml",
     "app/views/cms/fortress/admin/_left_designs_nav.html.haml",
     "app/views/cms/fortress/admin/_left_nav.html.haml",
@@ -113,6 +112,7 @@ Gem::Specification.new do |s|
     "lib/cms/fortress/rails/engine.rb",
     "lib/cms/fortress/routes/admin.rb",
     "lib/cms/fortress/routing.rb",
+    "lib/cms/fortress/site_methods.rb",
     "lib/comfortable_mexican_sofa/fixture/page.rb",
     "lib/generators/cms/comfy/comfy_generator.rb",
     "lib/generators/cms/fortress/USAGE",

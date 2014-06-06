@@ -6,6 +6,7 @@ require 'tinymce-rails'
 require_relative 'comfortable_mexican_sofa/fixture/page'
 
 require_relative 'cms/fortress/application_controller_methods'
+require_relative 'cms/fortress/sites_controller_methods'
 require_relative 'cms/fortress/page_methods'
 require_relative 'cms/fortress/file_methods'
 require_relative 'cms/fortress/site_methods'
