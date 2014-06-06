@@ -42,11 +42,8 @@ module Cms
                 ret = true
               end
             end
-            ret
+            self.update_attribute(:is_published, ret)
           end
-
-          scope :drafts, -> { joins(:page_workflow).where(cms_page_workflows: {status_id: 0}) }
-          scope :reviewed, -> { joins(:page_workflow).where(cms_page_workflows: {status_id: 1}) }
 
         end
 
