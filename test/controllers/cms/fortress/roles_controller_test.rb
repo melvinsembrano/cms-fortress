@@ -1,11 +1,16 @@
+# http://api.rubyonrails.org/classes/ActionController/TestCase.html
 require 'test_helper'
 
+
 class Cms::Fortress::RolesControllerTest < ActionController::TestCase
-  setup do
+  def setup
+    @comfy_cms_site = comfy_cms_sites(:default)
+    @cms_fortress_user = cms_fortress_users(:one)
     @cms_fortress_role = cms_fortress_roles(:one)
+    sign_in Cms::Fortress::User, @cms_fortress_user
   end
 
-  test "should get index" do
+  def test_should_get_index
     get :index
     assert_response :success
     assert_not_nil assigns(:cms_fortress_roles)
@@ -18,7 +23,7 @@ class Cms::Fortress::RolesControllerTest < ActionController::TestCase
 
   test "should create cms_fortress_role" do
     assert_difference('Cms::Fortress::Role.count') do
-      post :create, cms_fortress_role: { description: @cms_fortress_role.description, title: @cms_fortress_role.title }
+      post :create, cms_fortress_role: { description: @cms_fortress_role.description, name: @cms_fortress_role.name }
     end
 
     assert_redirected_to cms_fortress_role_path(assigns(:cms_fortress_role))
@@ -35,7 +40,7 @@ class Cms::Fortress::RolesControllerTest < ActionController::TestCase
   end
 
   test "should update cms_fortress_role" do
-    put :update, id: @cms_fortress_role, cms_fortress_role: { description: @cms_fortress_role.description, title: @cms_fortress_role.title }
+    put :update, id: @cms_fortress_role, cms_fortress_role: { description: @cms_fortress_role.description, name: @cms_fortress_role.name }
     assert_redirected_to cms_fortress_role_path(assigns(:cms_fortress_role))
   end
 

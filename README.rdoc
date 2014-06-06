@@ -104,6 +104,17 @@ http://raw.github.com/melvinsembrano/cms-fortress/master/docs/screens/files-inte
 
 For more Comfortable Mexican Sofa awesomeness visit the wiki page here https://github.com/comfy/comfortable-mexican-sofa/wiki
 
+== Development & Testing
+
+To run the tests you have to install the development files and run the migrations
+
+    rails generate cms:fortress --development
+    rake db:migrate
+
+Afterwards you can run the tests by calling
+
+    rake test
+
 == Contributing to cms-fortress
 
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.

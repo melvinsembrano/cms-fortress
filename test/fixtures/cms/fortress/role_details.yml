@@ -1,17 +1,98 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
+admin_pages:
+  name:       Pages
+  command:    contents.pages
+  can_create: 1
+  can_update: 1
+  can_delete: 1
+  can_view:   1
+  role:       Administrator
+
+admin_files:
+  name:       Files
+  command:    contents.files
+  can_create: 1
+  can_update: 1
+  can_delete: 1
+  can_view:   1
+  role:       Administrator
+
+admin_page_review:
+  name:       Page - Review
+  command:    contents.page.review
+  can_create: 1
+  can_update: 1
+  can_delete: 1
+  can_view:   1
+  role:       Administrator
+
+admin_page_publish:
+  name:       Page - Publish
+  command:    contents.page.publish
+  can_create: 1
+  can_update: 1
+  can_delete: 1
+  can_view:   1
+  role:       Administrator
+
+admin_layouts:
+  name:       Layouts
+  command:    designs.layouts
+  can_create: 1
+  can_update: 1
+  can_delete: 1
+  can_view:   1
+  role:       Administrator
+
+admin_snippets:
+  name:       Snippets
+  command:    designs.snippets
+  can_create: 1
+  can_update: 1
+  can_delete: 1
+  can_view:   1
+  role:       Administrator
+
+admin_sites:
+  name:       Sites
+  command:    settings.sites
+  can_create: 1
+  can_update: 1
+  can_delete: 1
+  can_view:   1
+  role:       Administrator
+
+admin_roles:
+  name:       Roles
+  command:    settings.roles
+  can_create: 1
+  can_update: 1
+  can_delete: 1
+  can_view:   1
+  role:       Administrator
+
+admin_users:
+  name:       Users
+  command:    settings.users
+  can_create: 1
+  can_update: 1
+  can_delete: 1
+  can_view:   1
+  role:       Administrator
+
 one:
   name: MyString
   command: MyString
-  create: false
-  update: false
-  delete: false
-  view: false
+  can_create: false
+  can_update: false
+  can_delete: false
+  can_view: false
 
 two:
   name: MyString
   command: MyString
-  create: false
-  update: false
-  delete: false
-  view: false
+  can_create: false
+  can_update: false
+  can_delete: false
+  can_view: false

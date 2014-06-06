@@ -1,5 +1,4 @@
 module Cms::Fortress::Error
-  # log error to the Rails log
   def self.log_error(name, message)
     Rails.logger.fatal("[ERROR:] in #{name} with message: #{message}\n\n")
   end
