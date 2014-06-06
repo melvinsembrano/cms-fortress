@@ -5,7 +5,8 @@ module Cms
       def after_sign_in_path_for(resource)
         if resource.class.eql?(Cms::Fortress::User)
           session[:site_id] = resource.site_id
-          comfy_admin_cms_path
+          #comfy_admin_cms_path
+          dashboard_site_path
         else
           begin
             stored_location_for(resource) || send("after_sign_in_path_for_#{ resource.class.name.underscore }", resource)
@@ -18,7 +19,8 @@ module Cms
       def after_sign_out_path_for(resource_or_scope)
         # request.referrer
         if resource_or_scope.eql?(:cms_fortress_user)
-          comfy_admin_cms_path
+          # comfy_admin_cms_path
+          dashboard_site_path
         else
           begin
             stored_location_for(resource_or_scope) || send("after_sign_out_path_for_#{ resource_or_scope.to_s }", resource_or_scope)
