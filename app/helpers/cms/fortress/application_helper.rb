@@ -36,7 +36,7 @@ module Cms::Fortress::ApplicationHelper
 
   def topnav_resource_item(key, resource)
     if ["divider", "dropdown-header"].include?(resource[:name])
-      title = resource[:title].nil? ? "" : t(resource[:title])
+      title = resource[:title].nil? ? "" : t(resource[:title], site_name: @site.label)
       content_tag(:li, title, class: resource[:name], role: "presentation")
     else
       if can? :view, "#{ key }.#{ resource[:name] }"
