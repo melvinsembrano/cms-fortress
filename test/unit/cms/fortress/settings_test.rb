@@ -10,7 +10,7 @@ class Cms::Fortress::SettingsTest < ActiveSupport::TestCase
 
   test "test_it_should_return_the_config_file" do
     settings = Cms::Fortress::Settings.new(:global_settings)
-    assert_equal(settings.title, 'Kenny CMS')
+    assert_equal(settings.title, 'CMS Fortress')
   end
 
 end

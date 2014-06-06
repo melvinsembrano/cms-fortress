@@ -3,19 +3,24 @@
 Administrator:
   name: Administrator
   description: Administrator
+  site: default
 
 Author:
   name: Author
   description: Author
+  site: default
 
 Contributor:
   name: Contributor
   description: Contributor
+  site: default
 
 one:
   name: MyString
   description: MyText
+  site: default
 
 two:
   name: MyString
   description: MyText
+  site: default
