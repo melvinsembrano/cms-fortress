@@ -16,7 +16,7 @@ en:
       cancel: Cancel
       published: Published
       published_date: scheduled publication
-      cached_timeout: Cached Timeout
+      cache_timeout: Cached Timeout
       toggle_navigation: Toggle Navigation
       image_selector: Image Selector
       insert_item: Click the thumbnail to insert item to the selected editor.
@@ -97,11 +97,11 @@ en:
       cms:
         pages:
           form:
-            review: review
-            schedule: scheduled publish
-            publish: publish
-            draft: save draft
-            reset: reset
+            review: approve
+            schedule: schedule for publication
+            publish: publish now
+            draft: save as draft
+            reset: reset to draft
 
   activerecord:
     attributes:

@@ -22,7 +22,7 @@ class Comfy::Admin::Cms::PagesControllerTest < ActionController::TestCase
                 { :identifier => 'default_field_text',
                   :content    => 'title content' }
             ]
-        }, :commit => 'draft'
+        }, :transition => 'draft'
         page = Comfy::Cms::Page.last
         assert_equal @comfy_cms_site, page.site
         assert page.drafted?
@@ -46,7 +46,7 @@ class Comfy::Admin::Cms::PagesControllerTest < ActionController::TestCase
                 { :identifier => 'default_field_text',
                   :content    => 'title content' }
             ]
-        }, :commit => 'publish'
+        }, :transition => 'publish'
         page = Comfy::Cms::Page.last
         assert_equal @comfy_cms_site, page.site
         assert page.published?
@@ -59,7 +59,7 @@ class Comfy::Admin::Cms::PagesControllerTest < ActionController::TestCase
   test "drafted page should become reviewed" do
     page = comfy_cms_pages(:drafted)
     assert_no_difference 'Comfy::Cms::Block.count' do
-      put :update, :site_id => page.site, :id => page, :commit => 'review'
+      put :update, :site_id => page.site, :id => page, :transition => 'review'
       assert_response :redirect
       assert_redirected_to :action => :edit, :id => page
       assert_equal 'Page updated', flash[:success]
@@ -70,7 +70,7 @@ class Comfy::Admin::Cms::PagesControllerTest < ActionController::TestCase
   test "drafted page should become published" do
     page = comfy_cms_pages(:drafted)
     assert_no_difference 'Comfy::Cms::Block.count' do
-      put :update, :site_id => page.site, :id => page, :commit => 'publish'
+      put :update, :site_id => page.site, :id => page, :transition => 'publish'
       assert_response :redirect
       assert_redirected_to :action => :edit, :id => page
       assert_equal 'Page updated', flash[:success]
@@ -81,7 +81,7 @@ class Comfy::Admin::Cms::PagesControllerTest < ActionController::TestCase
   test "reviewed page should become published" do
     page = comfy_cms_pages(:reviewed)
     assert_no_difference 'Comfy::Cms::Block.count' do
-      put :update, :site_id => page.site, :id => page, :commit => 'publish'
+      put :update, :site_id => page.site, :id => page, :transition => 'publish'
       assert_response :redirect
       assert_redirected_to :action => :edit, :id => page
       assert_equal 'Page updated', flash[:success]
@@ -92,11 +92,24 @@ class Comfy::Admin::Cms::PagesControllerTest < ActionController::TestCase
   test "published page should become drafted" do
     page = comfy_cms_pages(:published)
     assert_no_difference 'Comfy::Cms::Block.count' do
-      put :update, :site_id => page.site, :id => page, :commit => 'reset'
+      put :update, :site_id => page.site, :id => page, :transition => 'reset'
       assert_response :redirect
       assert_redirected_to :action => :edit, :id => page
       assert_equal 'Page updated', flash[:success]
       assert assigns(:page).drafted?
     end
+  end
+
+  test "saving a page should'nt change status of a page" do
+    page = comfy_cms_pages(:drafted)
+    label = 'Arrr'
+    put :update, :site_id => page.site, :id => page, :commit => 'save', :page => {
+        :label          => label,
+    }
+    assert_response :redirect
+    assert_redirected_to :action => :edit, :id => page
+    assert_equal 'Page updated', flash[:success]
+    assert assigns(:page).drafted?
+    assert_equal assigns(:page).label, label
   end
 end
