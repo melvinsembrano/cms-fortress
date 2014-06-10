@@ -8,26 +8,33 @@ module Cms
           include AASM
 
           aasm do
-            state :drafted, initial: true
+            state :new, initial: true
+            state :drafted
             state :reviewed
             state :scheduled
             state :published
 
+            event :draft do
+              after :publish_page?
+              transitions from: :new, to: :drafted
+            end
+
             event :review do
-              transitions from: :drafted, to: :reviewed
+              after :publish_page?
+              transitions from: [:new, :drafted], to: :reviewed
             end
 
             event :schedule do
               after :publish_page?
-              transitions from: [:drafted, :reviewed], to: :scheduled, guard: :published_date?
+              transitions from: [:new, :drafted, :reviewed], to: :scheduled, guard: :published_date?
             end
 
             event :publish do
               after :publish_page?
-              transitions from: [:drafted, :reviewed, :scheduled], to: :published
+              transitions from: [:new, :drafted, :reviewed, :scheduled], to: :published
             end
 
-            event :draft do
+            event :reset do
               after :publish_page?
               transitions from: [:reviewed, :scheduled, :published], to: :drafted
             end
@@ -42,7 +49,7 @@ module Cms
                 ret = true
               end
             end
-            self.update_attribute(:is_published, ret)
+            self.is_published = ret
           end
 
         end

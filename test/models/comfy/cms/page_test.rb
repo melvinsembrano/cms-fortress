@@ -1,14 +1,33 @@
 require 'test_helper'
 
 class Comfy::Cms::PageTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  test "new page can be drafted" do
+    @new = comfy_cms_pages(:default)
+    @new.draft
+    assert(@new.drafted?)
+    assert(!@new.is_published)
+  end
+
+  test "new page can be reviewed" do
+    @new = comfy_cms_pages(:default)
+    @new.review
+    assert(@new.reviewed?)
+    assert(!@new.is_published)
+  end
+
+  test "new page can be published" do
+    @new = comfy_cms_pages(:default)
+    @new.publish
+    assert(@new.published?)
+    assert(@new.is_published)
+  end
 
   test "drafted page can be reviewed" do
     @drafted = comfy_cms_pages(:drafted)
     @drafted.review
     assert(@drafted.reviewed?)
+    assert(!@drafted.is_published)
   end
 
   test "drafted page can be published" do
@@ -26,23 +45,39 @@ class Comfy::Cms::PageTest < ActiveSupport::TestCase
     assert(@reviewed.is_published)
   end
 
+  test "reviewed page can be resetted" do
+    @reviewed = comfy_cms_pages(:reviewed)
+    @reviewed.reset
+    assert(@reviewed.drafted?)
+  end
+
   test "reviewed page can be drafted" do
     @reviewed = comfy_cms_pages(:reviewed)
-    @reviewed.draft
-    assert(@reviewed.drafted?)
+    assert_raises (AASM::InvalidTransition) {
+      @reviewed.draft
+    }
+    assert(!@reviewed.is_published)
+  end
+
+  test "published page can be resetted" do
+    @published = comfy_cms_pages(:published)
+    @published.reset
+    assert(@published.drafted?)
+    assert(!@published.is_published)
   end
 
   test "published page can be drafted" do
     @published = comfy_cms_pages(:published)
-    @published.draft
-    assert(@published.drafted?)
-    assert(!@published.is_published)
+    assert_raises (AASM::InvalidTransition) {
+      @published.draft
+    }
+    assert(@published.is_published)
   end
 
   test "published page cannot be reviewed" do
     @published = comfy_cms_pages(:published)
     assert_raises (AASM::InvalidTransition) {
-      @published.review!
+      @published.review
     }
     assert(@published.is_published)
   end

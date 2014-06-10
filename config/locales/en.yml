@@ -100,7 +100,8 @@ en:
             review: review
             schedule: scheduled publish
             publish: publish
-            draft: reset
+            draft: save draft
+            reset: reset
 
   activerecord:
     attributes:

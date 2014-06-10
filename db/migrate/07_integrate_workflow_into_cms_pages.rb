@@ -6,7 +6,7 @@ class IntegrateWorkflowIntoCmsPages < ActiveRecord::Migration
 
   def change
 
-    add_column :comfy_cms_pages, :aasm_state, :string, default: 'drafted'
+    add_column :comfy_cms_pages, :aasm_state, :string, default: 'new'
     add_column :comfy_cms_pages, :published_date, :date
 
     Cms::PageWorkflow.all.each do |workflow|

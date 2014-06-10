@@ -137,7 +137,7 @@ ActiveRecord::Schema.define(version: 7) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "cached_timeout",                  default: 0
-    t.string   "aasm_state",                      default: "drafted"
+    t.string   "aasm_state",                      default: "new"
     t.date     "published_date"
   end
 

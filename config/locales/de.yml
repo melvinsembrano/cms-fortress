@@ -23,6 +23,18 @@ de:
       settings: Einstellungen
 
       admin:
+        dashboard:
+          title: Dashboard
+          draft_widget: Seiten im Entwurf
+          reviewed_widget: Überprüfte Seite
+          updated_pages: Kürzlich bearbeitete Seiten
+
+        sites:
+          menu_header: "Site/ %{site_name}"
+        super_user:
+          title: Super Users
+          menu_header: Nur Super User
+
         users: Benutzer
         not_authorized: Sie sind nicht berechtigt diese Funktionalität zu nutzen
         settings_dashboard: Dashboard für Einstellungen
@@ -85,7 +97,8 @@ de:
             review: Überprüfen
             schedule: Veröffentlichung planen
             publish: Veröffentlichen
-            draft: Zurücksetzen
+            draft: Entwurf speichern
+            reset: Zurücksetzen
 
   activerecord:
     attributes:

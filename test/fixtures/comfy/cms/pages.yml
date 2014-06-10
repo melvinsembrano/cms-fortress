@@ -44,7 +44,7 @@ drafted:
   target_page:
   layout: default
   label: Drafted Page
-  slug:
+  slug: 'drafted'
   full_path: '/'
   children_count: 1
   position: 0
@@ -66,7 +66,7 @@ reviewed:
   target_page:
   layout: default
   label: Reviewed Page
-  slug:
+  slug: 'reviewed'
   full_path: '/'
   children_count: 0
   position: 0
@@ -88,7 +88,7 @@ published:
   target_page:
   layout: default
   label: Published Page
-  slug:
+  slug: 'published'
   full_path: '/'
   children_count: 0
   position: 0

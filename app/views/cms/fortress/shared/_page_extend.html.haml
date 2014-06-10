@@ -1,4 +1,4 @@
-- if Cms::Fortress.configuration.enable_page_workflow && can?(:manage, 'contents.page.schedule')
+- if Cms::Fortress.configuration.enable_page_workflow && can?(:manage, 'contents.page.schedule') && !@page.new_record?
   = form.text_field :published_date, label: t('cms.fortress.published_date'), class: "status-control", :data => {:utc_date => (@page.published_date.nil? ? Time.now : @page.published_date).strftime("%d %B, %Y") }
 
 - if Cms::Fortress.configuration.enable_page_caching
