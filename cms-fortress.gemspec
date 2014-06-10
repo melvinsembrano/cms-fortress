@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.summary           = "Comfortable Mexican Sofa (CMS) - User and role management extension"
 
   s.files             = `git ls-files`.split($/)
-  s.executables       = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  s.executables       = []
   s.test_files        = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths     = ["lib"]
 
