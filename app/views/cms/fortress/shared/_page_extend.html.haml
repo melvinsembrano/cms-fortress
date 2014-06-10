@@ -2,4 +2,4 @@
   = form.text_field :published_date, label: t('cms.fortress.published_date'), class: "status-control", :data => {:utc_date => (@page.published_date.nil? ? Time.now : @page.published_date).strftime("%d %B, %Y") }
 
 - if Cms::Fortress.configuration.enable_page_caching
-  = form.select :cached_timeout, cached_timeout_for_select, {label: t('cms.fortress.cached_timeout'), control_col: "col-sm-4"}, {class: 'status-control'}
+  = form.select :cached_timeout, cached_timeout_for_select, {label: t('cms.fortress.cache_timeout'), control_col: "col-sm-4"}, {class: 'status-control'}

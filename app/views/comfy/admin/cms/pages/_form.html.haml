@@ -36,10 +36,15 @@
 
 = render 'comfy/admin/cms/partials/page_form_after', :object => form
 
-= form.form_group :class => 'form-actions' do
-  = form.button t('.preview'), :name => 'preview', :id => nil, :class => 'btn btn-default'
+= form.form_group :class => 'form-actions', :label => { text: "Workflow" } do
   - if Cms::Fortress.configuration.enable_page_workflow
     - page_actions(@page).each do |page_action|
-      = form.button t('.'+page_action.to_s), :class => 'btn btn-primary', :value => page_action, :name => 'commit'
+      %p
+        = form.button t('.'+page_action.to_s), :class => 'btn btn-primary', :value => page_action, :name => 'transition'
+
+= form.form_group :class => 'form-actions' do
+  - if !@page.new_record?
+    = form.button t('.update'), :class => 'btn btn-success', :value => 'save', :name => 'commit'
+  = form.button t('.preview'), :name => 'preview', :id => nil, :class => 'btn btn-default'
 
 = render :partial => 'cms/fortress/shared/page_extend_js'

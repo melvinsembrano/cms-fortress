@@ -16,7 +16,7 @@ de:
       cancel: Abbrechen
       published: Publiziert
       published_date: geplante Veröffentlichung
-      cached_timeout: Cache Dauer
+      cache_timeout: Cache Dauer
       toggle_navigation: Navigation einklappen
       image_selector: Bildauswahl
       insert_item: Ein Bild anklicken um es in den ausgewählten Editor einzufügen.
@@ -94,11 +94,11 @@ de:
       cms:
         pages:
           form:
-            review: Überprüfen
-            schedule: Veröffentlichung planen
-            publish: Veröffentlichen
-            draft: Entwurf speichern
-            reset: Zurücksetzen
+            review: Freigeben
+            schedule: Publizierung planen
+            publish: Jetzt publizieren
+            draft: Als Entwurf speichern
+            reset: Auf Entwurf zurücksetzen
 
   activerecord:
     attributes:
