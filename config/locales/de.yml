@@ -15,6 +15,7 @@ de:
       are_you_sure: Sind Sie sicher?
       cancel: Abbrechen
       published: Publiziert
+      published_date: geplante Veröffentlichung
       cached_timeout: Cache Dauer
       toggle_navigation: Navigation einklappen
       image_selector: Bildauswahl
@@ -22,6 +23,18 @@ de:
       settings: Einstellungen
 
       admin:
+        dashboard:
+          title: Dashboard
+          draft_widget: Seiten im Entwurf
+          reviewed_widget: Überprüfte Seite
+          updated_pages: Kürzlich bearbeitete Seiten
+
+        sites:
+          menu_header: "Site/ %{site_name}"
+        super_user:
+          title: Super Users
+          menu_header: Nur Super User
+
         users: Benutzer
         not_authorized: Sie sind nicht berechtigt diese Funktionalität zu nutzen
         settings_dashboard: Dashboard für Einstellungen
@@ -76,6 +89,16 @@ de:
             email_address: E-Mail Adresse
             password: Password
             remember_me: Angemeldet bleiben
+  comfy:
+    admin:
+      cms:
+        pages:
+          form:
+            review: Überprüfen
+            schedule: Veröffentlichung planen
+            publish: Veröffentlichen
+            draft: Entwurf speichern
+            reset: Zurücksetzen
 
   activerecord:
     attributes:

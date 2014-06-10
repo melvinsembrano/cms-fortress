@@ -3,6 +3,7 @@ contents:
   - files
   - page.review
   - page.publish
+  - page.draft
 designs:
   - layouts
   - snippets

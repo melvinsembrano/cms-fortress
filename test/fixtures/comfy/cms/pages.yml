@@ -10,7 +10,7 @@ default:
   position: 0
   is_published: true
   content_cache: |-
-    
+
     layout_content_a
     default_page_text_content_a
     default_snippet_content
@@ -37,3 +37,69 @@ child:
     layout_content_b
     default_snippet_content
     layout_content_c
+
+drafted:
+  site: default
+  parent:
+  target_page:
+  layout: default
+  label: Drafted Page
+  slug: 'drafted'
+  full_path: '/'
+  children_count: 1
+  position: 0
+  is_published: false
+  content_cache: |-
+
+    layout_content_a
+    default_page_text_content_a
+    default_snippet_content
+    default_page_text_content_b
+    layout_content_b
+    default_snippet_content
+    layout_content_c
+  aasm_state: drafted
+
+reviewed:
+  site: default
+  parent:
+  target_page:
+  layout: default
+  label: Reviewed Page
+  slug: 'reviewed'
+  full_path: '/'
+  children_count: 0
+  position: 0
+  is_published: false
+  content_cache: |-
+
+    layout_content_a
+    default_page_text_content_a
+    default_snippet_content
+    default_page_text_content_b
+    layout_content_b
+    default_snippet_content
+    layout_content_c
+  aasm_state: reviewed
+
+published:
+  site: default
+  parent:
+  target_page:
+  layout: default
+  label: Published Page
+  slug: 'published'
+  full_path: '/'
+  children_count: 0
+  position: 0
+  is_published: true
+  content_cache: |-
+
+    layout_content_a
+    default_page_text_content_a
+    default_snippet_content
+    default_page_text_content_b
+    layout_content_b
+    default_snippet_content
+    layout_content_c
+  aasm_state: published
