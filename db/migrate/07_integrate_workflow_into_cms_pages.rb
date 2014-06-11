@@ -27,7 +27,7 @@ class IntegrateWorkflowIntoCmsPages < ActiveRecord::Migration
             'drafted'
           end
         page.published_date = workflow.published_date
-        raise page.errors.inspect unless page.save!
+        page.save!
       end
     end
 
