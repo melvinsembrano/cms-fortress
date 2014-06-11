@@ -8,6 +8,14 @@
 
 = render 'comfy/admin/cms/partials/page_form_before', :object => form
 
+- if Cms::Fortress.configuration.enable_page_workflow && !@page.new_record?
+  .container-fluid.workflow-panel
+    .btn-group.pull-left
+      %span.btn.btn-success= @page.aasm_state.titleize
+      - page_actions(@page).each do |page_action|
+        = form.button t('.'+page_action.to_s), :class => 'btn btn-default', :value => page_action, :name => 'transition'
+  %hr
+
 = form.text_field :label, :data => {:slugify => @page.new_record?}
 
 - unless @site.pages.count == 0 || @site.pages.root == @page
@@ -36,15 +44,8 @@
 
 = render 'comfy/admin/cms/partials/page_form_after', :object => form
 
-= form.form_group :class => 'form-actions', :label => { text: "Workflow" } do
-  - if Cms::Fortress.configuration.enable_page_workflow
-    - page_actions(@page).each do |page_action|
-      %p
-        = form.button t('.'+page_action.to_s), :class => 'btn btn-primary', :value => page_action, :name => 'transition'
-
 = form.form_group :class => 'form-actions' do
-  - if !@page.new_record?
-    = form.button t('.update'), :class => 'btn btn-success', :value => 'save', :name => 'commit'
   = form.button t('.preview'), :name => 'preview', :id => nil, :class => 'btn btn-default'
+  = form.button t(@page.new_record?? '.create' : '.update'), :class => 'btn btn-primary', :value => 'save', :name => 'commit'
 
 = render :partial => 'cms/fortress/shared/page_extend_js'

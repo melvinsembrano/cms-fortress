@@ -1,19 +1,20 @@
 .page-header
 
   = link_to t('.revision', :count => @page.revisions.count), comfy_admin_cms_site_page_revisions_path(@site, @page), :class => 'btn btn-default pull-right'
-  %h2.pull-right
-    -if @page.drafted?
-      %span.label.label-info
-        Draft
-    -if @page.reviewed?
-      %span.label.label-primary
-        Reviewed
-    -if @page.scheduled?
-      %span.label.label-warning
-        Scheduled
-    -if @page.published?
-      %span.label.label-success
-        Published
+
+  /%h2.pull-right
+  /  -if @page.drafted?
+  /    %span.label.label-info
+  /      Draft
+  /  -if @page.reviewed?
+  /    %span.label.label-primary
+  /      Reviewed
+  /  -if @page.scheduled?
+  /    %span.label.label-warning
+  /      Scheduled
+  /  -if @page.published?
+  /    %span.label.label-success
+  /      Published
   %h2= t('.title')
 
 

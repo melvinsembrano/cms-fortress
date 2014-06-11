@@ -15,7 +15,8 @@ en:
       are_you_sure: Are you sure?
       cancel: Cancel
       published: Published
-      published_date: scheduled publication
+      published_date: Published At
+      schedule_date: Scheduled Publication
       cache_timeout: Cached Timeout
       toggle_navigation: Toggle Navigation
       image_selector: Image Selector
@@ -97,11 +98,11 @@ en:
       cms:
         pages:
           form:
-            review: approve
-            schedule: schedule for publication
-            publish: publish now
+            review: Approve
+            schedule: Publish Date
+            publish: Publish Now
             draft: save as draft
-            reset: reset to draft
+            reset: Reset to Draft
 
   activerecord:
     attributes:

@@ -5,6 +5,8 @@ module Cms
       def self.included(base)
 
         base.class_eval do
+          before_create { self.draft if self.new? }
+
           include AASM
 
           aasm do
@@ -12,7 +14,7 @@ module Cms
             state :drafted
             state :reviewed
             state :scheduled
-            state :published
+            state :published, before_enter: :check_publish_date
 
             event :draft do
               after :publish_page?
@@ -40,12 +42,16 @@ module Cms
             end
           end
 
+          def check_publish_date
+            self.published_date = Time.now unless self.published_date
+          end
+
           def publish_page?
             ret = false
             if self.published?
               ret = true
             else
-              if self.scheduled? && self.published_date.present? <= Date.today
+              if self.scheduled? && self.published_date.present? && self.published_date <= Date.today
                 ret = true
               end
             end
