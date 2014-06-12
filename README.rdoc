@@ -137,6 +137,6 @@ Afterwards you can run the tests by calling
 
 == Copyright
 
-Copyright (c) 2013 Melvin Sembrano. See LICENSE.txt for
+Copyright (c) 2014 Melvin Sembrano. See LICENSE.txt for
 further details.
 
