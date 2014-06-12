@@ -76,6 +76,21 @@ You can create a custom role ability via a three-step process.
         :path => 'admin_my_role_details_path'
       }
       # the other two lists are "content_resources" and "design_resources"
+
+      #adding a super user only menu item
+      config.settings_resources << {
+        :name => 'my_role_detail',
+        :title => 'i18n.label.title', # this is passed to the t() function - can be plain text
+        :path => 'admin_my_role_details_path',
+        :super_user => true
+      }
+      
+      # adding a divider menu item (Wide Theme only)
+      config.content_resources << {name: 'divider'}
+      
+      #adding a menu header item (Wide Theme only)
+      config.content_resources << {name: 'dropdown-header', title: "i18n.my.header.label"}
+      
     end
 
 The path is eval'd at runtime, so you can use Rails helper methods such as
