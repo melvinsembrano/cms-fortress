@@ -22,4 +22,9 @@
 
 .current-site-info {
   margin-top: -1.2em;
+  margin-bottom: 0.3em;
+}
+
+.site_selector {
+  width: 250px;
 }

@@ -22,6 +22,7 @@ de:
       image_selector: Bildauswahl
       insert_item: Ein Bild anklicken um es in den ausgewählten Editor einzufügen.
       settings: Einstellungen
+      site_selector: "Seite auswählen: "
 
       admin:
         dashboard:
