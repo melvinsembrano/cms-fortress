@@ -15,7 +15,8 @@ de:
       are_you_sure: Sind Sie sicher?
       cancel: Abbrechen
       published: Publiziert
-      published_date: geplante Veröffentlichung
+      published_date: Publiziert am
+      schedule_date: geplante Publizierung
       cache_timeout: Cache Dauer
       toggle_navigation: Navigation einklappen
       image_selector: Bildauswahl
