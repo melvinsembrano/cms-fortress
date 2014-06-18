@@ -1,7 +1,10 @@
 - unless @site.nil? || @site.new_record?
   .container-fluid.current-site-info
-    %span.label.label-primary
-      = @site.label
+    -if multiple_sites?
+      = site_selector
+    -else
+      %span.label.label-primary
+        = @site.label
 
 .container-fluid.wide-body
   - if controller_name.eql?('revisions')
