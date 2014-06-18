@@ -10,22 +10,18 @@ module Cms::Fortress::SprocketHelper
     end
 
     options = {
-      menubar: 'tools format view',
-      toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table | fullscreen code',
-      toolbar2: '',
-      plugins: "['code', 'fullscreen', 'media', 'link', 'table']",
-      language: 'en'
+      menubar: "tools format view",
+      toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table | fullscreen code | image fmedia link",
+      toolbar2: "",
+      plugins: ["code", "fullscreen", "media", "link", "table"],
+      language: "en"
     }.stringify_keys.merge(config)
 
   <<-EOF
   tinymce.init({
+      #{configuration_from_options(options)},
       selector: 'textarea[data-cms-rich-text]',
-      menubar: '#{ options['menubar'] }',
-      toolbar1: '#{ options['toolbar1'] } | image fmedia link',
-      toolbar2: '#{ options['toolbar2'] }',
-      plugins: #{ options['plugins'] },
       link_list: CmsFortress.media.othersUrl(),
-      language: '#{ options['language'] }',
       setup: function(ed) {
         ed.addButton('image', {
           title: 'Insert Image',
@@ -46,4 +42,11 @@ module Cms::Fortress::SprocketHelper
   EOF
   end
 
+  private
+
+  def configuration_from_options(options)
+    options.map do |k, v|
+      v.is_a?(Array) ? "#{k}: #{v}" : "#{k}: '#{v}'"
+    end.join(',')
+  end
 end
