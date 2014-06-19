@@ -2,10 +2,10 @@
 
 Gem::Specification.new do |s|
   s.name      = "cms-fortress"
-  s.version   = "1.3.0.rc2"
+  s.version   = "1.3.0.rc3"
 
   s.authors           = ["Melvin Sembrano"]
-  s.date              = "2014-06-12"
+  s.date              = "2014-06-19"
   s.description       = "Comfortable Mexican Sofa (CMS) - User and role management extension"
   s.email             = "melvinsembrano@gmail.com"
   s.extra_rdoc_files  = [ "LICENSE.txt", "README.rdoc" ]
