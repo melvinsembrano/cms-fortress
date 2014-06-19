@@ -22,13 +22,16 @@ module Cms::Fortress::SprocketHelper
       #{configuration_from_options(options)},
       selector: 'textarea[data-cms-rich-text]',
       link_list: CmsFortress.media.othersUrl(),
+
       setup: function(ed) {
+
         ed.addButton('image', {
           title: 'Insert Image',
           onclick: function() {
             return CmsFortress.media.showImageDialog(ed);
           }
         });
+
         return ed.addButton('fmedia', {
           tooltip: 'Insert Video',
           icon: 'media',
@@ -37,7 +40,9 @@ module Cms::Fortress::SprocketHelper
             return CmsFortress.media.showVideoDialog(ed);
           }
         });
+
       }
+
     });
   EOF
   end
@@ -46,7 +51,11 @@ module Cms::Fortress::SprocketHelper
 
   def configuration_from_options(options)
     options.map do |k, v|
-      v.is_a?(Array) ? "#{k}: #{v}" : "#{k}: '#{v}'"
+      v.is_a?(Array) ? "#{k}: #{v}" : "#{k}: #{boolean_value(v)}"
     end.join(',')
+  end
+
+  def boolean_value(v)
+    [true, false].include?(v) ? "#{v}" : "'#{v}'"
   end
 end
