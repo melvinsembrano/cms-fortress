@@ -1,42 +1,42 @@
-en:
+es:
   cms:
     fortress:
       page_title: CMS Fortress Admin
       title: CMS Fortress
-      contents: Contents
-      design: Design
-      admin: Admin
-      login: Logout
-      logout: Logout
-      create: Create
-      update: Update
-      delete: Delete
-      edit: Edit
-      are_you_sure: Are you sure?
-      cancel: Cancel
-      published: Published
-      published_date: Published At
+      contents: Contenido
+      design: Diseño
+      admin: Administración
+      login: Inicio de sesión
+      logout: Salir
+      create: Crear
+      update: Actualización
+      delete: Borrar
+      edit: Editar
+      are_you_sure: ¿Está seguro?
+      cancel: Cancelar
+      published: Publicado
+      published_date: Publicado En
       schedule_date: Scheduled Publication
-      cache_timeout: Cached Timeout
+      cache_timeout: Tiempo de espera de caché
       toggle_navigation: Toggle Navigation
       image_selector: Image Selector
       insert_item: Click the thumbnail to insert item to the selected editor.
-      settings: Settings
-      current_site: Current Site
+      settings: Configuración
+      current_site: Sitio Actual
 
       admin:
 
         dashboard:
-          title: Dashboard
-          draft_widget: Draft Pages
-          reviewed_widget: Reviewed Pages
-          updated_pages: Recently Updated Pages
+          title: Salpicadero
+          draft_widget: Proyecto de Páginas
+          reviewed_widget: Comentado Páginas
+          updated_pages: Páginas Actualizado Recientemente
 
         sites:
-          menu_header: "Site/ %{site_name}"
+          menu_header: "Sitio/ %{site_name}"
         super_user:
-          title: Super Users
-          menu_header: Super Users Only
+          title: Estupendo Usuarios
+          menu_header: único Estupendo Usuario
 
         users: Users
         not_authorized: You are not authorized to access this functionality
@@ -50,37 +50,37 @@ en:
           missing_roles_yaml_file: "The configuration file config/roles.yml is missing."
 
       roles:
-        title: Roles
-        new_link: New Role
-        edit_title: Edit Role
-        new_title: Create New Role
-        back: Back
-        load: Load New Roles
-        role: Role
-        show: Show
-        manage: Manage
-        save: Save
+        title: Rol
+        new_link: Nuevo Rol
+        edit_title: Editar Rol
+        new_title: Crear nuevo Rol
+        back: Espalda
+        load: Cargue Nuevo Rol
+        role: Rol
+        show: Mostar
+        manage: Gestionar
+        save: Ahorrar
         description: Description
-        show_access_rights: Show Access Rights
-        name: Name
-        contents: Contents
-        designs: Designs
-        settings: Settings
-        files: Files
-        page: Page
-        publish: publish
-        review: review
-        pages: Pages
+        show_access_rights: Mostrar Derechos de Consulta
+        name: Nombre
+        contents: Contenido
+        designs: Diseño
+        settings: Configuración
+        files: Archivos
+        page: Página
+        publish: Publicar
+        review: Revisión
+        pages: Páginas
         layouts: Layouts
         snippets: Snippets
-        roles: Roles
-        sites: Sites
-        users: Users
+        roles: Rol
+        sites: Sitios
+        users: Usuarios
 
       users:
-        title: Users
-        new_link: New User
-        new_super_link: New Super User
+        title: Usuarios
+        new_link: Nuevo Usuario
+        new_super_link: Nuevo Estupendo Usuario
         edit_title: Edit User
         new_title: Create New User
         last_name: Lastname
@@ -126,3 +126,4 @@ en:
         full_path: Path
         parent_id: Parent page
         slug: Slug
+

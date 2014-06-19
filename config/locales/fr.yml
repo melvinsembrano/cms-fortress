@@ -1,4 +1,4 @@
-en:
+fr:
   cms:
     fortress:
       page_title: CMS Fortress Admin
@@ -126,3 +126,4 @@ en:
         full_path: Path
         parent_id: Parent page
         slug: Slug
+
