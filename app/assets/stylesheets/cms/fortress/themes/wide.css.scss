@@ -1,6 +1,15 @@
 body#comfy {
   background-color: inherit;
 
+  small.site-button-label {
+    color: #999;
+  }
+
+  strong.site-button-label {
+    margin-left: 10px;
+    margin-right: 1em;
+  }
+
 /**
   font-size: 13px;
   line-height: 18px;
