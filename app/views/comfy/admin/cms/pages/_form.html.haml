@@ -11,7 +11,7 @@
 - if Cms::Fortress.configuration.enable_page_workflow && !@page.new_record?
   .container-fluid
     .btn-group
-      %span.btn.btn-success= @page.aasm_state.titleize
+      %span.btn.btn-success= t('.' + @page.aasm_state)
       - page_actions(@page).each do |page_action|
         = form.button t('.'+page_action.to_s), :class => 'btn btn-default', :value => page_action, :name => 'transition'
   %hr
