@@ -97,9 +97,12 @@ de:
         pages:
           form:
             review: Freigeben
+            reviewed: Freigegeben
             schedule: Publizierung planen
             publish: Jetzt publizieren
+            published: Publiziert
             draft: Als Entwurf speichern
+            drafted: Entwurf
             reset: Auf Entwurf zurücksetzen
 
   activerecord:
