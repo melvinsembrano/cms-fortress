@@ -1,10 +1,25 @@
 - unless @site.nil? || @site.new_record?
   .container-fluid.current-site-info
-    -if multiple_sites?
-      = site_selector
-    -else
-      %span.label.label-primary
-        = @site.label
+    - if super_user? && multiple_sites?
+      .btn-group(style="margin-top: 8px;")
+        %button.btn.btn-default.btn-sm.dropdown-toggle(type='button' data-toggle="dropdown")
+          %small.site-button-label
+            %em
+              = t('.current_site')
+          %strong.site-button-label
+            = current_site
+          %b.caret
+        %ul.dropdown-menu
+          - all_sites.each do |site|
+            = topnav_item site.label, comfy_admin_cms_site_pages_path(site), @site.id.eql?(site.id)
+    - else
+      .btn.btn-default.btn-sm
+        %small.site-button-label
+          %em
+            = t('.current_site')
+        %strong.site-button-label
+          = current_site
+
 
 .container-fluid.wide-body
   - if controller_name.eql?('revisions')

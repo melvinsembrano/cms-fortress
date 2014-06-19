@@ -3,6 +3,14 @@ require 'cms/fortress/error'
 
 module Cms::Fortress::ApplicationHelper
 
+  def current_site
+    @site.label
+  end
+
+  def super_user?
+     current_cms_fortress_user && current_cms_fortress_user.type.eql?(:super_user)
+  end
+
   def dashboard_widget(title, collection)
     render partial: "cms/fortress/shared/dashboard_widget", locals: {title: title, collection: collection}
   end
