@@ -11,8 +11,8 @@ module Cms::Fortress::ApplicationHelper
      current_cms_fortress_user && current_cms_fortress_user.type.eql?(:super_user)
   end
 
-  def dashboard_widget(title, collection)
-    render partial: "cms/fortress/shared/dashboard_widget", locals: {title: title, collection: collection}
+  def dashboard_widget(title, collection, partial="cms/fortress/shared/dashboard_widget")
+    render partial: partial, locals: {title: title, collection: collection}
   end
 
   def role_display(command)
