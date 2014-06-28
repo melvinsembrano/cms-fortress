@@ -64,3 +64,5 @@ log/
 00_create_cms.rb
 
 /db/development.sqlite3
+
+*.gem
