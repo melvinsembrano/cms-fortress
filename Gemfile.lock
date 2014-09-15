@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cms-fortress (1.3.0)
+    cms-fortress (1.3.2)
       aasm (~> 3.2)
       cancan (>= 1.6.9)
       comfortable_mexican_sofa (~> 1.12.0)
