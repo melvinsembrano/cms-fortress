@@ -23,11 +23,13 @@ module ComfortableMexicanSofa::Fixture::Page
             page.layout       = site.layouts.where(:identifier => attrs['layout']).first || parent.try(:layout)
             page.is_published = attrs['is_published'].nil?? true : attrs['is_published']
             page.position     = attrs['position'] if attrs['position']
-            
+
+            page.cached_timeout = attrs['cached_timeout']
+            page.aasm_state = attrs['aasm_state']
+            page.published_date = attrs['published_date']
+
             categories        = attrs['categories']
 
-            page.page_workflow = Cms::PageWorkflow.new(attrs['page_workflow']) if page.page_workflow.nil?
-            
             if attrs['target_page']
               self.target_pages ||= {}
               self.target_pages[page] = attrs['target_page']
@@ -38,13 +40,23 @@ module ComfortableMexicanSofa::Fixture::Page
         # setting content
         blocks_to_clear = page.blocks.collect(&:identifier)
         blocks_attributes = [ ]
-        Dir.glob("#{path}/*.html").each do |block_path|
-          identifier = block_path.split('/').last.gsub(/\.html\z/, '')
+        file_extentions = %w(html haml jpg png gif)
+        Dir.glob("#{path}/*.{#{file_extentions.join(',')}}").each do |block_path|
+          extention = File.extname(block_path)[1..-1]
+          identifier = block_path.split('/').last.gsub(/\.(#{file_extentions.join('|')})\z/, '')
           blocks_to_clear.delete(identifier)
           if fresh_fixture?(page, block_path)
+            content = case extention
+            when 'jpg', 'png', 'gif'
+              ::File.open(block_path)
+            when 'haml'
+              Haml::Engine.new(::File.open(block_path).read).render.rstrip
+            else
+              ::File.open(block_path).read
+            end
             blocks_attributes << {
               :identifier => identifier,
-              :content    => read_as_haml(block_path)
+              :content    => content
             }
           end
         end
@@ -58,7 +70,7 @@ module ComfortableMexicanSofa::Fixture::Page
         if page.changed? || page.blocks_attributes_changed || self.force_import
           if page.save
             save_categorizations!(page, categories)
-            ComfortableMexicanSofa.logger.warn("[FIXTURES] Imported Page \t #{page.full_path}")
+            ComfortableMexicanSofa.logger.info("[FIXTURES] Imported Page \t #{page.full_path}")
           else
             ComfortableMexicanSofa.logger.warn("[FIXTURES] Failed to import Page \n#{page.errors.inspect}")
           end
@@ -89,7 +101,6 @@ module ComfortableMexicanSofa::Fixture::Page
 
   class Exporter < ComfortableMexicanSofa::Fixture::Exporter
     def export!
-
       prepare_folder!(self.path)
       
       self.site.pages.each do |page|
@@ -106,7 +117,9 @@ module ComfortableMexicanSofa::Fixture::Page
             'categories'    => page.categories.map{|c| c.label},
             'is_published'  => page.is_published,
             'position'      => page.position,
-            'page_workflow' => {status_id: page.page_workflow.status_id, published_date: page.page_workflow.published_date }
+            'cached_timeout' => page.cached_timeout,
+            'aasm_state' => page.aasm_state,
+            'published_date' => page.published_date
           }.to_yaml)
         end
         page.blocks_attributes.each do |block|
@@ -115,9 +128,8 @@ module ComfortableMexicanSofa::Fixture::Page
           end
         end
         
-        ComfortableMexicanSofa.logger.warn("[FIXTURES] Exported Page \t #{page.full_path}")
+        ComfortableMexicanSofa.logger.info("[FIXTURES] Exported Page \t #{page.full_path}")
       end
     end
   end
 end
-
