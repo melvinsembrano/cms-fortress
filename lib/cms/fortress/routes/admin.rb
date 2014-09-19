@@ -9,7 +9,8 @@ class ActionDispatch::Routing::Mapper
         :sign_in => 'login', :sign_out => 'logout'
       },
       :controllers => {
-        :sessions => 'cms/fortress/users/sessions'
+        :sessions => 'cms/fortress/users/sessions',
+        :passwords => 'cms/fortress/users/passwords'
       }
 
     scope path, module: 'cms/fortress' do

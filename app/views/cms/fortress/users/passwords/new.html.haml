@@ -1,0 +1,14 @@
+= render :partial => 'cms/fortress/shared/navbar'
+.container
+  .row
+    .col-sm-6.col-sm-offset-3
+      = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, role: 'form', class: 'form-reset-password' }) do |f|
+        %h3 Forgot your password?
+        = devise_error_messages!
+        .form-group
+          = f.label :email
+          = f.email_field :email, autofocus: true, class: 'form-control'
+
+        = f.submit "Send me reset password instructions", class: 'btn btn-default'
+
+        = render "devise/shared/links"
