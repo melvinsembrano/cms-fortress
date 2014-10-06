@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails',                     '>= 4.0.0'
   s.add_dependency 'comfortable_mexican_sofa',  '~> 1.12.0'
   s.add_dependency 'devise',                    '~> 3.2'
-  s.add_dependency 'cancan',                    '>= 1.6.9'
+  s.add_dependency 'cancancan',                 '~> 1.9'
   s.add_dependency 'delayed_job',               '~> 4'
   s.add_dependency 'tinymce-rails',             '~> 4.0.0'
   s.add_dependency 'tinymce-rails-langs',       '~> 4.0'
