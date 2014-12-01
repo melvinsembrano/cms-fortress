@@ -1,6 +1,6 @@
 module Comfy::Admin::Cms::PagesHelper
   def page_actions(page)
-    states = page.aasm.permissible_events
+    states = page.aasm.events(permitted: true)
     states.select! do |state|
       can?(:manage, 'contents.page.'+state.to_s)
     end
