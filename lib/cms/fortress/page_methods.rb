@@ -4,6 +4,8 @@ module Cms
 
       def self.included(base)
 
+        base.extend ClassMethods
+
         base.class_eval do
           before_create { self.draft if self.new? }
 
@@ -61,6 +63,13 @@ module Cms
         end
 
       end
+
+        module ClassMethods
+          def updated_scheduled
+
+          end
+        end
+
 
     end
   end

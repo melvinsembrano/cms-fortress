@@ -1,8 +1,11 @@
 #= require tinymce-jquery
 #= require '../site_selector'
 
+
 window.CMS.wysiwyg = function () {
     return <%= tinymce_init %>
 }
 
-
+$(document).ready( function() {
+  $('.dropdown-toggle').dropdown();
+});

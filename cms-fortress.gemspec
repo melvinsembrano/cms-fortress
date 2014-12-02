@@ -2,10 +2,10 @@
 
 Gem::Specification.new do |s|
   s.name      = "cms-fortress"
-  s.version   = "1.3.4"
+  s.version   = "1.3.5"
 
   s.authors           = ["Melvin Sembrano"]
-  s.date              = "2014-12-01"
+  s.date              = "2014-12-02"
   s.description       = "Comfortable Mexican Sofa (CMS) - User and role management extension"
   s.email             = "melvinsembrano@gmail.com"
   s.extra_rdoc_files  = [ "LICENSE.txt", "README.rdoc" ]
@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.require_paths     = ["lib"]
 
   s.add_dependency 'rails',                     '>= 4.0.0'
-  s.add_dependency 'comfortable_mexican_sofa',  '<= 1.12.2'
+  s.add_dependency 'comfortable_mexican_sofa',  '~> 1.12.3'
   s.add_dependency 'devise',                    '~> 3.2'
   s.add_dependency 'cancancan',                 '~> 1.9'
   s.add_dependency 'delayed_job',               '~> 4'
