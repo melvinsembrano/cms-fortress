@@ -19,12 +19,12 @@ module Cms::Fortress::SprocketHelper
 
   <<-EOF
   tinymce.init({
-      #{configuration_from_options(options)},
+      #{configuration_from_options(options)}
+      #{configuration_from_options_as_string(options)}
       selector: 'textarea[data-cms-rich-text]',
       link_list: CmsFortress.media.othersUrl(),
 
       setup: function(ed) {
-
         ed.addButton('image', {
           title: 'Insert Image',
           onclick: function() {
@@ -40,19 +40,27 @@ module Cms::Fortress::SprocketHelper
             return CmsFortress.media.showVideoDialog(ed);
           }
         });
-
       }
-
     });
   EOF
   end
 
   private
 
+  def configuration_from_options_as_string(options)
+    config = options.map do |k, v|
+      "#{k.to_s.gsub('[plain]', '')}: #{v}," if k.to_s =~ /\[plain\]/
+    end
+    config.join() if config.present?
+  end
+
   def configuration_from_options(options)
-    options.map do |k, v|
-      v.is_a?(Array) ? "#{k}: #{v}" : "#{k}: #{boolean_value(v)}"
-    end.join(',')
+    config = options.map do |k, v|
+      unless k.to_s =~ /\[plain\]/
+        v.is_a?(Array) ? "#{k}: #{v}," : "#{k}: #{boolean_value(v)},"
+      end
+    end
+    config.join()
   end
 
   def boolean_value(v)
