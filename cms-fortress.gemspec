@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.version   = "1.3.5"
 
   s.authors           = ["Melvin Sembrano"]
-  s.date              = "2014-12-02"
+  s.date              = "2014-12-09"
   s.description       = "Comfortable Mexican Sofa (CMS) - User and role management extension"
   s.email             = "melvinsembrano@gmail.com"
   s.extra_rdoc_files  = [ "LICENSE.txt", "README.rdoc" ]
