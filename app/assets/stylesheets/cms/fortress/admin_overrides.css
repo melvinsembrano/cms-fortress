@@ -28,3 +28,12 @@
 .site_selector {
   width: 250px;
 }
+
+h2.pull-right{
+  font-size: 27px;
+}
+.btn-scheduled, .btn-drafted, .btn-reviewed, .btn-published{color:#fff;}
+.btn-scheduled{background-color:#f0ad4e;}
+.btn-drafted{background-color:#5bc0de;}
+.btn-reviewed{background-color:#428bca;}
+.btn-published{background-color:#5cb85c;}
