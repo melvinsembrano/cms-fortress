@@ -95,15 +95,23 @@ de:
     admin:
       cms:
         pages:
-          form:
+          form: &pages_form
             review: Freigeben
             reviewed: Freigegeben
             schedule: Publizierung planen
+            scheduled: Geplant
             publish: Jetzt publizieren
             published: Publiziert
             draft: Als Entwurf speichern
             drafted: Entwurf
             reset: Auf Entwurf zurücksetzen
+
+          edit:
+            <<: *pages_form
+        files:
+          form:
+            are_you_sure: Wirklich löschen?
+            delete: Löschen!
 
   activerecord:
     attributes:
