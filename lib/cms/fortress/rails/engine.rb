@@ -58,7 +58,7 @@ module Cms
       end
 
       initializer :assets do |config|
-        Rails.application.config.assets.precompile += %w( cms/fortress/admin_overrides.css cms/fortress/session.css cms/fortress/themes/wide.css cms/fortress/themes/wide.js cms/fortress/media.js html5shiv.js cms/fortress/cms_fortress.js)
+        Rails.application.config.assets.precompile += %w( cms/fortress/admin_overrides.css cms/fortress/session.css cms/fortress/themes/wide.css cms/fortress/themes/wide.js cms/fortress/media.js html5shiv.js)
       end
     end
   end
