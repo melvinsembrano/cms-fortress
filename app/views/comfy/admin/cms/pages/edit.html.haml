@@ -2,20 +2,21 @@
 
   = link_to t('.revision', :count => @page.revisions.count), comfy_admin_cms_site_page_revisions_path(@site, @page), :class => 'btn btn-default pull-right'
 
-  %h2.pull-right
-    -if @page.drafted?
-      %span.label.label-info
-        =t('.drafted')
-    -if @page.reviewed?
-      %span.label.label-primary
-        =t('.reviewed')
-    -if @page.scheduled?
-      %span.label.label-warning
-        =t('.scheduled')
-    -if @page.published?
-      %span.label.label-success
-        =t('.published')
+  /%h2.pull-right
+  /  -if @page.drafted?
+  /    %span.label.label-info
+  /      Draft
+  /  -if @page.reviewed?
+  /    %span.label.label-primary
+  /      Reviewed
+  /  -if @page.scheduled?
+  /    %span.label.label-warning
+  /      Scheduled
+  /  -if @page.published?
+  /    %span.label.label-success
+  /      Published
   %h2= t('.title')
+
 
 - content_for :right_column do
   = render 'comfy/admin/cms/sites/mirrors', :object => @page
