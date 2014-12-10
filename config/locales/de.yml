@@ -108,6 +108,10 @@ de:
 
           edit:
             <<: *pages_form
+        files:
+          form:
+            are_you_sure: Wirklich löschen?
+            delete: Löschen!
 
   activerecord:
     attributes:

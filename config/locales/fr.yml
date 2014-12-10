@@ -109,8 +109,14 @@ fr:
             drafted: Draft
             reset: Reset to Draft
 
-        edit:
-          <<: *pages_form
+          edit:
+            <<: *pages_form
+
+        files:
+          form:
+            are_you_sure: Are you sure to delete?
+            delete: Delete!
+
   activerecord:
     attributes:
       cms/fortress/user:
