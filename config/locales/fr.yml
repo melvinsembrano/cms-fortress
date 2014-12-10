@@ -98,16 +98,19 @@ fr:
     admin:
       cms:
         pages:
-          form:
+          form: &pages_form
             review: Approve
             reviewed: Reviewed
             schedule: Publish Date
+            scheduled: Scheduled
             publish: Publish Now
             published: Published
             draft: save as draft
             drafted: Draft
             reset: Reset to Draft
 
+        edit:
+          <<: *pages_form
   activerecord:
     attributes:
       cms/fortress/user:

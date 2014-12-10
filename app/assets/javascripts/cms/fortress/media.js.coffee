@@ -2,6 +2,11 @@ window.media =
   init: ->
     this.dlg = $("#media-box-dialog")
     # this.dlg.modal(show: false, backdrop: false)
+    @eventListeners()
+
+  eventListeners: ->
+    ($ 'button.js-blank').on 'click', (e) =>
+      ($ e.target).closest('form').attr('target', '_blank')
 
   loading: "<p>Loading...</p>"
 
