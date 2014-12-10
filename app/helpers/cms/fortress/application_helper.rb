@@ -122,8 +122,8 @@ module Cms::Fortress::ApplicationHelper
         include?(controller_name)
   end
 
-  def settings
-    Cms::Fortress::Settings.new(:global_settings)
+  def settings(type = :global_settings)
+    Cms::Fortress::Settings.new(type)
   end
 end
 

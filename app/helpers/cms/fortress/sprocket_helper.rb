@@ -2,12 +2,7 @@ module Cms::Fortress::SprocketHelper
   include TinyMCE::Rails::Helper
 
   def tinymce_init
-    path = File.join(Rails.root, 'config', 'tinymce.yml')
-    if File.exist?(path)
-      config = YAML.load_file(path)
-    else
-      config = {}
-    end
+    config = Cms::Fortress::Settings.new(:tinymce).to_h rescue {}
 
     options = {
       menubar: "tools format view",
@@ -15,7 +10,7 @@ module Cms::Fortress::SprocketHelper
       toolbar2: "",
       plugins: ["code", "fullscreen", "media", "link", "table"],
       language: "en"
-    }.stringify_keys.merge(config)
+    }.merge(config)
 
   <<-EOF
   tinymce.init({
