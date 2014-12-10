@@ -1,10 +1,10 @@
 module Comfy::Admin::Cms::PagesHelper
   def page_actions(page)
-    states = page.aasm.permissible_events
-    states.select! do |state|
-      can?(:manage, 'contents.page.'+state.to_s)
+    events = page.aasm.events(permitted: true).map(&:name)
+    events.select! do |event|
+      can?(:manage, 'contents.page.' + event.to_s)
     end
-    states
+    events
   end
 
   def cached_timeout_for_select

@@ -4,7 +4,6 @@ class Comfy::Cms::PageTest < ActiveSupport::TestCase
 
   test "new page can be drafted" do
     @new = comfy_cms_pages(:default)
-    @new.draft
     assert(@new.drafted?)
     assert(!@new.is_published)
   end

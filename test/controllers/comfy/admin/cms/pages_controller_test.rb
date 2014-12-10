@@ -22,7 +22,7 @@ class Comfy::Admin::Cms::PagesControllerTest < ActionController::TestCase
                 { :identifier => 'default_field_text',
                   :content    => 'title content' }
             ]
-        }, :transition => 'draft'
+        }
         page = Comfy::Cms::Page.last
         assert_equal @comfy_cms_site, page.site
         assert page.drafted?
