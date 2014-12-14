@@ -74,7 +74,7 @@ module Cms::Fortress::ApplicationHelper
       elsif type.eql?(:video)
         cms_fortress_files_videos_path
       else
-        cms_fortress_files_others_url(format: :json)
+        cms_fortress_files_others_path(format: :json)
       end
     end
   end
