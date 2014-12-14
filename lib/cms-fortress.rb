@@ -3,6 +3,7 @@ require 'devise'
 require 'cancan'
 require 'aasm'
 require 'tinymce-rails'
+require 'tinymce-rails-langs'
 
 require_relative 'comfortable_mexican_sofa/fixture/page'
 
