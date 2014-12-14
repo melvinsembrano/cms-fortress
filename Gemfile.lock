@@ -8,7 +8,7 @@ PATH
       delayed_job (~> 4)
       devise (~> 3.2)
       rails (>= 4.0.0)
-      tinymce-rails (~> 4.0.0)
+      tinymce-rails (~> 4.1.0)
       tinymce-rails-langs (~> 4.0)
 
 GEM
@@ -199,7 +199,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
-    tinymce-rails (4.0.28.2)
+    tinymce-rails (4.1.6)
       railties (>= 3.1.1)
     tinymce-rails-langs (4.20140129)
       tinymce-rails (~> 4.0)
