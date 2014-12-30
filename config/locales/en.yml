@@ -137,7 +137,7 @@ en:
         slug: Slug
   login:
     forgot_your_password: Forgot your password?
-    send_me_reset_password_instructions: Send me rcset p_sswo_d instru: ctions
+    send_me_reset_password_instructions: Send me reset password instructions
     change_your_password: Change your password
     new_password: New password
     confirm_new_password: Confirm new password
