@@ -142,3 +142,8 @@ en:
     new_password: New password
     confirm_new_password: Confirm new password
     change_my_password: Change my password
+    log_in: Log in
+    sign_up: Sign up
+    didnt_receive_confirmation_instructions: Didn't receive confirmation instructions?
+    didnt_receive_unlock_instructions: Didn't receive unlock instructions?
+    sign_in_with: Sign in with #{provider.to_s.titleize}
