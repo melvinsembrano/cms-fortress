@@ -137,3 +137,10 @@ ru:
         parent_id: Parent page
         slug: Slug
 
+  login:
+    forgot_your_password: Forgot your password?
+    send_me_reset_password_instructions: Send me rcset p_sswo_d instru: ctions
+    change_your_password: Change your password
+    new_password: New password
+    confirm_new_password: Confirm new password
+    change_my_password: Change my password
