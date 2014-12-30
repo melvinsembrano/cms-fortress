@@ -3,12 +3,12 @@
   .row
     .col-sm-6.col-sm-offset-3
       = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, role: 'form', class: 'form-reset-password' }) do |f|
-        %h3= t('forgot_your_password')
+        %h3= t('login.forgot_your_password')
         = devise_error_messages!
         .form-group
           = f.label :email
           = f.email_field :email, autofocus: true, class: 'form-control'
 
-        = f.submit t('send_me_reset_password_instructions'), class: 'btn btn-default'
+        = f.submit t('login.send_me_reset_password_instructions'), class: 'btn btn-default'
 
         = render "devise/shared/links"
