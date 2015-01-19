@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.require_paths     = ["lib"]
 
   s.add_dependency 'rails',                     '>= 4.0.0'
-  s.add_dependency 'comfortable_mexican_sofa',  '~> 1.12.3'
+  s.add_dependency 'comfortable_mexican_sofa',  '~> 1.12.5'
   s.add_dependency 'devise',                    '~> 3.2'
   s.add_dependency 'cancancan',                 '~> 1.9'
   s.add_dependency 'delayed_job',               '~> 4'
