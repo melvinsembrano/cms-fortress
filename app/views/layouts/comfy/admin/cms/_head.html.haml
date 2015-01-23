@@ -3,8 +3,7 @@
   %title= settings.title
   = csrf_meta_tag
 
-  = stylesheet_link_tag 'comfortable_mexican_sofa/application'
-  = stylesheet_link_tag 'comfortable_mexican_sofa/admin/application'
+  = stylesheet_link_tag 'comfy/admin/cms/application'
 
   = stylesheet_link_tag "cms/fortress/admin_overrides"
 
@@ -12,8 +11,7 @@
     = stylesheet_link_tag "cms/fortress/themes/#{ theme_name }"
 
 
-  = javascript_include_tag 'comfortable_mexican_sofa/application'
-  = javascript_include_tag 'comfortable_mexican_sofa/admin/application'
+  = javascript_include_tag 'comfy/admin/cms/application'
   = javascript_include_tag 'cms/fortress/media'
 
   - unless default_theme?
@@ -23,5 +21,3 @@
   = yield :head
 
   = render 'comfy/admin/cms/partials/html_head'
-
-
