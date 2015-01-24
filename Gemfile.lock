@@ -215,7 +215,7 @@ PLATFORMS
 DEPENDENCIES
   bundler
   cms-fortress!
-  minitest (~> 4.7.3)
+  minitest (~> 4.7, >= 4.7.3)
   minitest-rails
   minitest-reporters
   minitest-spec-rails
