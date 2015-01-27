@@ -1,6 +1,7 @@
 {<img src="https://badge.fury.io/rb/cms-fortress.png" alt="Gem Version" />}[http://badge.fury.io/rb/cms-fortress]
 {<img src="https://gemnasium.com/melvinsembrano/cms-fortress.png" alt="Dependencies" />}[https://gemnasium.com/melvinsembrano/cms-fortress]
 {<img src="https://codeclimate.com/github/melvinsembrano/cms-fortress.png" alt="Code Climate" />}[https://codeclimate.com/github/melvinsembrano/cms-fortress]
+{<img src="https://travis-ci.org/melvinsembrano/cms-fortress.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/melvinsembrano/cms-fortress]
 
 = cms-fortress
 
