@@ -5,7 +5,7 @@
 
 = cms-fortress
 
-An extension for the awesome Comfortable Mexican Sofa (https://github.com/comfy/comfortable-mexican-sofa) CMS Engine
+An extension for the awesome ComfortableMexicanSofa (https://github.com/comfy/comfortable-mexican-sofa) CMS Engine
 
 * Added Role Management for proper workflow
 * Added Devise for User and Session Management
@@ -85,13 +85,13 @@ You can create a custom role ability via a three-step process.
         :path => 'admin_my_role_details_path',
         :super_user => true
       }
-      
+
       # adding a divider menu item (Wide Theme only)
       config.content_resources << {name: 'divider'}
-      
+
       #adding a menu header item (Wide Theme only)
       config.content_resources << {name: 'dropdown-header', title: "i18n.my.header.label"}
-      
+
     end
 
 The path is eval'd at runtime, so you can use Rails helper methods such as
@@ -118,9 +118,9 @@ Below are the fetures for wide theme:
 * Compact Layout and Menus
 * Responsive Layout
 * Fullcreen Editing
-* Integrated image file attachement
+* Integrated image file attachment
 * Integrated video file attachment
-* Integrated link file attachement
+* Integrated link file attachment
 
 http://raw.github.com/melvinsembrano/cms-fortress/master/docs/screens/compact-layout-01.png
 
@@ -141,15 +141,9 @@ Afterwards you can run the tests by calling
 
     rake test
 
-== Contributing to cms-fortress
+== Contributing
 
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
-* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
-* Fork the project.
-* Start a feature/bugfix branch.
-* Commit and push until you are happy with your contribution.
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+Please see {CONTRIBUTING.rdoc}[https://github.com/melvinsembrano/cms-fortress/blob/master/CONTRIBUTING.rdoc] for details.
 
 == Copyright
 
