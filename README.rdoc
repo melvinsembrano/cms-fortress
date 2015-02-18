@@ -23,7 +23,7 @@ An extension for the awesome ComfortableMexicanSofa (https://github.com/comfy/co
 
 Add gem defintion to your Gemfile:
 
-  gem 'cms-fortress', '~> 1.3.0'
+  gem 'cms-fortress', '~> 1.3.6'
 
 Then from the Rails project's root run:
 
