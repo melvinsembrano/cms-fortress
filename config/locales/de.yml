@@ -133,14 +133,14 @@ de:
         slug: URL-Pfad
 
   login:
-    forgot_your_password: Forgot your password?
-    send_me_reset_password_instructions: Send me reset password instructions
-    change_your_password: Change your password
-    new_password: New password
-    confirm_new_password: Confirm new password
-    change_my_password: Change my password
-    log_in: Log in
-    sign_up: Sign up
-    didnt_receive_confirmation_instructions: Didn't receive confirmation instructions?
-    didnt_receive_unlock_instructions: Didn't receive unlock instructions?
-    sign_in_with: Sign in with #{provider.to_s.titleize}
+    forgot_your_password: Passwort vergessen?
+    send_me_reset_password_instructions: Passwort-Reset Anweisungen senden
+    change_your_password: Ändern Sie Ihr Passwort
+    new_password: neues Passwort
+    confirm_new_password: Neuse Passwort bestätigen
+    change_my_password: Passwort ändern
+    log_in: Einloggen
+    sign_up: Registrieren
+    didnt_receive_confirmation_instructions: Sie haben keine Passwort-Reset Anweisungen erhalten?
+    didnt_receive_unlock_instructions: Sie haben keine Anweisungen zum entsperren erhalten?
+    sign_in_with: Anmelden mit #{provider.to_s.titleize}
