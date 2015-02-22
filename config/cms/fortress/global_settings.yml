@@ -1,6 +1,7 @@
 default: &default
   title: "CMS Fortress"
   title_link: "#"
+  use_tinymce: true
 
 development:
   <<: *default
