@@ -3,19 +3,25 @@
   %title= settings.title
   = csrf_meta_tag
 
-  = stylesheet_link_tag 'comfy/admin/cms/application'
-
-  = stylesheet_link_tag "cms/fortress/admin_overrides"
+  = stylesheet_link_tag 'comfy/admin/cms/application', 'data-turbolinks-track' => true
+  = stylesheet_link_tag "cms/fortress/admin_overrides", 'data-turbolinks-track' => true
 
   - unless default_theme?
     = stylesheet_link_tag "cms/fortress/themes/#{ theme_name }"
 
 
-  = javascript_include_tag 'comfy/admin/cms/application'
-  = javascript_include_tag 'cms/fortress/media'
+  = javascript_include_tag 'comfy/admin/cms/application', 'data-turbolinks-track' => true
+  = javascript_include_tag 'cms/fortress/media', 'data-turbolinks-track' => true
 
   - unless default_theme?
     = javascript_include_tag "cms/fortress/themes/#{ theme_name }"
+
+  - if @site && @site.persisted? && !settings.use_tinymce
+
+    :javascript
+      CMS.file_upload_path  = '#{comfy_admin_cms_site_files_path(@site)}';
+      CMS.pages_path        = '#{comfy_admin_cms_site_pages_path(@site)}';
+      CMS.locale            = '#{I18n.locale}';
 
 
   = yield :head
