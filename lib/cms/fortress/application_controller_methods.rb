@@ -46,6 +46,8 @@ module Cms
       def self.included(base)
         base.class_eval do
 
+          before_action :configure_permitted_parameters, if: :devise_controller?
+
           rescue_from CanCan::AccessDenied do |ex|
             # if cannot view page check if can on files
             if controller_name.eql?('pages')
@@ -69,6 +71,12 @@ module Cms
             else
               redirect_to cms_fortress_unauthorised_path #, :alert => ex.message
             end
+          end
+
+          protected
+          
+          def configure_permitted_parameters
+            devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:email, :password, :remember_me, :site_id) }
           end
 
         end
