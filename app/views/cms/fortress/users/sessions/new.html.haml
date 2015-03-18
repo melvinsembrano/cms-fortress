@@ -10,6 +10,9 @@
         .form-group
           = f.label :password
           = f.password_field :password, :placeholder => t('cms.fortress.users.sessions.new.password'), :class => "form-control"
+        .form-group
+          = f.label :site
+          = f.select :site_id, Comfy::Cms::Site.all.collect{ |s| [s.label, s.id] }, :class => "form-control"
 
         - if devise_mapping.rememberable?
           .checkbox
