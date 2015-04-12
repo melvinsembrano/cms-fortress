@@ -1,11 +1,12 @@
 class DeviseCreateCmsFortressUsers < ActiveRecord::Migration
 
-  def migrate(direction)
-    super
+  # move creation of default user to the 08 migration
+  # def migrate(direction)
+  #   super
 
-    # Create default cms-admin user
-    Cms::Fortress::User.create!(:email => 'admin@cmsfortress.com', :password => '1234qwer', :password_confirmation => '1234qwer', :role_id => 1) if direction == :up
-  end
+  #   # Create default cms-admin user
+  #   Cms::Fortress::User.create!(:email => 'admin@cmsfortress.com', :password => '1234qwer', :password_confirmation => '1234qwer', :role_id => 1) if direction == :up
+  # end
 
   def change
     create_table(:cms_fortress_users) do |t|
