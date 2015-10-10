@@ -31,12 +31,14 @@ module Cms
       attr_accessor :enable_page_workflow
       attr_accessor :enable_page_caching
       attr_accessor :theme
+      attr_accessor :login_site_selector
 
       def initialize
         self.class.send(:include, Rails.application.routes.url_helpers)
         @theme = :default
         @enable_page_workflow = true
         @enable_page_caching = true
+        @login_site_selector = false
         @content_resources = [
           {:name => 'pages', :title => 'comfy.admin.cms.base.pages',
            :path => 'comfy_admin_cms_site_pages_path(@site) if @site && !@site.new_record?'},

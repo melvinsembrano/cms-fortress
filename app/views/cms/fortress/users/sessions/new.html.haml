@@ -10,7 +10,7 @@
         .form-group
           = f.label :password
           = f.password_field :password, :placeholder => t('cms.fortress.users.sessions.new.password'), :class => "form-control"
-        .form-group
+        .form-group(class="#{ "hide" unless Comfy::Cms::Site.count > 1 && Cms::Fortress.configuration.login_site_selector }")
           = f.label :site
           = f.select :site_id, Comfy::Cms::Site.all.collect{ |s| [s.label, s.id] }, :class => "form-control"
 

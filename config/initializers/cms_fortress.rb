@@ -2,6 +2,9 @@ Cms::Fortress.configure do |config|
   # comment the line below if you want to use the default layout
   config.theme = :wide
 
+  # Turn on site selector on login page
+  # config.login_site_selector = true
+
   # Turn off page workflow options
   # config.enable_page_workflow = false
   # Turn off page caching options
