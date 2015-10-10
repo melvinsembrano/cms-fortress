@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name      = "cms-fortress"
-  s.version   = "1.3.11"
+  s.version   = "1.3.12"
 
   s.authors           = ["Melvin Sembrano"]
   s.date              = "2015-10-10"
