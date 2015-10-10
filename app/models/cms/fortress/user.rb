@@ -14,7 +14,7 @@ class Cms::Fortress::User < ActiveRecord::Base
   validates_length_of       :password, within: Devise.password_length, allow_blank: true
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :timeoutable,
-         :authentication_keys => [:email, :site_id]
+         :authentication_keys => -> {Cms::Fortress.configuration.login_site_selector ? [:email, :site_id] : [:email]}.call
 
   belongs_to :role
   belongs_to :site, class_name: "Comfy::Cms::Site", foreign_key: :site_id
