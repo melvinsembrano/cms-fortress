@@ -1,14 +1,7 @@
-<% config = Cms::Fortress::Settings.new(:global_settings).to_h %>
 
 //= require '../site_selector'
 $(document).ready( function() {
   $('.dropdown-toggle').dropdown();
 });
 
-<% if config[:use_tinymce] %>
-  //= require tinymce-jquery
-  window.CMS.wysiwyg = function () {
-    return <%= tinymce_init %>
-  }
-<% end %>
 
