@@ -23,7 +23,7 @@ An extension for the awesome ComfortableMexicanSofa (https://github.com/comfy/co
 
 Add gem defintion to your Gemfile:
 
-  gem 'cms-fortress', '~> 1.3.6'
+  gem 'cms-fortress', '~> 1.3.12'
 
 Then from the Rails project's root run:
 
@@ -147,6 +147,6 @@ Please see {CONTRIBUTING.rdoc}[https://github.com/melvinsembrano/cms-fortress/bl
 
 == Copyright
 
-Copyright (c) 2014 Melvin Sembrano. See LICENSE.txt for
+Copyright (c) 2015 Melvin Sembrano. See LICENSE.txt for
 further details.
 
