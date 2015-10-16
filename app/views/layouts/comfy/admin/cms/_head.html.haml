@@ -16,7 +16,7 @@
   - unless default_theme?
     = javascript_include_tag "cms/fortress/themes/#{ theme_name }"
 
-  - if @site && @site.persisted? && !settings.use_tinymce
+  - if @site && @site.persisted?
 
     :javascript
       CMS.file_upload_path  = '#{comfy_admin_cms_site_files_path(@site)}';
