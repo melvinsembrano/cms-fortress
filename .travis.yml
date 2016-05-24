@@ -8,4 +8,6 @@ branches:
   only:
     - master
 
-cache: bundler
+# cache: bundler
+before_install:
+  - gem install bundler
